@@ -1,0 +1,12 @@
+0001-Document-changes-applied-in-the-debian-package.patch
+0002-Change-default-configuration.patch
+0003-Change-the-textdomaindir-to-match-debian-installatio.patch
+0004-Load-checkinstallrc-from-etc.patch
+0007-Drop-cases-for-glibc-2.4.patch
+0008-Set-file-permissions-to-o-g-instead-of-644.patch
+0011-fix-crash-when-sizeof-mode_t-sizeof-int.patch
+0012-add-debian-cflags.patch
+0013-fix-installcheck-tests.patch
+0014-fix-xstat64.patch
+0015-add-renameat2.patch
+0016-Define-_STAT_VER-_MKNOD_VER-locally-dropped-in-glibc.patch
