@@ -1,0 +1,54 @@
+From 50baa8dd8595566901243a8e7b32c64a230b2e21 Mon Sep 17 00:00:00 2001
+From: Timo Juhani Lindfors <timo.lindfors@iki.fi>
+Date: Tue, 5 Mar 2013 10:30:03 +0200
+Subject: [PATCH] fix crash when sizeof(mode_t) < sizeof(int)
+
+On Debian GNU/kfreebsd mode_t is uint16_t. According to GCC this gets
+promoted to an int:
+
+installwatch.c:3835:11: warning: 'short unsigned int' is promoted to 'int' when passed through '...' [enabled by default]
+installwatch.c:3835:11: note: (so you should pass 'int' not 'short unsigned int' to 'va_arg')
+installwatch.c:3835:11: note: if this code is reached, the program will abort
+
+and according to "man va_arg" this indeed is documented to lead to
+random behavior:
+
+ "If there is no next argnument, or if type is not compatible with the
+  type of the actual next argument (as promoted according to the
+  default argument promotions), random errors will occur.
+
+This patch simply uses int instead of mode_t and fixes Debian bug
+702314 (checkinstall aborts with illegal instruction on kFreeBSD).
+---
+ installwatch/installwatch.c |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+--- a/installwatch/installwatch.c
++++ b/installwatch/installwatch.c
+@@ -2838,7 +2838,7 @@
+ #endif
+ 
+ 	va_start(ap, flags);
+-	mode = va_arg(ap, mode_t);
++	mode = va_arg(ap, int /*promoted from mode_t*/);
+ 	va_end(ap);
+ 
+ 	  /* We were asked to work in "real" mode */
+@@ -3619,7 +3619,7 @@
+ #endif
+ 
+ 	va_start(ap, flags);
+-	mode = va_arg(ap, mode_t);
++	mode = va_arg(ap, int /*promoted from mode_t*/);
+ 	va_end(ap);
+ 
+ 	  /* We were asked to work in "real" mode */
+@@ -3860,7 +3860,7 @@
+  	va_list arg;
+  	if(flags & O_CREAT) {
+  		va_start(arg, flags);
+- 		mode = va_arg(arg, mode_t);
++ 		mode = va_arg(arg, int /*promoted from mode_t*/);
+  		va_end (arg);
+  	}
+  	
