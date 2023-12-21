@@ -1,0 +1,26 @@
+From: Giulio Moro <giuliomoro@yahoo.it>
+Date: Sat, 14 Oct 2017 01:10:35 +0000
+Subject: checkinstall: Segmentation fault when invoking `checkinstall cmake -P cmake_install.cmake`
+Forwarded: https://bugtrack.izto.org:4442/show_bug.cgi?id=171
+
+in installwatch.c, _xstat64() is missing check for initialization
+
+As a consequence of this, if `__xstat64()` is the first function called from
+the library, then no initialization is performed and the program segfaults when
+trying to call `true_xstat64()` which is uninitialized
+
+This causes a segmentation fault on Debian Stretch when invoking e.g.:
+`checkinstall cmake -P cmake_install.cmake`
+---
+--- a/installwatch/installwatch.c
++++ b/installwatch/installwatch.c
+@@ -3734,6 +3734,9 @@
+ 	instw_setpath(&instw,pathname);
+ 	instw_getstatus(&instw,&status);
+ 
++       if (!libc_handle)
++           initialize();
++
+ #if DEBUG
+ 	instw_print(&instw);
+ #endif
