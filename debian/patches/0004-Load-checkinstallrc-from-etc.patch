@@ -8,9 +8,9 @@ Subject: [PATCH] Load checkinstallrc from /etc
 
 diff --git a/checkinstall.in b/checkinstall.in
 index d2ba87e..aeae91e 100755
---- a/checkinstall.in
-+++ b/checkinstall.in
-@@ -500,7 +500,7 @@ function copy_dir_hierarchy {
+--- a/checkinstall
++++ b/checkinstall
+@@ -492,7 +492,7 @@ function copy_dir_hierarchy {
  ckversion
  echo
  
