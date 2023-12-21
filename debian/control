@@ -1,0 +1,32 @@
+Source: checkinstall
+Section: admin
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Stephen Gelman <ssgelm@debian.org>
+Build-Depends: debhelper-compat (= 12),
+               docbook-to-man,
+               gettext,
+               libc0.1-dev (>= 2.10) [kfreebsd-i386 kfreebsd-amd64],
+               libc0.3 (>=2.10) [hurd-i386],
+               libc6-dev (>=2.10) [i386 amd64 armel hppa mips mipsel powerpc s390 sparc],
+               libc6.1-dev (>=2.10) [alpha ia64]
+Standards-Version: 4.4.0
+Vcs-Git: https://salsa.debian.org/debian/checkinstall.git
+Vcs-Browser: https://salsa.debian.org/debian/checkinstall
+Homepage: http://checkinstall.izto.org
+
+Package: checkinstall
+Architecture: any
+Depends: dpkg-dev,
+         file,
+         sensible-utils,
+         ${misc:Depends}, ${shlibs:Depends}
+Recommends: make
+Suggests: gettext
+Description: installation tracker
+ CheckInstall keeps track of all the files created or
+ modified by your installation script ("make install"
+ "make install_modules", "setup", etc), builds a
+ standard binary package and installs it in your
+ system giving you the ability to uninstall it with your
+ distribution's standard package management utilities.
