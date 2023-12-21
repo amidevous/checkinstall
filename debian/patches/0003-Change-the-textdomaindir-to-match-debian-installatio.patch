@@ -1,0 +1,20 @@
+From: Felipe Sateler <fsateler@gmail.com>
+Date: Thu, 15 Apr 2010 14:47:43 -0400
+Subject: [PATCH] Change the textdomaindir to match debian installation
+
+===================================================================
+---
+ checkinstall |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+--- a/checkinstall.in
++++ b/checkinstall.in
+@@ -64,7 +64,7 @@
+ INSTALLDIR=MAKEFILE_PREFIX
+ 
+ # gettext variables
+-export TEXTDOMAINDIR="$INSTALLDIR"/lib/checkinstall/locale
++export TEXTDOMAINDIR=/usr/share/locale
+ export TEXTDOMAIN=checkinstall
+ 
+ # .spec file path
