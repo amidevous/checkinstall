@@ -1,0 +1,13 @@
+Index: installwatch/Makefile
+===================================================================
+--- installwatch/Makefile.orig	2009-12-07 15:07:05.000000000 +0100
++++ installwatch/Makefile	2009-12-07 16:20:35.557745354 +0100
+@@ -15,7 +15,7 @@ BINDIR=$(PREFIX)/bin
+ LIBDIR=$(PREFIX)/lib
+ 
+ LIBS       = -ldl
+-DEFINES    = -D_GNU_SOURCE -DPIC -fPIC -D_REENTRANT -DVERSION=\"$(VERSION)\"
++DEFINES    = -U_FORTIFY_SOURCE -D_GNU_SOURCE -DPIC -fPIC -D_REENTRANT -DVERSION=\"$(VERSION)\"
+ CFLAGS     = -Wall
+ ALL_CFLAGS = $(CFLAGS) $(DEFINES)
+ 

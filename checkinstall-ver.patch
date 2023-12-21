@@ -1,0 +1,29 @@
+diff -Nur checkinstall-1.6.2.orig/installwatch/installwatch.c checkinstall-1.6.2/installwatch/installwatch.c
+--- checkinstall-1.6.2.orig/installwatch/installwatch.c	2022-09-01 11:40:24.268096815 +0800
++++ checkinstall-1.6.2/installwatch/installwatch.c	2022-09-02 13:43:45.205592285 +0800
+@@ -48,6 +48,25 @@
+ #include <dlfcn.h>
+ #include <dirent.h>
+ 
++#ifndef _STAT_VER
++#if defined (__aarch64__)
++#define _STAT_VER 0
++#elif defined (__x86_64__)
++#define _STAT_VER 1
++#else
++#define _STAT_VER 3
++#endif
++#endif
++#ifndef _MKNOD_VER
++#if defined (__aarch64__)
++#define _MKNOD_VER 0
++#elif defined (__x86_64__)
++#define _MKNOD_VER 0
++#else
++#define _MKNOD_VER 1
++#endif
++#endif
++
+ /* There's no d_off on GNU/kFreeBSD */
+ #if defined(__FreeBSD_kernel__)
+ #define D_OFF(X) (-1)

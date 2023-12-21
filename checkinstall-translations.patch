@@ -1,0 +1,3170 @@
+Index: locale/checkinstall-de.po
+===================================================================
+--- locale/checkinstall-de.po.orig	2009-06-06 22:41:12.000000000 +0200
++++ locale/checkinstall-de.po	2009-12-07 16:46:07.141856323 +0100
+@@ -12,15 +12,15 @@ msgid ""
+ msgstr ""
+ "Project-Id-Version: 1.6.0beta1\n"
+ "POT-Creation-Date: 2003-03-17 13:30+0100\n"
+-"PO-Revision-Date:  2003-03-17 13:30+0100\n"
+-"Last-Translator: Andreas Muck <fam.muck@telda.net>\n"
+-"Language-Team: DE <fam.muck@telda.net>\n"
++"PO-Revision-Date:  2009-12-07 16:42:28+0100\n"
++"Last-Translator: Philipp Thomas <pth@suse.de>\n"
++"Language-Team: DE <translation-team-de@lists.sourceforge.net>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=iso-8859-15\n"
++"Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ 
+ msgid "           This software is released under the GNU GPL."
+-msgstr "  Diese Software wurde unter der GNU GPL verЖffentlicht"
++msgstr "  Diese Software wurde unter der GNU GPL verц╤ffentlicht"
+ 
+ msgid "Usage: checkinstall [options] [command [command arguments]]"
+ msgstr "Benutzung: checkinstall [Optionen] [Befehl [Befehls-Argumente]]"
+@@ -32,7 +32,7 @@ msgid "*Package type selection*"
+ msgstr "*Auswahl des Paket-Typs*"
+ 
+ msgid "-t,--type=<slackware|rpm|debian> Choose packaging system"
+-msgstr "-t, --type=<slackware|rpmdebian> WДhlen Sie Ihr Paket-System"
++msgstr "-t, --type=<slackware|rpmdebian> Wц╓hlen Sie Ihr Paket-System"
+ 
+ msgid "-S                               Build a Slackware package"
+ msgstr "-S                            Erstelle ein Slackware-Paket"
+@@ -89,7 +89,7 @@ msgid "--provides=<list>              Fe
+ msgstr "--provides=<Liste>             Eigenschaften dieses Pakets (.rpm)"
+ 
+ msgid "--requires=<list>              Features required by this package (.rpm)"
+-msgstr "--requires=<Liste>             Von diesem Paket benЖtigte Pakete (.rpm)"
++msgstr "--requires=<Liste>             Von diesem Paket benц╤tigte Pakete (.rpm)"
+ 
+ msgid "--rpmflags=<flags>             Pass this flags to the rpm installer"
+ msgstr "--rpmflags=<Optionen>          Installiert mit diesen Optionen (RPM)"
+@@ -101,7 +101,7 @@ msgid "--spec=<path>                  .s
+ msgstr "--spec=<Pfad>                  Pfad zur .spec-Datei"
+ 
+ msgid "--nodoc                        Do not include documentation files"
+-msgstr "--nodoc                        Schlieъt Dokumentations-Dateien aus"
++msgstr "--nodoc                        Schlieц÷t Dokumentations-Dateien aus"
+ 
+ msgid "*Info display options*"
+ msgstr "*Optionen zur Info-Anzeige*"
+@@ -110,13 +110,13 @@ msgid "-d<0|1|2>                      Se
+ msgstr "-d<0|1|2>                      Variiert den Fehlerinfo-Status"
+ 
+ msgid "-si                            Run an interactive install command"
+-msgstr "-si                            FЭhre interaktiven Installations-Befehl aus"
++msgstr "-si                            Fц╪hre interaktiven Installations-Befehl aus"
+ 
+ msgid "--showinstall=<yes|no>         Toggle interactive install command"
+ msgstr "--showinstall=<yes|no>         Aktiviert interaktiven Installations-Befehl"
+ 
+ msgid "-ss                            Run an interactive Slackware installation script"
+-msgstr "-ss                            FЭhre interaktives Slackware-Installationsprogramm aus"
++msgstr "-ss                            Fц╪hre interaktives Slackware-Installationsprogramm aus"
+ 
+ msgid "--showslack=<yes|no>           Toggle interactive Slackware installation script"
+ msgstr "--showslack=<yes|no>           Aktiviert interaktives Slackware-Installationsprogramm"
+@@ -128,10 +128,10 @@ msgid "--autodoinst=<yes|no>          To
+ msgstr "--autodoinst=<yes|no>          Aktiviert die Erstellung eines doinst.sh-Skripts"
+ 
+ msgid "--strip=<yes|no>               Strip any ELF binaries found inside the package"
+-msgstr "--strip=<yes|no>               Strippe alle ELF-BinДrdateien des Pakets"
++msgstr "--strip=<yes|no>               Strippe alle ELF-Binц╓rdateien des Pakets"
+ 
+ msgid "--stripso=<yes|no>             Strip any ELF binary libraries (.so files)"
+-msgstr "--stripso=<yes|no>             Strippe alle ELF-BinДrbibliotheken (.so Dateien)"
++msgstr "--stripso=<yes|no>             Strippe alle ELF-Binц╓rbibliotheken (.so Dateien)"
+ 
+ msgid "--gzman=<yes|no>               Compress any man pages found inside the package"
+ msgstr "--gzman=<yes|no>               Komprimiere die Manual-Dateien des Pakets"
+@@ -140,10 +140,10 @@ msgid "--docdir=<path>                Wh
+ msgstr "--docdir=<Pfad>                Pfad zu den System-Dokumentationen"
+ 
+ msgid "--umask=<mask>                 Set the umask value"
+-msgstr "--umask=<Maske>                Setzt den Wert fЭr 'umask'"
++msgstr "--umask=<Maske>                Setzt den Wert fц╪r 'umask'"
+ 
+ msgid "--exclude=<file|dir[,...]>     Exclude these files/directories from the package"
+-msgstr "--exclude=<Datei|Verzeichnis[,...]> Schlieъe diese Dateien/Verzeichnisse aus dem Paket aus"
++msgstr "--exclude=<Datei|Verzeichnis[,...]> Schlieц÷e diese Dateien/Verzeichnisse aus dem Paket aus"
+ 
+ msgid "--include=<listfile>           Force the inclusion in the package of the"
+ msgstr "--include=<Listen-Datei>       Baue die in <Listen-Datei> angegebenen Dateien in das Paket ein"
+@@ -167,16 +167,16 @@ msgid "*Cleanup options*"
+ msgstr "*Nachbearbeitungs-Optionen*"
+ 
+ msgid "--deldoc=<yes|no>              Delete doc-pak upon termination"
+-msgstr "--deldoc=<yes|no>              LЖsche doc-pak nach Fertigstellung"
++msgstr "--deldoc=<yes|no>              Lц╤sche doc-pak nach Fertigstellung"
+ 
+ msgid "--deldesc=<yes|no>             Delete description-pak upon termination"
+-msgstr "--deldesc=<yes|no>             LЖsche description-pak nach Fertigstellung"
++msgstr "--deldesc=<yes|no>             Lц╤sche description-pak nach Fertigstellung"
+ 
+ msgid "--delspec=<yes|no>             Delete spec file upon termination"
+-msgstr "--delspec=<yes|no>             LЖsche die spec-Datei nach Fertigstellung"
++msgstr "--delspec=<yes|no>             Lц╤sche die spec-Datei nach Fertigstellung"
+ 
+ msgid "--bk                           Backup any overwritten files"
+-msgstr "--bk                           Bewahre alle Эberschriebenen Dateien"
++msgstr "--bk                           Bewahre alle ц╪berschriebenen Dateien"
+ 
+ msgid "--backup=<yes|no>              Toggle backup"
+ msgstr "--backup=<yes|no>              Aktiviere Backup-Funktion"
+@@ -194,19 +194,19 @@ msgid "--version                      Sh
+ msgstr "--version                      Zeige Versions-Informationen"
+ 
+ msgid "Use --help or -h to get more information"
+-msgstr "Verwenden Sie --help oder -h fЭr mehr Informationen"
++msgstr "Verwenden Sie --help oder -h fц╪r mehr Informationen"
+ 
+ msgid "is an invalid value for"
+-msgstr "ist ein unzulДssiger Wert fЭr"
++msgstr "ist ein unzulц╓ssiger Wert fц╪r"
+ 
+ msgid "Restoring overwritten files from backup..."
+-msgstr "Stelle Эberschriebene Dateien wieder her..."
++msgstr "Stelle ц╪berschriebene Dateien wieder her..."
+ 
+ msgid "*** SIGINT received ***"
+ msgstr "*** SIGINT erhalten ***"
+ 
+ msgid "Cleaning up..."
+-msgstr "RДume auf..."
++msgstr "Rц╓ume auf..."
+ 
+ msgid "Bye."
+ msgstr "Auf Wiedersehen!"
+@@ -221,16 +221,16 @@ msgid "I can't find $INSTALLWATCH."
+ msgstr "$INSTALLWATCH wurde nicht gefunden"
+ 
+ msgid "I can't continue. Either install installwatch or"
+-msgstr "Weitere Verarbeitung nicht mЖglich. Installieren Sie installwatch"
++msgstr "Weitere Verarbeitung nicht mц╤glich. Installieren Sie installwatch"
+ 
+ msgid "modify the INSTALLWATCH variable in this script,"
+-msgstr "oder Дndern Sie die variable INSTALLWATCH in diesem Skript,"
++msgstr "oder ц╓ndern Sie die variable INSTALLWATCH in diesem Skript,"
+ 
+ msgid "then run checkinstall again."
+ msgstr "starten Sie dann checkinstall erneut."
+ 
+ msgid "My temp dir exists already."
+-msgstr "Mein temporДres Verzeichnis existiert schon."
++msgstr "Mein temporц╓res Verzeichnis existiert schon."
+ 
+ msgid "This looks like a symlink attack!"
+ msgstr "Dies sieht aus wie eine Symlink-Attacke!"
+@@ -239,16 +239,16 @@ msgid "*** Aborting"
+ msgstr "*** Abruch"
+ 
+ msgid "is an unacceptable value for the temp dir. Please"
+-msgstr "ist kein akzeptabler Wert fЭr das temporДre Verzeichnis. Bitte"
++msgstr "ist kein akzeptabler Wert fц╪r das temporц╓re Verzeichnis. Bitte"
+ 
+ msgid "edit the variable definition for"
+-msgstr "дndern Sie die Variablen-Definition fЭr"
++msgstr "ц└ndern Sie die Variablen-Definition fц╪r"
+ 
+ msgid "and try again."
+ msgstr "und versuchen Sie es erneut."
+ 
+ msgid "**** Failed to create temp dir!"
+-msgstr "**** Das temporДre Verzeichnis konnte nicht erstellt werden!"
++msgstr "**** Das temporц╓re Verzeichnis konnte nicht erstellt werden!"
+ 
+ msgid "**** Do you have write permission for ${BASE_TMP_DIR}?"
+ msgstr "**** Haben Sie Schreibzugriff auf ${BASE_TMP_DIR}?"
+@@ -284,16 +284,16 @@ msgid "****  Installation failed. Aborti
+ msgstr "**** Installation fehlgeschlagen. Breche Paket-Erzeugung ab."
+ 
+ msgid "Do you want to view the installation log file? "
+-msgstr "MЖchten Sie die Ereignis-Datei einsehen?"
++msgstr "Mц╤chten Sie die Ereignis-Datei einsehen?"
+ 
+ msgid "Some of the files created by the installation are inside the build"
+-msgstr "Einige der Dateien, die wДhrend der Installation erzeugt wurden, stammen"
++msgstr "Einige der Dateien, die wц╓hrend der Installation erzeugt wurden, stammen"
+ 
+ msgid "directory: `pwd`"
+ msgstr "aus dem Build-Verzeichnis: `pwd`"
+ 
+ msgid "You probably don't want them to be included in the package,"
+-msgstr "Sie wollen diese wahrscheinlich nicht in das Paket einschlieъen,"
++msgstr "Sie wollen diese wahrscheinlich nicht in das Paket einschlieц÷en,"
+ 
+ msgid "especially if they are inside your home directory."
+ msgstr "besonders, wenn sie sich in Ihrem Home-Verzeichnis befinden."
+@@ -302,7 +302,7 @@ msgid "Do you want me to list them? "
+ msgstr "Soll ich diese Dateien anzeigen?"
+ 
+ msgid "Should I exclude them from the package? (Saying yes is a good idea) "
+-msgstr "Soll ich sie aus dem Paket ausschlieъen? (yes ist hier eine gute Idee)"
++msgstr "Soll ich sie aus dem Paket ausschlieц÷en? (yes ist hier eine gute Idee)"
+ 
+ msgid "You requested to review the list of files that will be"
+ msgstr "Sie wollten die Liste der Dateien einsehen, die"
+@@ -311,22 +311,22 @@ msgid "included in this package."
+ msgstr "im Paket enthalten sein werden."
+ 
+ msgid "Now you'll have the chance to review and optionally modify it."
+-msgstr "Jetzt kЖnnen Sie sie durchsehen und ggf. verДndern."
++msgstr "Jetzt kц╤nnen Sie sie durchsehen und ggf. verц╓ndern."
+ 
+ msgid "Now you'll have the chance to review and optionally modify this file."
+-msgstr "Jetzt haben Sie die MЖglichkeit, die Datei einzusehen und ggf. zu verДndern."
++msgstr "Jetzt haben Sie die Mц╤glichkeit, die Datei einzusehen und ggf. zu verц╓ndern."
+ 
+ msgid "Press ENTER to continue."
+-msgstr "DrЭcken Sie ENTER um fortzufahren."
++msgstr "Drц╪cken Sie ENTER um fortzufahren."
+ 
+ msgid "Copying files to the temporary directory..."
+-msgstr "Kopiere Dateien in das temporДre Verzeichnis..."
++msgstr "Kopiere Dateien in das temporц╓re Verzeichnis..."
+ 
+ msgid "Striping ELF binaries and libraries..."
+-msgstr "Strippe ELF BinДr-Dateien und -Bibliotheken..."
++msgstr "Strippe ELF Binц╓r-Dateien und -Bibliotheken..."
+ 
+ msgid "Striping ELF binaries..."
+-msgstr "Strippe ELF BinДr-Dateien..."
++msgstr "Strippe ELF Binц╓r-Dateien..."
+ 
+ msgid "Compressing man pages..."
+ msgstr "Komprimiere man-Seiten..."
+@@ -335,19 +335,19 @@ msgid "Building file list..."
+ msgstr "Erzeuge Datei-Liste..."
+ 
+ msgid "Please choose the packaging method you want to use."
+-msgstr "WДhlen Sie die Paket-Art, die Sie erzeugen wollen."
++msgstr "Wц╓hlen Sie die Paket-Art, die Sie erzeugen wollen."
+ 
+ msgid "Slackware [S], RPM [R] or Debian [D]? "
+ msgstr "Slackware [S], RPM [R] oder Debian [D]? "
+ 
+ msgid "Please write a description for the package."
+-msgstr "Bitte geben Sie eine Beschreibung fЭr das Paket ein."
++msgstr "Bitte geben Sie eine Beschreibung fц╪r das Paket ein."
+ 
+ msgid " Remember that pkgtool shows"
+-msgstr "Bedenken Sie, daъ pkgtool nur die erste Zeile anzeigt,"
++msgstr "Bedenken Sie, daц÷ pkgtool nur die erste Zeile anzeigt,"
+ 
+ msgid "only the first one when listing packages so make that one descriptive."
+-msgstr "wenn Pakete gelistet werden. Diese sollte daher aussagekrДftig sein."
++msgstr "wenn Pakete gelistet werden. Diese sollte daher aussagekrц╓ftig sein."
+ 
+ msgid "End your description with an empty line or EOF."
+ msgstr "Beenden Sie Ihre Beschreibung mit einer leeren Zeile oder EOF."
+@@ -356,16 +356,16 @@ msgid "Package created with checkinstall
+ msgstr "Das Paket wurde mit checkinstall $CHECKINSTALL_VERSION erzeugt"
+ 
+ msgid "Warning: Your package description is bigger than 11 lines."
+-msgstr "WARNUNG: Ihre Paketbeschreibung ist lДnger als 11 Zeilen."
++msgstr "WARNUNG: Ihre Paketbeschreibung ist lц╓nger als 11 Zeilen."
+ 
+ msgid "Warning: The Slackware 8.1+ pkgtools might not like it."
+-msgstr "WARNUNG: Die Slackware 8.1+ pkgtools werden das nicht mЖgen."
++msgstr "WARNUNG: Die Slackware 8.1+ pkgtools werden das nicht mц╤gen."
+ 
+ msgid "*** Warning: The package name"
+ msgstr "*** WARNUNG: Der Paket-Name"
+ 
+ msgid "contains upper case"
+-msgstr "enthДlt GROSSBUCHSTABEN"
++msgstr "enthц╓lt GROSSBUCHSTABEN"
+ 
+ msgid "*** Warning: letters. dpkg might not like that so I changed"
+ msgstr "*** WARNUNG: dpkg mag das nicht, ich habe sie daher durch"
+@@ -374,10 +374,10 @@ msgid "*** Warning: them to lower case."
+ msgstr "*** WARNUNG: Kleinbuchstaben ersetzt."
+ 
+ msgid "*** Warning: The package version \"${VERSION}\" does not"
+-msgstr "*** WARNUNG: Die Paket-Version \"${VERSION}\" enthДlt keinerlei"
++msgstr "*** WARNUNG: Die Paket-Version \"${VERSION}\" enthц╓lt keinerlei"
+ 
+ msgid "*** Warning: contain any digits. dpkg might not like that."
+-msgstr "Zahlenangaben. dpkg wird das nicht mЖgen."
++msgstr "Zahlenangaben. dpkg wird das nicht mц╤gen."
+ 
+ msgid "This package will be built according to these values: "
+ msgstr "Das Paket wird entsprechend dieser Vorgaben erstellt:"
+@@ -410,13 +410,13 @@ msgid "9 -  Alternate source location:"
+ msgstr "9 -  Alternative Quellen-Angabe:"
+ 
+ msgid "10 - Provides:"
+-msgstr "10 -  Stellt zur VerfЭgung:"
++msgstr "10 -  Stellt zur Verfц╪gung:"
+ 
+ msgid "11 - Requires:"
+-msgstr "11 -  BenЖtigt:"
++msgstr "11 -  Benц╤tigt:"
+ 
+ msgid "Enter a number to change any of them or press ENTER to continue: "
+-msgstr "Geben Sie die betreffende Nummer ein, um die Vorgaben zu Дndern: "
++msgstr "Geben Sie die betreffende Nummer ein, um die Vorgaben zu ц╓ndern: "
+ 
+ msgid "Enter new summary: "
+ msgstr "Geben Sie eine neue Zusammenfassung ein: "
+@@ -428,7 +428,7 @@ msgid "Enter new version: "
+ msgstr "Geben Sie die neue Versionsbezeichnung ein: "
+ 
+ msgid "Enter new release number: "
+-msgstr "Geben Sie die neue VerЖffentlichungsnummer ein: "
++msgstr "Geben Sie die neue Verц╤ffentlichungsnummer ein: "
+ 
+ msgid "Enter the license type: "
+ msgstr "Geben Sie den Lizenz-Typ ein: "
+@@ -452,7 +452,7 @@ msgid "Enter the provided features: "
+ msgstr "Geben Sie die bereitgestellten Eigenschaften ein: "
+ 
+ msgid "Enter the additional requirements: "
+-msgstr "Geben Sie zusДtzlich erforderliche Pakete ein: "
++msgstr "Geben Sie zusц╓tzlich erforderliche Pakete ein: "
+ 
+ msgid "********************************************"
+ msgstr "********************************************"
+@@ -476,7 +476,7 @@ msgid "Writing Slackware install script.
+ msgstr "Schreibe Slackware-Installationsskript..."
+ 
+ msgid "Appending your script to the main install script..."
+-msgstr "HДnge Ihr Skript an das Haupt-Installationsskript an..."
++msgstr "Hц╓nge Ihr Skript an das Haupt-Installationsskript an..."
+ 
+ msgid "Creating package ${SLACK_PKG_BASENAME}..."
+ msgstr "Erstelle Paket ${SLACK_PKG_BASENAME}..."
+@@ -488,7 +488,7 @@ msgid "*** Failed to install the package
+ msgstr "*** Installation des Pakets fehlgeschlagen"
+ 
+ msgid "Do you want to see the log file? "
+-msgstr "MЖchten Sie die log-Datei sehen? "
++msgstr "Mц╤chten Sie die log-Datei sehen? "
+ 
+ msgid "NOTE: The package will not be installed."
+ msgstr "ANMERKUNG: Das Paket wird nicht installiert."
+@@ -497,7 +497,7 @@ msgid "*********************************
+ msgstr "**************************************"
+ 
+ msgid "**** RPM package creation selected ***"
+-msgstr "**** Erstellung eines RPM-Pakets gewДhlt ***"
++msgstr "**** Erstellung eines RPM-Pakets gewц╓hlt ***"
+ 
+ msgid "*** The \"rpm\" program is not in your PATH!"
+ msgstr "*** Das Programm \"rpm\" ist nicht in Ihrem Suchpfad!"
+@@ -512,7 +512,7 @@ msgid "the RPM source directory tree: "
+ msgstr "zum RPM Quell-Verzeichnisbaum an: "
+ 
+ msgid "You requested to review the .spec file for this package."
+-msgstr "Sie wollten die .spec-Datei fЭr dieses Paket einsehen."
++msgstr "Sie wollten die .spec-Datei fц╪r dieses Paket einsehen."
+ 
+ msgid "Building RPM package..."
+ msgstr "Erstelle das RPM-Paket..."
+@@ -539,7 +539,7 @@ msgid "*********************************
+ msgstr "*****************************************"
+ 
+ msgid "**** Debian package creation selected ***"
+-msgstr "**** Erstellung eines Debian-Pakets gewДhlt ***"
++msgstr "**** Erstellung eines Debian-Pakets gewц╓hlt ***"
+ 
+ msgid "*** The \"dpkg\" program is not in your PATH!"
+ msgstr "*** Das Programm \"dpkg\" ist nicht im Suchpfad!"
+@@ -548,7 +548,7 @@ msgid "*** Debian package creation abort
+ msgstr "*** Erstellung des Debian-Pakets abgebrochen"
+ 
+ msgid "You requested to review the control file for this package."
+-msgstr "Sie wollten die control-Datei fЭr dieses Paket einsehen."
++msgstr "Sie wollten die control-Datei fц╪r dieses Paket einsehen."
+ 
+ msgid "Building Debian package..."
+ msgstr "Erstelle Debian-Paket..."
+@@ -557,13 +557,13 @@ msgid "Installing Debian package..."
+ msgstr "Installiere Debian-Paket..."
+ 
+ msgid "*** No method was selected, I won't build any package."
+-msgstr "*** Es wurde keine Methode ausgewДhlt, Ich werde kein Paket erstellen."
++msgstr "*** Es wurde keine Methode ausgewц╓hlt, Ich werde kein Paket erstellen."
+ 
+ msgid "*** The installation command \"$INSTALLCMD\""
+ msgstr "*** Das Installations-Kommando \"$INSTALLCMD\""
+ 
+ msgid "*** has already been executed."
+-msgstr "*** wurde schon ausgefЭhrt."
++msgstr "*** wurde schon ausgefц╪hrt."
+ 
+ msgid "The package storage directory"
+ msgstr "Das Paket-Verzeichnis existiert nicht."
+@@ -578,7 +578,7 @@ msgid "*** Unable to create $PAK_DIR"
+ msgstr "*** Kann $PAK_DIR nicht erstellen"
+ 
+ msgid "Transferring package to"
+-msgstr "эbertrage Paket nach"
++msgstr "ц°bertrage Paket nach"
+ 
+ msgid "There's no package storage directory, the package"
+ msgstr "Es existiert kein Paket-Verzeichnis, das Paket"
+@@ -587,16 +587,16 @@ msgid "will be stored at the default loc
+ msgstr "wird am Standard-Ort gespeichert."
+ 
+ msgid "Erasing temporary files..."
+-msgstr "LЖsche temporДre Dateien..."
++msgstr "Lц╤sche temporц╓re Dateien..."
+ 
+ msgid "Deleting doc-pak directory..."
+-msgstr "LЖsche doc-pak-Verzeichnis..."
++msgstr "Lц╤sche doc-pak-Verzeichnis..."
+ 
+ msgid "Writing backup package..."
+ msgstr "Schreibe Sicherungs-Paket..."
+ 
+ msgid "Deleting temp dir..."
+-msgstr "LЖsche temporДres Verzeichnis..."
++msgstr "Lц╤sche temporц╓res Verzeichnis..."
+ 
+ msgid "Building debug information package..."
+ msgstr "Erstelle Fehlerinfo-Paket..."
+@@ -605,10 +605,10 @@ msgid " Done. The new package has been i
+ msgstr " Geschafft. Das neue Paket wurde installiert und gespeichert nach"
+ 
+ msgid " You can remove it from your system anytime using: "
+-msgstr " Sie kЖnnen es aus Ihrem System entfernen mit dem Befehl: "
++msgstr " Sie kц╤nnen es aus Ihrem System entfernen mit dem Befehl: "
+ 
+ msgid " Done. The new package has been saved to"
+ msgstr " Geschafft. Das neue Paket wurde gespeichert nach"
+ 
+ msgid " You can install it in your system anytime using: "
+-msgstr " Sie kЖnnen es in Ihr System installieren mit dem Befehl: "
++msgstr " Sie kц╤nnen es in Ihr System installieren mit dem Befehl: "
+Index: locale/checkinstall-es.po
+===================================================================
+--- locale/checkinstall-es.po.orig	2009-06-06 22:41:12.000000000 +0200
++++ locale/checkinstall-es.po	2009-12-07 16:52:37.482670344 +0100
+@@ -1,5 +1,5 @@
+-# MENSAJES PARA CHECKINSTALL-1.6.0beta1 en ESPAяOL
+-# Copyright (C) 2002 Felipe Eduardo SАnchez DМaz DurАn
++# MENSAJES PARA CHECKINSTALL-1.6.0beta1 en ESPAц▒OL
++# Copyright (C) 2002 Felipe Eduardo Sц║nchez Dц╜az Durц║n
+ # Felipe Eduardo Sanchez Diaz Duran <izto@asic-linux.com.mx>, 2002.
+ #
+ #, fuzzy
+@@ -7,15 +7,15 @@ msgid ""
+ msgstr ""
+ "Project-Id-Version: 1.6.0beta1\n"
+ "POT-Creation-Date: 2002-11-27 00:58-0600\n"
+-"PO-Revision-Date:  2002-11-27 00:58-0600\n"
++"PO-Revision-Date:  2009-12-07 16:52:23+01:00\n"
+ "Last-Translator: Felipe Eduardo Sanchez Diaz Duran <izto@asic-linux.com.mx>\n"
+ "Language-Team: ES <izto@asic-linux.com.mx>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=iso-8859-1\n"
++"Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ 
+ msgid "           This software is released under the GNU GPL."
+-msgstr "           Este software es distribuМdo de acuerdo a la GNU GPL"
++msgstr "           Este software es distribuц╜do de acuerdo a la GNU GPL"
+ 
+ msgid "Usage: checkinstall [options] [command [command arguments]]"
+ msgstr "Uso: checkinstall [opciones] [comando [argumentos del comando]]"
+@@ -24,7 +24,7 @@ msgid "Options:"
+ msgstr "Opciones:"
+ 
+ msgid "*Package type selection*"
+-msgstr "*SelecciСn del tipo de paquete*"
++msgstr "*SelecciцЁn del tipo de paquete*"
+ 
+ msgid "-t,--type=<slackware|rpm|debian> Choose packaging system"
+ msgstr "-t,--type=<slackware|rpm|debian>  Escoge tipo de paquete"
+@@ -39,13 +39,13 @@ msgid "-D
+ msgstr "-D                               Crea un paquete de Debian"
+ 
+ msgid "*Install options*"
+-msgstr "*Opciones de instalaciСn*"
++msgstr "*Opciones de instalaciцЁn*"
+ 
+ msgid "--install=<yes|no>             Toggle created package installation"
+-msgstr "--install=<yes|no>             Activa la instalaciСn del paquete al crearlo"
++msgstr "--install=<yes|no>             Activa la instalaciцЁn del paquete al crearlo"
+ 
+ msgid "*Scripting options*"
+-msgstr "*Opciones de automatizaciСn*"
++msgstr "*Opciones de automatizaciцЁn*"
+ 
+ msgid "-y, --default                  Accept default answers to all questions"
+ msgstr "-y, --default                  Acepta los defaults a todas las preguntas"
+@@ -54,13 +54,13 @@ msgid "--pkgname=<name>               Se
+ msgstr "--pkgname=<name>               El nombre del paquete"
+ 
+ msgid "--pkgversion=<version>         Set version"
+-msgstr "--pkgversion=<version>         La versiСn del paquete"
++msgstr "--pkgversion=<version>         La versiцЁn del paquete"
+ 
+ msgid "-A, --arch, --pkgarch=<arch>   Set architecture"
+ msgstr "-A, --arch, --pkgarch=<arch>   La arquitectura del paquete"
+ 
+ msgid "--pkgrelease=<release>         Set release"
+-msgstr "--pkgrelease=<release>         El nЗmero de release"
++msgstr "--pkgrelease=<release>         El nц╨mero de release"
+ 
+ msgid "--pkglicense=<license>         Set license"
+ msgstr "--pkglicense=<license>         Tipo de licencia"
+@@ -69,22 +69,22 @@ msgid "--pkggroup=<group>             Se
+ msgstr "--pkggroup=<group>             Grupo de software al que pertenece"
+ 
+ msgid "--pkgsource=<source>           Set source location"
+-msgstr "--pkgsource=<source>           UbicaciСn del cСdigo fuente"
++msgstr "--pkgsource=<source>           UbicaciцЁn del cцЁdigo fuente"
+ 
+ msgid "--pkgaltsource=<altsource>     Set alternate source location"
+-msgstr "--pkgaltsource=<altsource>     UbicaciСn alternativa del cСdigo fuente"
++msgstr "--pkgaltsource=<altsource>     UbicaciцЁn alternativa del cцЁdigo fuente"
+ 
+ msgid "--pakdir=<directory>           The new package will be saved here"
+-msgstr "--pakdir=<directory>           El nuevo paquete serА guardado aquМ"
++msgstr "--pakdir=<directory>           El nuevo paquete serц║ guardado aquц╜"
+ 
+ msgid "--maintainer=<email addr>      The package maintainer (.deb)"
+ msgstr "--maintainer=<email addr>      El encargado del paquete (.deb)"
+ 
+ msgid "--provides=<list>              Features provided by this package (.rpm)"
+-msgstr "--provides=<list>              CaracterМsticas proporcionadas (.rpm)"
++msgstr "--provides=<list>              Caracterц╜sticas proporcionadas (.rpm)"
+ 
+ msgid "--requires=<list>              Features required by this package (.rpm)"
+-msgstr "--requires=<list>              CaracterМsticas requeridas (.rpm)"
++msgstr "--requires=<list>              Caracterц╜sticas requeridas (.rpm)"
+ 
+ msgid "--rpmflags=<flags>             Pass this flags to the rpm installer"
+ msgstr "--rpmflags=<flags>             Pasa estas opciones al instalador rpm"
+@@ -93,56 +93,56 @@ msgid "--dpkgflags=<flags>            Pa
+ msgstr "--dpkgflags=<flags>            Pasa estas banderas al instalador dpkg"
+ 
+ msgid "--spec=<path>                  .spec file location"
+-msgstr "--spec=<path>                  UbicaciСn del archivo .spec"
++msgstr "--spec=<path>                  UbicaciцЁn del archivo .spec"
+ 
+ msgid "--nodoc                        Do not include documentation files"
+-msgstr "--nodoc                        No incluir archivos de documentaciСn"
++msgstr "--nodoc                        No incluir archivos de documentaciцЁn"
+ 
+ msgid "*Info display options*"
+-msgstr "*Opciones de desplegado de informaciСn*"
++msgstr "*Opciones de desplegado de informaciцЁn*"
+ 
+ msgid "-d<0|1|2>                      Set debug level"
+-msgstr "-d<0|1|2>                      Establece el nivel de depuraciСn"
++msgstr "-d<0|1|2>                      Establece el nivel de depuraciцЁn"
+ 
+ msgid "-si                            Run an interactive install command"
+-msgstr "-si                            Ejecuta un comando de instalaciСn interactivo"
++msgstr "-si                            Ejecuta un comando de instalaciцЁn interactivo"
+ 
+ msgid "--showinstall=<yes|no>         Toggle interactive install command"
+-msgstr "--showinstall=<yes|no>         Activa un comando de instalaciСn interactivo"
++msgstr "--showinstall=<yes|no>         Activa un comando de instalaciцЁn interactivo"
+ 
+ msgid ""
+ "-ss                            Run an interactive Slackware installation "
+ "script"
+-msgstr "-ss                      Ejecuta una instalaciСn interactiva en Slackware"
++msgstr "-ss                      Ejecuta una instalaciцЁn interactiva en Slackware"
+ 
+ msgid ""
+ "--showslack=<yes|no>           Toggle interactive Slackware installation "
+ "script"
+-msgstr "--showslack=<yes|no>     Activa la instalaciСn interactiva en Slackware"
++msgstr "--showslack=<yes|no>     Activa la instalaciцЁn interactiva en Slackware"
+ 
+ msgid "*Package tuning options*"
+-msgstr "*Opciones de afinaciСn del paquete*"
++msgstr "*Opciones de afinaciцЁn del paquete*"
+ 
+ msgid ""
+ "--autodoinst=<yes|no>          Toggle the creation of a doinst.sh script"
+-msgstr "--autodoinst=<yes|no>    Activa la creaciСn de un script doinst.sh"
++msgstr "--autodoinst=<yes|no>    Activa la creaciцЁn de un script doinst.sh"
+ 
+ msgid ""
+ "--strip=<yes|no>               Strip any ELF binaries found inside the "
+ "package"
+-msgstr "--strip=<yes|no>         Elimina sМmbolos de binarios ELF dentro del paquete"
++msgstr "--strip=<yes|no>         Elimina sц╜mbolos de binarios ELF dentro del paquete"
+ 
+ msgid ""
+ "--stripso=<yes|no>             Strip any ELF binary libraries (.so files)"
+-msgstr "--stripso=<yes|no>       Elimina sМmbolos de la bibliotecas ELF (Archivos .so)"
++msgstr "--stripso=<yes|no>       Elimina sц╜mbolos de la bibliotecas ELF (Archivos .so)"
+ 
+ msgid ""
+ "--gzman=<yes|no>               Compress any man pages found inside the "
+ "package"
+-msgstr "--gzman=<yes|no>         Comprime las pАginas de manual en el paquete"
++msgstr "--gzman=<yes|no>         Comprime las pц║ginas de manual en el paquete"
+ 
+ msgid "--docdir=<path>                Where to put documentation files"
+-msgstr "--docdir=<path>                Directorio en donde se guardarА la documentaciСn"
++msgstr "--docdir=<path>                Directorio en donde se guardarц║ la documentaciцЁn"
+ 
+ msgid "--umask=<mask>                 Set the umask value"
+ msgstr "--umask=<mask>                 Usar este valor para el umask"
+@@ -200,16 +200,16 @@ msgid "--help, -h                     Sh
+ msgstr "--help, -h                     Muestra este mensaje"
+ 
+ msgid "--copyright                    Show Copyright information"
+-msgstr "--copyright                    Muestra informaciСn de Copyright"
++msgstr "--copyright                    Muestra informaciцЁn de Copyright"
+ 
+ msgid "--version                      Show version information"
+-msgstr "--version                      Muestra el nЗmero de versiСn"
++msgstr "--version                      Muestra el nц╨mero de versiцЁn"
+ 
+ msgid "Use --help or -h to get more information"
+-msgstr "Utiliza --help o -h para obtener mas informaciСn"
++msgstr "Utiliza --help o -h para obtener mas informaciцЁn"
+ 
+ msgid "is an invalid value for"
+-msgstr "es un valor invАlido para"
++msgstr "es un valor invц║lido para"
+ 
+ msgid "Restoring overwritten files from backup..."
+ msgstr "Restaurando los archivos sobreescritos..."
+@@ -221,13 +221,13 @@ msgid "Cleaning up..."
+ msgstr "Limpiando..."
+ 
+ msgid "Bye."
+-msgstr "AdiСs."
++msgstr "AdiцЁs."
+ 
+ msgid "The checkinstallrc file was not found at:"
+ msgstr "El archivo checkinstallrc no fue encontrado en:"
+ 
+ msgid "Assuming default values."
+-msgstr "Asumiendo valores por omisiСn"
++msgstr "Asumiendo valores por omisiцЁn"
+ 
+ msgid "I can't find $INSTALLWATCH."
+ msgstr "No puedo encontrar $INSTALLWATCH"
+@@ -245,7 +245,7 @@ msgid "My temp dir exists already."
+ msgstr "Mi directorio temporal ya existe."
+ 
+ msgid "This looks like a symlink attack!"
+-msgstr "Esto parece un ataque de enlaces simbСlicos!"
++msgstr "Esto parece un ataque de enlaces simbцЁlicos!"
+ 
+ msgid "*** Aborting"
+ msgstr "*** Abortando"
+@@ -254,13 +254,13 @@ msgid "is an unacceptable value for the
+ msgstr "es un valor inaceptable para el directorio temporal. Por favor"
+ 
+ msgid "edit the variable definition for"
+-msgstr "edita la definiciСn de la variable"
++msgstr "edita la definiciцЁn de la variable"
+ 
+ msgid "and try again."
+ msgstr "e intenta de nuevo."
+ 
+ msgid "**** Failed to create temp dir!"
+-msgstr "**** FallС la creaciСn del directorio temporal!"
++msgstr "**** FallцЁ la creaciцЁn del directorio temporal!"
+ 
+ msgid "**** Do you have write permission for ${BASE_TMP_DIR}?"
+ msgstr "**** Tienes permiso de escritura para ${BASE_TMP_DIR}?"
+@@ -269,66 +269,66 @@ msgid "The package documentation directo
+ msgstr "El directorio de documentacion ./doc-pak no existe."
+ 
+ msgid "Should I create a default set of package docs? "
+-msgstr "©Debo crear un juego por default de documentaciСn?"
++msgstr "б©Debo crear un juego por default de documentaciцЁn?"
+ 
+ msgid "Preparing package documentation..."
+-msgstr "Preparando la documentaciСn del paquete..."
++msgstr "Preparando la documentaciцЁn del paquete..."
+ 
+ msgid "*** No known documentation files were found. The new package"
+-msgstr "*** No se encontraron archivos conocidos de documentaciСn. El nuevo paquete"
++msgstr "*** No se encontraron archivos conocidos de documentaciцЁn. El nuevo paquete"
+ 
+ msgid "*** won't include a documentation directory."
+-msgstr "*** no incluirА un directorio de documentaciСn."
++msgstr "*** no incluirц║ un directorio de documentaciцЁn."
+ 
+ msgid "Copying documentation directory..."
+-msgstr "Copiando el directorio de documentaciСn..."
++msgstr "Copiando el directorio de documentaciцЁn..."
+ 
+ msgid "Installing with"
+ msgstr "Instalando con"
+ 
+ msgid ""
+ "========================= Installation results ==========================="
+-msgstr "====================== Resultados de la instalaciСn  ====================="
++msgstr "====================== Resultados de la instalaciцЁn  ====================="
+ 
+ msgid ""
+ "======================== Installation successful =========================="
+-msgstr "========================== InstalaciСn exitosa ==========================="
++msgstr "========================== InstalaciцЁn exitosa ==========================="
+ 
+ msgid "****  Installation failed. Aborting package creation."
+-msgstr "**** La instalaciСn fallС. Abortando la creaciСn del paquete."
++msgstr "**** La instalaciцЁn fallцЁ. Abortando la creaciцЁn del paquete."
+ 
+ msgid "Do you want to view the installation log file? "
+-msgstr "©Quieres ver el archivo de bitАcora de la instalaciСn?"
++msgstr "б©Quieres ver el archivo de bitц║cora de la instalaciцЁn?"
+ 
+ msgid "Some of the files created by the installation are inside the build"
+-msgstr "Algunos archivos creados por la instalaciСn estАn dentro del"
++msgstr "Algunos archivos creados por la instalaciцЁn estц║n dentro del"
+ 
+ msgid "directory: `pwd`"
+-msgstr "directorio de construcciСn del paquete: `pwd`"
++msgstr "directorio de construcciцЁn del paquete: `pwd`"
+ 
+ msgid "You probably don't want them to be included in the package,"
+ msgstr "Probablemente no los quieres incluidos en el paquete,"
+ 
+ msgid "especially if they are inside your home directory."
+-msgstr "especialmente si estАn dentro de tu directorio home."
++msgstr "especialmente si estц║n dentro de tu directorio home."
+ 
+ msgid "Do you want me to list them? "
+-msgstr "©Quieres que los liste para tМ?"
++msgstr "б©Quieres que los liste para tц╜?"
+ 
+ msgid "Should I exclude them from the package? (Saying yes is a good idea) "
+-msgstr "©Debo excluirlos del paquete (Decir que sМ es una buena idea)"
++msgstr "б©Debo excluirlos del paquete (Decir que sц╜ es una buena idea)"
+ 
+ msgid "You requested to review the list of files that will be"
+-msgstr "Tu solicitaste revisar la lista de los archivos que serАn"
++msgstr "Tu solicitaste revisar la lista de los archivos que serц║n"
+ 
+ msgid "included in this package."
+ msgstr "incluidos en este paquete."
+ 
+ msgid "Now you'll have the chance to review and optionally modify it."
+-msgstr "Ahora tendrАs la oportunidad de revisar la lista y opcionalmente modificarla."
++msgstr "Ahora tendrц║s la oportunidad de revisar la lista y opcionalmente modificarla."
+ 
+ msgid "Now you'll have the chance to review and optionally modify this file."
+-msgstr "Ahora tendrАs la oportunidad de revisarlo y opcionalmente modificarlo."
++msgstr "Ahora tendrц║s la oportunidad de revisarlo y opcionalmente modificarlo."
+ 
+ msgid "Press ENTER to continue."
+ msgstr "Oprime ENTER para continuar."
+@@ -337,25 +337,25 @@ msgid "Copying files to the temporary di
+ msgstr "Copiando los archivos al directorio temporal..."
+ 
+ msgid "Striping ELF binaries and libraries..."
+-msgstr "Eliminando sМmbolos de binarios y bibliotecas ELF..."
++msgstr "Eliminando sц╜mbolos de binarios y bibliotecas ELF..."
+ 
+ msgid "Striping ELF binaries..."
+-msgstr "Elminando sМmbolos de los binarios ELF..."
++msgstr "Elminando sц╜mbolos de los binarios ELF..."
+ 
+ msgid "Compressing man pages..."
+-msgstr "Comprimiendo las pАginas de manual..."
++msgstr "Comprimiendo las pц║ginas de manual..."
+ 
+ msgid "Building file list..."
+ msgstr "Creando la lista de archivos..."
+ 
+ msgid "Please choose the packaging method you want to use."
+-msgstr "Por favor escoge el mИtodo de empaquetado que quieres usar."
++msgstr "Por favor escoge el mц╘todo de empaquetado que quieres usar."
+ 
+ msgid "Slackware [S], RPM [R] or Debian [D]? "
+-msgstr "©Slackware [S], RPM [R] o Debian [D]? "
++msgstr "б©Slackware [S], RPM [R] o Debian [D]? "
+ 
+ msgid "Please write a description for the package."
+-msgstr "Por favor escribe una descripciСn para el paquete."
++msgstr "Por favor escribe una descripciцЁn para el paquete."
+ 
+ msgid " Remember that pkgtool shows"
+ msgstr " Recuerda que pkgtool solo muestra"
+@@ -370,7 +370,7 @@ msgid "Package created with checkinstall
+ msgstr "Paquete creado con checkinstall $CHECKINSTALL_VERSION"
+ 
+ msgid "Warning: Your package description is bigger than 11 lines."
+-msgstr "Advertencia: Tu descripciСn tiene mas de 11 lineas."
++msgstr "Advertencia: Tu descripciцЁn tiene mas de 11 lineas."
+ 
+ msgid "Warning: The Slackware 8.1+ pkgtools might not like it."
+ msgstr "Advertencia: Eso puede no gustarle a las pkgtools de Slackware 8.1+"
+@@ -382,19 +382,19 @@ msgid "contains upper case"
+ msgstr "contiene letras"
+ 
+ msgid "*** Warning: letters. dpkg might not like that so I changed"
+-msgstr "*** Advertencia: mayЗsculas. A dpkg puede no gustarle eso asi que las"
++msgstr "*** Advertencia: mayц╨sculas. A dpkg puede no gustarle eso asi que las"
+ 
+ msgid "*** Warning: them to lower case."
+-msgstr "*** Advertencia: cambiИ a minЗsculas."
++msgstr "*** Advertencia: cambiц╘ a minц╨sculas."
+ 
+ msgid "*** Warning: The package version \"${VERSION}\" does not"
+-msgstr "*** Advertencia: La versiСn \"${VERSION}\" no contiene"
++msgstr "*** Advertencia: La versiцЁn \"${VERSION}\" no contiene"
+ 
+ msgid "*** Warning: contain any digits. dpkg might not like that."
+-msgstr "*** Advertencia: dМgitos. Esto puede no gustarle a dpkg."
++msgstr "*** Advertencia: dц╜gitos. Esto puede no gustarle a dpkg."
+ 
+ msgid "This package will be built according to these values: "
+-msgstr "Este paquete serА creado de acuerdo a estos valores:"
++msgstr "Este paquete serц║ creado de acuerdo a estos valores:"
+ 
+ msgid "0 -  Maintainer:"
+ msgstr "0 -  Encargado:"
+@@ -406,7 +406,7 @@ msgid "2 -  Name:"
+ msgstr "2 -  Nombre:"
+ 
+ msgid "3 -  Version:"
+-msgstr "3 -  VersiСn:"
++msgstr "3 -  VersiцЁn:"
+ 
+ msgid "5 -  License:"
+ msgstr "5 -  Licencia:"
+@@ -418,10 +418,10 @@ msgid "7 -  Architecture:"
+ msgstr "7 -  Arquitectura:"
+ 
+ msgid "8 -  Source location:"
+-msgstr "8 -  UbicaciСn del cСdigo fuente:"
++msgstr "8 -  UbicaciцЁn del cцЁdigo fuente:"
+ 
+ msgid "9 -  Alternate source location:"
+-msgstr "9 -  UbicaciСn alternativa:"
++msgstr "9 -  UbicaciцЁn alternativa:"
+ 
+ msgid "10 - Provides:"
+ msgstr "10 - Proporciona:"
+@@ -430,7 +430,7 @@ msgid "11 - Requires:"
+ msgstr "11 - Requiere:"
+ 
+ msgid "Enter a number to change any of them or press ENTER to continue: "
+-msgstr "Introduce un nЗmero para cambiar algЗn dato u oprime ENTER para continuar:"
++msgstr "Introduce un nц╨mero para cambiar algц╨n dato u oprime ENTER para continuar:"
+ 
+ msgid "Enter new summary: "
+ msgstr "Introduce el nuevo resumen:"
+@@ -439,10 +439,10 @@ msgid "Enter new name: "
+ msgstr "Introduce el nuevo nombre:"
+ 
+ msgid "Enter new version: "
+-msgstr "Introduce la nueva versiСn:"
++msgstr "Introduce la nueva versiцЁn:"
+ 
+ msgid "Enter new release number: "
+-msgstr "Introduce el nuevo nЗmero de release:"
++msgstr "Introduce el nuevo nц╨mero de release:"
+ 
+ msgid "Enter the license type: "
+ msgstr "Introduce el tipo de licencia:"
+@@ -454,16 +454,16 @@ msgid "Enter the architecture type: "
+ msgstr "Introduce la nueva arquitectura:"
+ 
+ msgid "Enter the source location: "
+-msgstr "Introduce la ubicaciСn del cСdigo fuente:"
++msgstr "Introduce la ubicaciцЁn del cцЁdigo fuente:"
+ 
+ msgid "Enter the alternate source location: "
+-msgstr "Introduce la ubicaciСn alternativa del cСdigo fuente:"
++msgstr "Introduce la ubicaciцЁn alternativa del cцЁdigo fuente:"
+ 
+ msgid "Enter the maintaner's name and e-mail address: "
+-msgstr "Introduce el nombre y direcciСn de e-mail del encargado:"
++msgstr "Introduce el nombre y direcciцЁn de e-mail del encargado:"
+ 
+ msgid "Enter the provided features: "
+-msgstr "Introduce las caracterМsticas proporcionadas:"
++msgstr "Introduce las caracterц╜sticas proporcionadas:"
+ 
+ msgid "Enter the additional requirements: "
+ msgstr "Introduce los requisitos adicionales:"
+@@ -472,25 +472,25 @@ msgid "*********************************
+ msgstr "******************************************************************"
+ 
+ msgid "**** Slackware package creation selected ***"
+-msgstr "**** Se ha seleccionado la creaciСn de un paquete de Slackware ***"
++msgstr "**** Se ha seleccionado la creaciцЁn de un paquete de Slackware ***"
+ 
+ msgid "*** The \"installpkg\" program is not in your PATH!"
+-msgstr "*** El programa \"installpkg\" no estА en tu variable PATH!"
++msgstr "*** El programa \"installpkg\" no estц║ en tu variable PATH!"
+ 
+ msgid "*** Slackware package creation aborted"
+-msgstr "*** Se ha abortado la creaciСn del paquete de Slackware"
++msgstr "*** Se ha abortado la creaciцЁn del paquete de Slackware"
+ 
+ msgid "Preparing Slackware install directory..."
+-msgstr "Preparando el directorio de instalaciСn de Slackware..."
++msgstr "Preparando el directorio de instalaciцЁn de Slackware..."
+ 
+ msgid "Writing package description..."
+-msgstr "Escribiendo la descripciСn del paquete..."
++msgstr "Escribiendo la descripciцЁn del paquete..."
+ 
+ msgid "Writing Slackware install script..."
+-msgstr "Escribiendo el script de instalaciСn de Slackware..."
++msgstr "Escribiendo el script de instalaciцЁn de Slackware..."
+ 
+ msgid "Appending your script to the main install script..."
+-msgstr "Agregando tu script al script principal de instalaciСn..."
++msgstr "Agregando tu script al script principal de instalaciцЁn..."
+ 
+ msgid "Creating package ${SLACK_PKG_BASENAME}..."
+ msgstr "Creando paquete ${SLACK_PKG_BASENAME}..."
+@@ -499,25 +499,25 @@ msgid "Installing package..."
+ msgstr "Instalando el paquete..."
+ 
+ msgid "*** Failed to install the package"
+-msgstr "*** La instalaciСn del paquete fallС"
++msgstr "*** La instalaciцЁn del paquete fallцЁ"
+ 
+ msgid "Do you want to see the log file? "
+-msgstr "©Quieres ver el archivo de bitАcora?"
++msgstr "б©Quieres ver el archivo de bitц║cora?"
+ 
+ msgid "NOTE: The package will not be installed."
+-msgstr "NOTA: El paquete no serА instalado."
++msgstr "NOTA: El paquete no serц║ instalado."
+ 
+ msgid "**************************************"
+ msgstr "**********************************************************"
+ 
+ msgid "**** RPM package creation selected ***"
+-msgstr "**** Se ha seleccionado la creaciСn de un paquete RPM ****"
++msgstr "**** Se ha seleccionado la creaciцЁn de un paquete RPM ****"
+ 
+ msgid "*** The \"rpm\" program is not in your PATH!"
+-msgstr "*** El programa \"rpm\" no estА en tu PATH!"
++msgstr "*** El programa \"rpm\" no estц║ en tu PATH!"
+ 
+ msgid "*** RPM package creation aborted"
+-msgstr "*** Se ha abortado la creaciСn del paquete RPM"
++msgstr "*** Se ha abortado la creaciцЁn del paquete RPM"
+ 
+ msgid "$RPMSOURCEDIR has no SOURCES directory. Please write the path to"
+ msgstr "$RPMSOURCEDIR no tiene directorio SOURCES. Por favor escribe la ruta del"
+@@ -532,13 +532,13 @@ msgid "Building RPM package..."
+ msgstr "Creando paquete RPM..."
+ 
+ msgid "*** Failed to build the package"
+-msgstr "*** La creaciСn del paquete fallС"
++msgstr "*** La creaciцЁn del paquete fallцЁ"
+ 
+ msgid "Warning: the use of RPMFLAGS is deprecated."
+ msgstr "Advertencia: El uso de RPMFLAGS es obsoleto."
+ 
+ msgid "Warning: You should now use RPM_FLAGS,"
+-msgstr "Advertencia: Ahora deberМas utilizar la variable RPM_FLAGS,"
++msgstr "Advertencia: Ahora deberц╜as utilizar la variable RPM_FLAGS,"
+ 
+ msgid "Warning: please update your checkinstallrc file."
+ msgstr "Advertencia: por favor actualiza tu archivo checkinstallrc."
+@@ -547,19 +547,19 @@ msgid "Installing RPM package..."
+ msgstr "Instalando el paquete RPM..."
+ 
+ msgid "NOTE: The package will not be installed"
+-msgstr "NOTA: El paquete no serА instalado"
++msgstr "NOTA: El paquete no serц║ instalado"
+ 
+ msgid "*****************************************"
+ msgstr "*************************************************************"
+ 
+ msgid "**** Debian package creation selected ***"
+-msgstr "**** Se ha seleccionado la creaciСn de un paquete Debian ****"
++msgstr "**** Se ha seleccionado la creaciцЁn de un paquete Debian ****"
+ 
+ msgid "*** The \"dpkg\" program is not in your PATH!"
+-msgstr "*** El programa \"dpkg\" no estА en tu PATH!"
++msgstr "*** El programa \"dpkg\" no estц║ en tu PATH!"
+ 
+ msgid "*** Debian package creation aborted"
+-msgstr "*** Se ha abortado la creaciСn del paquete Debian"
++msgstr "*** Se ha abortado la creaciцЁn del paquete Debian"
+ 
+ msgid "You requested to review the control file for this package."
+ msgstr "Tu solicitaste revisar el archivo de control para este paquete."
+@@ -571,10 +571,10 @@ msgid "Installing Debian package..."
+ msgstr "Instalando el paquete Debian..."
+ 
+ msgid "*** No method was selected, I won't build any package."
+-msgstr "*** No se seleccionС algЗn mИtodo. No voy a crear un paquete."
++msgstr "*** No se seleccionцЁ algц╨n mц╘todo. No voy a crear un paquete."
+ 
+ msgid "*** The installation command \"$INSTALLCMD\""
+-msgstr "*** El comando de instalaciСn \"$INSTALLCMD\""
++msgstr "*** El comando de instalaciцЁn \"$INSTALLCMD\""
+ 
+ msgid "*** has already been executed."
+ msgstr "*** ya ha sido ejecutado."
+@@ -583,7 +583,7 @@ msgid "The package storage directory"
+ msgstr "El directorio de almacenamiento de paquetes"
+ 
+ msgid "doesn't exist. Do you want to create it?"
+-msgstr "no existe. ©Quieres crearlo ahora?"
++msgstr "no existe. б©Quieres crearlo ahora?"
+ 
+ msgid "Creating package storage directory..."
+ msgstr "Creando el directorio de almacenamiento de paquetes..."
+@@ -598,7 +598,7 @@ msgid "There's no package storage direct
+ msgstr "No hay un directorio de almacenamiento para el paquete, el paquete"
+ 
+ msgid "will be stored at the default location."
+-msgstr "serА almacenado en la ubicaciСn por default."
++msgstr "serц║ almacenado en la ubicaciцЁn por default."
+ 
+ msgid "Erasing temporary files..."
+ msgstr "Borrando directorios temporales..."
+@@ -613,7 +613,7 @@ msgid "Deleting temp dir..."
+ msgstr "Borrando el directorio temporal..."
+ 
+ msgid "Building debug information package..."
+-msgstr "Creando el archivo con informaciСn de depuraciСn..."
++msgstr "Creando el archivo con informaciцЁn de depuraciцЁn..."
+ 
+ msgid " Done. The new package has been installed and saved to"
+ msgstr " Terminado. El nuevo paquete ha sido instalado, lo he guardado en"
+Index: locale/checkinstall-it.po
+===================================================================
+--- locale/checkinstall-it.po.orig	2009-06-06 22:41:12.000000000 +0200
++++ locale/checkinstall-it.po	2009-12-07 16:55:03.042343628 +0100
+@@ -1,31 +1,20 @@
+-# translation of checkinstall-it.po to ITALIANO
+-# translation of checkinstall-it.po to
+-# translation of checkinstall-it.po to
+-# translation of checkinstall-it.po to
+-# translation of checkinstall-it.po to
+-# translation of checkinstall-it.po to
+-# translation of checkinstall-it.po to
+-# translation of checkinstall-it.po to
+-# translation of checkinstall-it.po to
+-# translation of checkinstall-it.po to
+-# translation of checkinstall-it.po to
+-# translation of checkinstall-template.po to
++# translation of checkinstall-template.po to italian
+ # Michele Petrecca <michelinux@alice.it>, 2005, 2006.
+ #
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: checkinstall-it\n"
+ "POT-Creation-Date: 2002-11-27 00:58-0600\n"
+-"PO-Revision-Date: 2006-01-29 16:11+0100\n"
++"PO-Revision-Date: 2009-12-07 16:54:07+0100\n"
+ "Last-Translator: Michele Petrecca <michelinux@alice.it>\n"
+ "Language-Team: ITALIANO\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=ISO-8859-1\n"
++"Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ "X-Generator: KBabel 1.9.1\n"
+ 
+ msgid "           This software is released under the GNU GPL."
+-msgstr "           Questo software Х rilasciato sotto i termini della licenza GNU GPL."
++msgstr "           Questo software ц╗ rilasciato sotto i termini della licenza GNU GPL."
+ 
+ msgid "Usage: checkinstall [options] [command [command arguments]]"
+ msgstr "Uso: checkinstall [opzioni] [comando [argomenti comando]]"
+@@ -85,7 +74,7 @@ msgid "--pkgaltsource=<altsource>     Se
+ msgstr "--pkgaltsource=<altsource>     Imposta il percorso alternativo del sorgente"
+ 
+ msgid "--pakdir=<directory>           The new package will be saved here"
+-msgstr "--pakdir=<directory>           Il nuovo pacchetto verrЮ salvato nel percorso quЛ indicato"
++msgstr "--pakdir=<directory>           Il nuovo pacchetto verrц═ salvato nel percorso quц╛ indicato"
+ 
+ msgid "--maintainer=<email addr>      The package maintainer (.deb)"
+ msgstr "--maintainer=<email addr>      E-mail del curatore del pacchetto (.deb)"
+@@ -211,10 +200,10 @@ msgid "--version                      Sh
+ msgstr "--version                      Mostra le informazioni sulla versione"
+ 
+ msgid "Use --help or -h to get more information"
+-msgstr "Usa --help o -h per di ottenere piЫ informazioni"
++msgstr "Usa --help o -h per di ottenere piц╧ informazioni"
+ 
+ msgid "is an invalid value for"
+-msgstr "Х un valore non valido per"
++msgstr "ц╗ un valore non valido per"
+ 
+ msgid "Restoring overwritten files from backup..."
+ msgstr "Ripristina il file sovrascritto dal backup..."
+@@ -229,16 +218,16 @@ msgid "Bye."
+ msgstr "Ciao."
+ 
+ msgid "The checkinstallrc file was not found at:"
+-msgstr "Il file checkinstallrc non Х stato trovato in:"
++msgstr "Il file checkinstallrc non ц╗ stato trovato in:"
+ 
+ msgid "Assuming default values."
+ msgstr "Assunzione dei valori predefiniti."
+ 
+ msgid "I can't find $INSTALLWATCH."
+-msgstr "Non Х possibile trovare $INSTALLWATCH."
++msgstr "Non ц╗ possibile trovare $INSTALLWATCH."
+ 
+ msgid "I can't continue. Either install installwatch or"
+-msgstr "Non Х possibile continuare. Installa installwatch oppure"
++msgstr "Non ц╗ possibile continuare. Installa installwatch oppure"
+ 
+ msgid "modify the INSTALLWATCH variable in this script,"
+ msgstr "modifca la variabile INSTALLWATCH in questo script,"
+@@ -247,7 +236,7 @@ msgid "then run checkinstall again."
+ msgstr "quindi lancia di nuovo checkinstall."
+ 
+ msgid "My temp dir exists already."
+-msgstr "La cartella temporanea giЮ esiste."
++msgstr "La cartella temporanea giц═ esiste."
+ 
+ msgid "This looks like a symlink attack!"
+ msgstr ""
+@@ -256,7 +245,7 @@ msgid "*** Aborting"
+ msgstr "*** Annullamento in corso"
+ 
+ msgid "is an unacceptable value for the temp dir. Please"
+-msgstr "Х un valore inaccettabile per la cartella temp. Per favore"
++msgstr "ц╗ un valore inaccettabile per la cartella temp. Per favore"
+ 
+ msgid "edit the variable definition for"
+ msgstr "modifica la variabile di definizione per"
+@@ -280,10 +269,10 @@ msgid "Preparing package documentation..
+ msgstr "Preparazione documentazione pacchetto in corso..."
+ 
+ msgid "*** No known documentation files were found. The new package"
+-msgstr "*** Nessun file della documentazione Х stato trovato. Il nuovo pacchetto"
++msgstr "*** Nessun file della documentazione ц╗ stato trovato. Il nuovo pacchetto"
+ 
+ msgid "*** won't include a documentation directory."
+-msgstr "*** non includerЮ una cartella per la documentazione."
++msgstr "*** non includerц═ una cartella per la documentazione."
+ 
+ msgid "Copying documentation directory..."
+ msgstr "Copiatura cartella documentazione in corso..."
+@@ -319,7 +308,7 @@ msgid "Do you want me to list them? "
+ msgstr ""
+ 
+ msgid "Should I exclude them from the package? (Saying yes is a good idea) "
+-msgstr "Li escluderesti dalla creazione del pacchetto? (dire SЛ e una buona idea!) "
++msgstr "Li escluderesti dalla creazione del pacchetto? (dire Sц╛ e una buona idea!) "
+ 
+ msgid "You requested to review the list of files that will be"
+ msgstr "Hai richiesto di esaminare nuovamente la lista dei file che saranno"
+@@ -328,10 +317,10 @@ msgid "included in this package."
+ msgstr " inclusi in questo pacchetto."
+ 
+ msgid "Now you'll have the chance to review and optionally modify it."
+-msgstr "Ora avrai la possibiltЮ di esaminare di nuovo e, opzionalmente, di modificarlo."
++msgstr "Ora avrai la possibiltц═ di esaminare di nuovo e, opzionalmente, di modificarlo."
+ 
+ msgid "Now you'll have the chance to review and optionally modify this file."
+-msgstr "Ora avrai la possibiltЮ di esaminare di nuovo e, opzionalmente, modificare questo file."
++msgstr "Ora avrai la possibiltц═ di esaminare di nuovo e, opzionalmente, modificare questo file."
+ 
+ msgid "Press ENTER to continue."
+ msgstr "Premi INVIO per continuare."
+@@ -373,7 +362,7 @@ msgid "Package created with checkinstall
+ msgstr "Pacchetto creato con la versione di checkinstall $CHECKINSTALL_VERSION"
+ 
+ msgid "Warning: Your package description is bigger than 11 lines."
+-msgstr "Attenzione : La descrizione del pacchetto Х superiore alle 11 linee."
++msgstr "Attenzione : La descrizione del pacchetto ц╗ superiore alle 11 linee."
+ 
+ msgid "Warning: The Slackware 8.1+ pkgtools might not like it."
+ msgstr ""
+@@ -397,7 +386,7 @@ msgid "*** Warning: contain any digits.
+ msgstr ""
+ 
+ msgid "This package will be built according to these values: "
+-msgstr "Il pacchetto verrЮ costruito con le seguenti caratteristiche: "
++msgstr "Il pacchetto verrц═ costruito con le seguenti caratteristiche: "
+ 
+ msgid "0 -  Maintainer:"
+ msgstr "0 -  Curatore:"
+@@ -478,7 +467,7 @@ msgid "**** Slackware package creation s
+ msgstr "**** Selezionata la creazione di un pacchetto Slackware ***"
+ 
+ msgid "*** The \"installpkg\" program is not in your PATH!"
+-msgstr "*** Il programma \"installpkg\" non Х indicato nella variabile d'ambiente PATH!"
++msgstr "*** Il programma \"installpkg\" non ц╗ indicato nella variabile d'ambiente PATH!"
+ 
+ msgid "*** Slackware package creation aborted"
+ msgstr "*** Annullata la creazione del pacchetto Slackware"
+@@ -508,7 +497,7 @@ msgid "Do you want to see the log file?
+ msgstr "Vuoi leggere il file di log? "
+ 
+ msgid "NOTE: The package will not be installed."
+-msgstr "NOTA: Il pacchetto non verrЮ installato."
++msgstr "NOTA: Il pacchetto non verrц═ installato."
+ 
+ msgid "**************************************"
+ msgstr "**************************************"
+@@ -517,7 +506,7 @@ msgid "**** RPM package creation selecte
+ msgstr "**** Selezionata la creazione di un pacchetto RPM ***"
+ 
+ msgid "*** The \"rpm\" program is not in your PATH!"
+-msgstr "*** Il programma \"rpm\" non Х indicato nella variabile d'ambiente PATH!"
++msgstr "*** Il programma \"rpm\" non ц╗ indicato nella variabile d'ambiente PATH!"
+ 
+ msgid "*** RPM package creation aborted"
+ msgstr "*** Annullata la creazione del pacchetto RPM"
+@@ -550,7 +539,7 @@ msgid "Installing RPM package..."
+ msgstr "Installazione pacchetto RPM in corso..."
+ 
+ msgid "NOTE: The package will not be installed"
+-msgstr "NOTA: Il pacchetto non verrЮ installato"
++msgstr "NOTA: Il pacchetto non verrц═ installato"
+ 
+ msgid "*****************************************"
+ msgstr "*****************************************"
+@@ -559,7 +548,7 @@ msgid "**** Debian package creation sele
+ msgstr "**** Selezionata la creazione di un pacchetto Debian ***"
+ 
+ msgid "*** The \"dpkg\" program is not in your PATH!"
+-msgstr "*** Il programma \"dpkg\" non Х indicato nella variabile d'ambiente PATH!"
++msgstr "*** Il programma \"dpkg\" non ц╗ indicato nella variabile d'ambiente PATH!"
+ 
+ msgid "*** Debian package creation aborted"
+ msgstr "*** Annullata la creazione del pacchetto Debian"
+@@ -574,13 +563,13 @@ msgid "Installing Debian package..."
+ msgstr "Installazione pacchetto Debian in corso..."
+ 
+ msgid "*** No method was selected, I won't build any package."
+-msgstr "*** Nessun metodo Х stato selezionato. Non vuoi costruire nessun pacchetto."
++msgstr "*** Nessun metodo ц╗ stato selezionato. Non vuoi costruire nessun pacchetto."
+ 
+ msgid "*** The installation command \"$INSTALLCMD\""
+ msgstr "*** Il comando d'installazione \"$INSTALLCMD\""
+ 
+ msgid "*** has already been executed."
+-msgstr "*** Х giЮ stato eseguito."
++msgstr "*** ц╗ giц═ stato eseguito."
+ 
+ msgid "The package storage directory"
+ msgstr "La cartella di immagazzinamento del pacchetto"
+@@ -592,16 +581,16 @@ msgid "Creating package storage director
+ msgstr "Creazione cartella di immagazzinamento in corso..."
+ 
+ msgid "*** Unable to create $PAK_DIR"
+-msgstr "*** Non Х possibile creare $PAK_DIR"
++msgstr "*** Non ц╗ possibile creare $PAK_DIR"
+ 
+ msgid "Transferring package to"
+ msgstr ""
+ 
+ msgid "There's no package storage directory, the package"
+-msgstr "Non c'Х nessuna cartella di immagazzinamento, il pacchetto "
++msgstr "Non c'ц╗ nessuna cartella di immagazzinamento, il pacchetto "
+ 
+ msgid "will be stored at the default location."
+-msgstr "verrЮ immagazzinato nella locazione predefinita."
++msgstr "verrц═ immagazzinato nella locazione predefinita."
+ 
+ msgid "Erasing temporary files..."
+ msgstr "Cancellazione file temporanei in corso..."
+@@ -619,13 +608,13 @@ msgid "Building debug information packag
+ msgstr "Costruzione delle informazioni di debug del pacchetto in corso..."
+ 
+ msgid " Done. The new package has been installed and saved to"
+-msgstr " Fatto. Il nuovo pacchetto Х stato installato e salvato in"
++msgstr " Fatto. Il nuovo pacchetto ц╗ stato installato e salvato in"
+ 
+ msgid " You can remove it from your system anytime using: "
+ msgstr "Puoi rimuoverlo dal tuo sistema in ogni momento usando: "
+ 
+ msgid " Done. The new package has been saved to"
+-msgstr "Fatto. Il nuovo pacchetto Х stato salvato in"
++msgstr "Fatto. Il nuovo pacchetto ц╗ stato salvato in"
+ 
+ msgid " You can install it in your system anytime using: "
+ msgstr "Puoi installarlo in ogni momento usando: "
+Index: locale/checkinstall-no.po
+===================================================================
+--- locale/checkinstall-no.po.orig	2009-06-06 22:41:12.000000000 +0200
++++ locale/checkinstall-no.po	2009-12-07 16:58:10.581843829 +0100
+@@ -1,4 +1,4 @@
+-# MESSAGES FOR CHECKINSTALL-1.6.0beta1 in Norwegian 
++# MESSAGES FOR CHECKINSTALL-1.6.0beta1 in Norwegian (Bokmal)
+ # Copyright (C) 2002 Felipe Eduardo Sanchez Diaz Duran
+ # Felipe Eduardo Sanchez Diaz Duran <izto@asic-linux.com.mx>, 2002.
+ #
+@@ -12,11 +12,11 @@ msgid ""
+ msgstr ""
+ "Project-Id-Version: 1.6.0beta1\n"
+ "POT-Creation-Date: 2002-11-27 00:58-0600\n"
+-"PO-Revision-Date:  2002-11-27 00:58-0600\n"
++"PO-Revision-Date:  2009-12-07 16:55:56+0100\n"
+ "Last-Translator: Felipe Eduardo Sanchez Diaz Duran <izto@asic-linux.com.mx>\n"
+ "Language-Team: ES <izto@asic-linux.com.mx>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=ISO-8859-1\n"
++"Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ 
+ msgid "           This software is released under the GNU GPL."
+@@ -53,7 +53,7 @@ msgid "*Scripting options*"
+ msgstr "*Scripting valg*"
+ 
+ msgid "-y, --default                  Accept default answers to all questions"
+-msgstr "-y, --default                 Godta forvalgt svar pЕ alle"
++msgstr "-y, --default                 Godta forvalgt svar pц╔ alle"
+ 
+ msgid "--pkgname=<name>               Set name"
+ msgstr "--pkgname=<name>              Sett navn"
+@@ -137,13 +137,13 @@ msgid ""
+ "--strip=<yes|no>               Strip any ELF binaries found inside the "
+ "package"
+ msgstr ""
+-"--strip=<yes|no>               Avkle alle ELF BinФrer funnet inni "
++"--strip=<yes|no>               Avkle alle ELF Binц╕rer funnet inni "
+ "pakke"
+ 
+ msgid ""
+ "--stripso=<yes|no>             Strip any ELF binary libraries (.so files)"
+ msgstr ""
+-"--stripso=<yes|no>      Avkle alle ELF binФre biblioteker (.so filer)"
++"--stripso=<yes|no>      Avkle alle ELF binц╕re biblioteker (.so filer)"
+ 
+ msgid ""
+ "--gzman=<yes|no>               Compress any man pages found inside the "
+@@ -173,12 +173,12 @@ msgstr "--inspect                     In
+ msgid ""
+ "--review-spec                  Review the spec file before creating a .rpm"
+ msgstr ""
+-"--review-spec                  ForhЕndsvis spec-filen fЬr bygging av .rpm"
++"--review-spec                  Forhц╔ndsvis spec-filen fц╦r bygging av .rpm"
+ 
+ msgid ""
+ "--review-control               Review the control file before creating a .deb"
+ msgstr ""
+-"--review-control              ForhЕndsvis kontrollfilen fЬr bygging av .deb"
++"--review-control              Forhц╔ndsvis kontrollfilen fц╦r bygging av .deb"
+ 
+ msgid ""
+ "--newslack                     Use the new (8.1+) Slackware description "
+@@ -206,7 +206,7 @@ msgid "--bk                           Ba
+ msgstr "--bk                          Backup og overskrevne filer"
+ 
+ msgid "--backup=<yes|no>              Toggle backup"
+-msgstr "--backup=<yes|no>             SlЕ av/pЕ backup"
++msgstr "--backup=<yes|no>             Slц╔ av/pц╔ backup"
+ 
+ msgid "*About CheckInstall*"
+ msgstr "*Om CheckInstall*"
+@@ -254,7 +254,7 @@ msgid "modify the INSTALLWATCH variable
+ msgstr "modifiser INSTALLWATCH'ens variabel i dette scriptet,"
+ 
+ msgid "then run checkinstall again."
+-msgstr "og kjЬr checkinstall igjen."
++msgstr "og kjц╦r checkinstall igjen."
+ 
+ msgid "My temp dir exists already."
+ msgstr "Min midlertidige mappe eksisterer allerede."
+@@ -272,7 +272,7 @@ msgid "edit the variable definition for"
+ msgstr "forandre definisjonen av variabelen for"
+ 
+ msgid "and try again."
+-msgstr "og prЬv igjen."
++msgstr "og prц╦v igjen."
+ 
+ msgid "**** Failed to create temp dir!"
+ msgstr "*** Kunne ikke opprette midlertidig mappe!"
+@@ -336,28 +336,28 @@ msgid "Should I exclude them from the pa
+ msgstr "Skal jeg eksludere dem fra pakken? (ja er en god ide) "
+ 
+ msgid "You requested to review the list of files that will be"
+-msgstr "Du ville forhЕndsvise listen av filer som vil bli"
++msgstr "Du ville forhц╔ndsvise listen av filer som vil bli"
+ 
+ msgid "included in this package."
+ msgstr "inkludert i denne pakken."
+ 
+ msgid "Now you'll have the chance to review and optionally modify it."
+-msgstr "Du vil nЕ ha sjansen til Е forhЕndsvise og evt. modifisere den."
++msgstr "Du vil nц╔ ha sjansen til ц╔ forhц╔ndsvise og evt. modifisere den."
+ 
+ msgid "Now you'll have the chance to review and optionally modify this file."
+-msgstr "Du vil nЕ ha sjansen til Е forhЕndsvise og evt. modifisere denne fila."
++msgstr "Du vil nц╔ ha sjansen til ц╔ forhц╔ndsvise og evt. modifisere denne fila."
+ 
+ msgid "Press ENTER to continue."
+-msgstr "Trykk ENTER for Е fortsette."
++msgstr "Trykk ENTER for ц╔ fortsette."
+ 
+ msgid "Copying files to the temporary directory..."
+ msgstr "Kopierer filer til midlertidig mappe..."
+ 
+ msgid "Striping ELF binaries and libraries..."
+-msgstr "Avkler ELF binФrer og biblioteker..."
++msgstr "Avkler ELF binц╕rer og biblioteker..."
+ 
+ msgid "Striping ELF binaries..."
+-msgstr "Avkler ELF binФrer..."
++msgstr "Avkler ELF binц╕rer..."
+ 
+ msgid "Compressing man pages..."
+ msgstr "Kompresser manualsider..."
+@@ -378,7 +378,7 @@ msgid " Remember that pkgtool shows"
+ msgstr " Husk at pkgtool viser"
+ 
+ msgid "only the first one when listing packages so make that one descriptive."
+-msgstr "kun den fЬrste nЕr man lister pakker sЕ lag den innholdsrik."
++msgstr "kun den fц╦rste nц╔r man lister pakker sц╔ lag den innholdsrik."
+ 
+ msgid "End your description with an empty line or EOF."
+ msgstr "Avslutt din fortegnelse med en tom linje eller EOF."
+@@ -387,7 +387,7 @@ msgid "Package created with checkinstall
+ msgstr "Pakke bygd med checkinstall $CHECKINSTALL_VERSION"
+ 
+ msgid "Warning: Your package description is bigger than 11 lines."
+-msgstr "Advarsel: Din pakkefortegnelse er stЬrre enn 11 linjer."
++msgstr "Advarsel: Din pakkefortegnelse er stц╦rre enn 11 linjer."
+ 
+ msgid "Warning: The Slackware 8.1+ pkgtools might not like it."
+ msgstr "Advarsel: Slackware 8.1+'s pkgtools liker kanskje ikke det."
+@@ -399,13 +399,13 @@ msgid "contains upper case"
+ msgstr "inneholder store bokstaver"
+ 
+ msgid "*** Warning: letters. dpkg might not like that so I changed"
+-msgstr "*** Advarsel: bokstaver. dpkg liker kanskje ikke det sЕ jeg byttet"
++msgstr "*** Advarsel: bokstaver. dpkg liker kanskje ikke det sц╔ jeg byttet"
+ 
+ msgid "*** Warning: them to lower case."
+-msgstr "*** Advarsel: de til smЕ bokstaver."
++msgstr "*** Advarsel: de til smц╔ bokstaver."
+ 
+ msgid "*** Warning: The package version \"${VERSION}\" does not"
+-msgstr "*** Advarsel: Pakkeversjon \"${VERSION}\" gjЬr ikke det"
++msgstr "*** Advarsel: Pakkeversjon \"${VERSION}\" gjц╦r ikke det"
+ 
+ msgid "*** Warning: contain any digits. dpkg might not like that."
+ msgstr "*** Advarsel: inneholder siffer. dpkg liker kanskje ikke det."
+@@ -447,7 +447,7 @@ msgid "11 - Requires:"
+ msgstr "11 - Krever:"
+ 
+ msgid "Enter a number to change any of them or press ENTER to continue: "
+-msgstr "Legg til et tall for Е bytte noe eller trykk ENTER for Е fortsette: "
++msgstr "Legg til et tall for ц╔ bytte noe eller trykk ENTER for ц╔ fortsette: "
+ 
+ msgid "Enter new summary: "
+ msgstr "Legg til ny oppsummering: "
+@@ -555,7 +555,7 @@ msgid "Warning: the use of RPMFLAGS is d
+ msgstr "Advarsel: bruken av RPMFLAGS er ikke foretrukket"
+ 
+ msgid "Warning: You should now use RPM_FLAGS,"
+-msgstr "Advarsel: Du burde nЕ bruke RPM_FLAGS,"
++msgstr "Advarsel: Du burde nц╔ bruke RPM_FLAGS,"
+ 
+ msgid "Warning: please update your checkinstallrc file."
+ msgstr "Advarsel: vennligst oppdater din checkinstallrc fil."
+@@ -594,7 +594,7 @@ msgid "*** The installation command \"$I
+ msgstr "*** Installasjons kommando \"$INSTALLCMD\""
+ 
+ msgid "*** has already been executed."
+-msgstr "*** har allerede blitt kjЬrt."
++msgstr "*** har allerede blitt kjц╦rt."
+ 
+ msgid "The package storage directory"
+ msgstr "Pakkelagrings mappe"
+@@ -615,7 +615,7 @@ msgid "There's no package storage direct
+ msgstr "Det er ingen pakkelagringsplass, pakken"
+ 
+ msgid "will be stored at the default location."
+-msgstr "vil bli lagret pЕ standard plass."
++msgstr "vil bli lagret pц╔ standard plass."
+ 
+ msgid "Erasing temporary files..."
+ msgstr "Sletter midlertidige filer..."
+@@ -633,13 +633,13 @@ msgid "Building debug information packag
+ msgstr "Bygger debug informasjons pakke..."
+ 
+ msgid " Done. The new package has been installed and saved to"
+-msgstr " Ferdig. Den nye pakken har blitt installert og lagret pЕ"
++msgstr " Ferdig. Den nye pakken har blitt installert og lagret pц╔"
+ 
+ msgid " You can remove it from your system anytime using: "
+-msgstr " Du kan fjerne den fra systemet ditt nЕr som helst ved Е:"
++msgstr " Du kan fjerne den fra systemet ditt nц╔r som helst ved ц╔:"
+ 
+ msgid " Done. The new package has been saved to"
+-msgstr " Ferdig. Pakken har nЕ blitt lagret pЕ"
++msgstr " Ferdig. Pakken har nц╔ blitt lagret pц╔"
+ 
+ msgid " You can install it in your system anytime using: "
+-msgstr " Du kan installere den pЕ systemet ditt nЕr som helst ved Е:"
++msgstr " Du kan installere den pц╔ systemet ditt nц╔r som helst ved ц╔:"
+Index: locale/checkinstall-ru.po
+===================================================================
+--- locale/checkinstall-ru.po.orig	2009-06-06 22:41:12.000000000 +0200
++++ locale/checkinstall-ru.po	2009-12-07 16:59:35.333931926 +0100
+@@ -12,7 +12,7 @@ msgid ""
+ msgstr ""
+ "Project-Id-Version: 1.6.0beta1\n"
+ "POT-Creation-Date: 2002-11-27 00:58-0600\n"
+-"PO-Revision-Date:  2003-03-14 17:56-0600\n"
++"PO-Revision-Date:  2009-12-07 16:59:28+0100\n"
+ "Last-Translator: Trofimov Igor <just@multilinux.info>\n"
+ "Language-Team: RU <just@multilinux.info>\n"
+ "MIME-Version: 1.0\n"
+@@ -20,631 +20,631 @@ msgstr ""
+ "Content-Transfer-Encoding: 8bit\n"
+ 
+ msgid "           This software is released under the GNU GPL."
+-msgstr "         Эта программа распространяется на условиях GNU GPL"
++msgstr "         п╜я┌п╟ п©я─п╬пЁя─п╟п╪п╪п╟ я─п╟я│п©я─п╬я│я┌я─п╟п╫я▐п╣я┌я│я▐ п╫п╟ я┐я│п╩п╬п╡п╦я▐я┘ GNU GPL"
+ 
+ msgid "Usage: checkinstall [options] [command [command arguments]]"
+-msgstr "Использование: checkinstall [опции] [команда [аргументы команды]]"
++msgstr "п≤я│п©п╬п╩я▄п╥п╬п╡п╟п╫п╦п╣: checkinstall [п╬п©я├п╦п╦] [п╨п╬п╪п╟п╫п╢п╟ [п╟я─пЁя┐п╪п╣п╫я┌я▀ п╨п╬п╪п╟п╫п╢я▀]]"
+ 
+ msgid "Options:"
+-msgstr "Опции:"
++msgstr "п·п©я├п╦п╦:"
+ 
+ msgid "*Package type selection*"
+-msgstr "*Выбор типа пакета*"
++msgstr "*п▓я▀п╠п╬я─ я┌п╦п©п╟ п©п╟п╨п╣я┌п╟*"
+ 
+ msgid "-t,--type=<slackware|rpm|debian> Choose packaging system"
+-msgstr "-t,--type=<slackware|rpm|debian> Выберите тип пакета"
++msgstr "-t,--type=<slackware|rpm|debian> п▓я▀п╠п╣я─п╦я┌п╣ я┌п╦п© п©п╟п╨п╣я┌п╟"
+ 
+ msgid "-S                               Build a Slackware package"
+-msgstr "-S                               Создать Slackware пакет"
++msgstr "-S                               п║п╬п╥п╢п╟я┌я▄ Slackware п©п╟п╨п╣я┌"
+ 
+ msgid "-R                               Build a RPM package"
+-msgstr "-R                               Создать RPM пакет"
++msgstr "-R                               п║п╬п╥п╢п╟я┌я▄ RPM п©п╟п╨п╣я┌"
+ 
+ msgid "-D                               Build a Debian package"
+-msgstr "-D                               Создать Debian пакет"
++msgstr "-D                               п║п╬п╥п╢п╟я┌я▄ Debian п©п╟п╨п╣я┌"
+ 
+ msgid "*Install options*"
+-msgstr "*Опции установки*"
++msgstr "*п·п©я├п╦п╦ я┐я│я┌п╟п╫п╬п╡п╨п╦*"
+ 
+ msgid "--install=<yes|no>             Toggle created package installation"
+-msgstr "--install=<yes|no>             Устанавливать созданные пакеты"
++msgstr "--install=<yes|no>             пёя│я┌п╟п╫п╟п╡п╩п╦п╡п╟я┌я▄ я│п╬п╥п╢п╟п╫п╫я▀п╣ п©п╟п╨п╣я┌я▀"
+ 
+ msgid "*Scripting options*"
+-msgstr "*Опции сценариев*"
++msgstr "*п·п©я├п╦п╦ я│я├п╣п╫п╟я─п╦п╣п╡*"
+ 
+ msgid "-y, --default                  Accept default answers to all questions"
+-msgstr "-y, --default                  Принять значения по умолчанию для всех вопросов"
++msgstr "-y, --default                  п÷я─п╦п╫я▐я┌я▄ п╥п╫п╟я┤п╣п╫п╦я▐ п©п╬ я┐п╪п╬п╩я┤п╟п╫п╦я▌ п╢п╩я▐ п╡я│п╣я┘ п╡п╬п©я─п╬я│п╬п╡"
+ 
+ msgid "--pkgname=<name>               Set name"
+-msgstr "--pkgname=<name>               Установить имя"
++msgstr "--pkgname=<name>               пёя│я┌п╟п╫п╬п╡п╦я┌я▄ п╦п╪я▐"
+ 
+ msgid "--pkgversion=<version>         Set version"
+-msgstr "--pkgversion=<version>         Установить версию"
++msgstr "--pkgversion=<version>         пёя│я┌п╟п╫п╬п╡п╦я┌я▄ п╡п╣я─я│п╦я▌"
+ 
+ msgid "-A, --arch, --pkgarch=<arch>   Set architecture"
+-msgstr "-A, --arch, --pkgarch=<arch>   Установить архитектуру"
++msgstr "-A, --arch, --pkgarch=<arch>   пёя│я┌п╟п╫п╬п╡п╦я┌я▄ п╟я─я┘п╦я┌п╣п╨я┌я┐я─я┐"
+ 
+ msgid "--pkgrelease=<release>         Set release"
+-msgstr "--pkgrelease=<release>         Установить версию релиза"
++msgstr "--pkgrelease=<release>         пёя│я┌п╟п╫п╬п╡п╦я┌я▄ п╡п╣я─я│п╦я▌ я─п╣п╩п╦п╥п╟"
+ 
+ msgid "--pkglicense=<license>         Set license"
+-msgstr "--pkglicense=<license>         Установить лицензию"
++msgstr "--pkglicense=<license>         пёя│я┌п╟п╫п╬п╡п╦я┌я▄ п╩п╦я├п╣п╫п╥п╦я▌"
+ 
+ msgid "--pkggroup=<group>             Set software group"
+-msgstr "--pkggroup=<group>             Установить программную группу"
++msgstr "--pkggroup=<group>             пёя│я┌п╟п╫п╬п╡п╦я┌я▄ п©я─п╬пЁя─п╟п╪п╪п╫я┐я▌ пЁя─я┐п©п©я┐"
+ 
+ msgid "--pkgsource=<source>           Set source location"
+-msgstr "--pkgsource=<source>           Установить пути к исходникам"
++msgstr "--pkgsource=<source>           пёя│я┌п╟п╫п╬п╡п╦я┌я▄ п©я┐я┌п╦ п╨ п╦я│я┘п╬п╢п╫п╦п╨п╟п╪"
+ 
+ msgid "--pkgaltsource=<altsource>     Set alternate source location"
+-msgstr "--pkgaltsource=<altsource>     Установить альтернативные пути к исходникам"
++msgstr "--pkgaltsource=<altsource>     пёя│я┌п╟п╫п╬п╡п╦я┌я▄ п╟п╩я▄я┌п╣я─п╫п╟я┌п╦п╡п╫я▀п╣ п©я┐я┌п╦ п╨ п╦я│я┘п╬п╢п╫п╦п╨п╟п╪"
+ 
+ msgid "--pakdir=<directory>           The new package will be saved here"
+-msgstr "--pakdir=<directory>           Созданные пакеты будут храниться в этом каталоге"
++msgstr "--pakdir=<directory>           п║п╬п╥п╢п╟п╫п╫я▀п╣ п©п╟п╨п╣я┌я▀ п╠я┐п╢я┐я┌ я┘я─п╟п╫п╦я┌я▄я│я▐ п╡ я█я┌п╬п╪ п╨п╟я┌п╟п╩п╬пЁп╣"
+ 
+ msgid "--maintainer=<email addr>      The package maintainer (.deb)"
+-msgstr "--maintainer=<email addr>      Создатель пакета (.deb)"
++msgstr "--maintainer=<email addr>      п║п╬п╥п╢п╟я┌п╣п╩я▄ п©п╟п╨п╣я┌п╟ (.deb)"
+ 
+ msgid "--provides=<list>              Features provided by this package (.rpm)"
+-msgstr "--provides=<list>              Дополнения, обеспечиваемые этим пакетом (.rpm)"
++msgstr "--provides=<list>              п■п╬п©п╬п╩п╫п╣п╫п╦я▐, п╬п╠п╣я│п©п╣я┤п╦п╡п╟п╣п╪я▀п╣ я█я┌п╦п╪ п©п╟п╨п╣я┌п╬п╪ (.rpm)"
+ 
+ msgid "--requires=<list>              Features required by this package (.rpm)"
+-msgstr "--requires=<list>              Дополнения, требуемые этим пакетом (.rpm)"
++msgstr "--requires=<list>              п■п╬п©п╬п╩п╫п╣п╫п╦я▐, я┌я─п╣п╠я┐п╣п╪я▀п╣ я█я┌п╦п╪ п©п╟п╨п╣я┌п╬п╪ (.rpm)"
+ 
+ msgid "--rpmflags=<flags>             Pass this flags to the rpm installer"
+-msgstr "--rpmflags=<flags>             Флаги для установщика rpm"
++msgstr "--rpmflags=<flags>             п╓п╩п╟пЁп╦ п╢п╩я▐ я┐я│я┌п╟п╫п╬п╡я┴п╦п╨п╟ rpm"
+ 
+ msgid "--dpkgflags=<flags>            Pass this flags to the dpkg installer"
+-msgstr "--dpkgflags=<flags>            Флаги для установщика dpkg"
++msgstr "--dpkgflags=<flags>            п╓п╩п╟пЁп╦ п╢п╩я▐ я┐я│я┌п╟п╫п╬п╡я┴п╦п╨п╟ dpkg"
+ 
+ msgid "--spec=<path>                  .spec file location"
+-msgstr "--spec=<path>                  расположение файла .spec"
++msgstr "--spec=<path>                  я─п╟я│п©п╬п╩п╬п╤п╣п╫п╦п╣ я└п╟п╧п╩п╟ .spec"
+ 
+ msgid "--nodoc                        Do not include documentation files"
+-msgstr "--nodoc                        Не включать файлы документации"
++msgstr "--nodoc                        п²п╣ п╡п╨п╩я▌я┤п╟я┌я▄ я└п╟п╧п╩я▀ п╢п╬п╨я┐п╪п╣п╫я┌п╟я├п╦п╦"
+ 
+ msgid "*Info display options*"
+-msgstr "*Информационные опции*"
++msgstr "*п≤п╫я└п╬я─п╪п╟я├п╦п╬п╫п╫я▀п╣ п╬п©я├п╦п╦*"
+ 
+ msgid "-d<0|1|2>                      Set debug level"
+-msgstr "-d<0|1|2>                      Установить уровень отладки"
++msgstr "-d<0|1|2>                      пёя│я┌п╟п╫п╬п╡п╦я┌я▄ я┐я─п╬п╡п╣п╫я▄ п╬я┌п╩п╟п╢п╨п╦"
+ 
+ msgid "-si                            Run an interactive install command"
+-msgstr "-si                            Запустить интерактивную команду установки"
++msgstr "-si                            п≈п╟п©я┐я│я┌п╦я┌я▄ п╦п╫я┌п╣я─п╟п╨я┌п╦п╡п╫я┐я▌ п╨п╬п╪п╟п╫п╢я┐ я┐я│я┌п╟п╫п╬п╡п╨п╦"
+ 
+ msgid "--showinstall=<yes|no>         Toggle interactive install command"
+-msgstr "--showinstall=<yes|no>         Изменить интерактивную команду установки"
++msgstr "--showinstall=<yes|no>         п≤п╥п╪п╣п╫п╦я┌я▄ п╦п╫я┌п╣я─п╟п╨я┌п╦п╡п╫я┐я▌ п╨п╬п╪п╟п╫п╢я┐ я┐я│я┌п╟п╫п╬п╡п╨п╦"
+ 
+ msgid ""
+ "-ss                            Run an interactive Slackware installation "
+ "script"
+ msgstr ""
+-"-ss                            Запустить интерактивный установочный Slackware "
+-"скрипт"
++"-ss                            п≈п╟п©я┐я│я┌п╦я┌я▄ п╦п╫я┌п╣я─п╟п╨я┌п╦п╡п╫я▀п╧ я┐я│я┌п╟п╫п╬п╡п╬я┤п╫я▀п╧ Slackware "
++"я│п╨я─п╦п©я┌"
+ 
+ msgid ""
+ "--showslack=<yes|no>           Toggle interactive Slackware installation "
+ "script"
+ msgstr ""
+-"--showslack=<yes|no>           Наличие интерактивного установочного Slackware "
+-"скрипта"
++"--showslack=<yes|no>           п²п╟п╩п╦я┤п╦п╣ п╦п╫я┌п╣я─п╟п╨я┌п╦п╡п╫п╬пЁп╬ я┐я│я┌п╟п╫п╬п╡п╬я┤п╫п╬пЁп╬ Slackware "
++"я│п╨я─п╦п©я┌п╟"
+ 
+ msgid "*Package tuning options*"
+-msgstr "*Опции настройки пакета*"
++msgstr "*п·п©я├п╦п╦ п╫п╟я│я┌я─п╬п╧п╨п╦ п©п╟п╨п╣я┌п╟*"
+ 
+ msgid ""
+ "--autodoinst=<yes|no>          Toggle the creation of a doinst.sh script"
+ msgstr ""
+-"--autodoinst=<yes|no>          Создавать doinst.sh скрипт"
++"--autodoinst=<yes|no>          п║п╬п╥п╢п╟п╡п╟я┌я▄ doinst.sh я│п╨я─п╦п©я┌"
+ 
+ msgid ""
+ "--strip=<yes|no>               Strip any ELF binaries found inside the "
+ "package"
+ msgstr ""
+-"--strip=<yes|no>               Убирать отладочную информация из любых ELF-файлов в "
+-"пакете"
++"--strip=<yes|no>               пёп╠п╦я─п╟я┌я▄ п╬я┌п╩п╟п╢п╬я┤п╫я┐я▌ п╦п╫я└п╬я─п╪п╟я├п╦я▐ п╦п╥ п╩я▌п╠я▀я┘ ELF-я└п╟п╧п╩п╬п╡ п╡ "
++"п©п╟п╨п╣я┌п╣"
+ 
+ msgid ""
+ "--stripso=<yes|no>             Strip any ELF binary libraries (.so files)"
+ msgstr ""
+-"--stripso=<yes|no>             Убирать отладочную информацию из любых ELF-библиотек (файлы .so)"
++"--stripso=<yes|no>             пёп╠п╦я─п╟я┌я▄ п╬я┌п╩п╟п╢п╬я┤п╫я┐я▌ п╦п╫я└п╬я─п╪п╟я├п╦я▌ п╦п╥ п╩я▌п╠я▀я┘ ELF-п╠п╦п╠п╩п╦п╬я┌п╣п╨ (я└п╟п╧п╩я▀ .so)"
+ 
+ msgid ""
+ "--gzman=<yes|no>               Compress any man pages found inside the "
+ "package"
+ msgstr ""
+-"--gzman=<yes|no>               Сжимать любые страницы руководства, обнаруженные внутри "
+-"пакета"
++"--gzman=<yes|no>               п║п╤п╦п╪п╟я┌я▄ п╩я▌п╠я▀п╣ я│я┌я─п╟п╫п╦я├я▀ я─я┐п╨п╬п╡п╬п╢я│я┌п╡п╟, п╬п╠п╫п╟я─я┐п╤п╣п╫п╫я▀п╣ п╡п╫я┐я┌я─п╦ "
++"п©п╟п╨п╣я┌п╟"
+ 
+ msgid "--docdir=<path>                Where to put documentation files"
+-msgstr "--docdir=<path>                Куда помещать файлы документации"
++msgstr "--docdir=<path>                п я┐п╢п╟ п©п╬п╪п╣я┴п╟я┌я▄ я└п╟п╧п╩я▀ п╢п╬п╨я┐п╪п╣п╫я┌п╟я├п╦п╦"
+ 
+ msgid "--umask=<mask>                 Set the umask value"
+-msgstr "--umask=<mask>                 Установить значение umask"
++msgstr "--umask=<mask>                 пёя│я┌п╟п╫п╬п╡п╦я┌я▄ п╥п╫п╟я┤п╣п╫п╦п╣ umask"
+ 
+ msgid ""
+ "--exclude=<file|dir[,...]>     Exclude these files/directories from the "
+ "package"
+ msgstr ""
+-"--exclude=<file|dir[,...]>     Исключить эти файлы/директории из "
+-"пакета"
++"--exclude=<file|dir[,...]>     п≤я│п╨п╩я▌я┤п╦я┌я▄ я█я┌п╦ я└п╟п╧п╩я▀/п╢п╦я─п╣п╨я┌п╬я─п╦п╦ п╦п╥ "
++"п©п╟п╨п╣я┌п╟"
+ 
+ msgid "--include=<listfile>           Force the inclusion in the package of the"
+-msgstr "--include=<listfile>           Дополнительное включение в пакет"
++msgstr "--include=<listfile>           п■п╬п©п╬п╩п╫п╦я┌п╣п╩я▄п╫п╬п╣ п╡п╨п╩я▌я┤п╣п╫п╦п╣ п╡ п©п╟п╨п╣я┌"
+ 
+ msgid "--inspect                      Inspect the package's file list"
+-msgstr "--inspect                      Проверить список всех файлов в пакете"
++msgstr "--inspect                      п÷я─п╬п╡п╣я─п╦я┌я▄ я│п©п╦я│п╬п╨ п╡я│п╣я┘ я└п╟п╧п╩п╬п╡ п╡ п©п╟п╨п╣я┌п╣"
+ 
+ msgid ""
+ "--review-spec                  Review the spec file before creating a .rpm"
+ msgstr ""
+-"--review-spec                  Проверить spec-файл перед созданием .rpm"
++"--review-spec                  п÷я─п╬п╡п╣я─п╦я┌я▄ spec-я└п╟п╧п╩ п©п╣я─п╣п╢ я│п╬п╥п╢п╟п╫п╦п╣п╪ .rpm"
+ 
+ msgid ""
+ "--review-control               Review the control file before creating a .deb"
+ msgstr ""
+-"--review-control               Проверить control-файл перед созданием .deb"
++"--review-control               п÷я─п╬п╡п╣я─п╦я┌я▄ control-я└п╟п╧п╩ п©п╣я─п╣п╢ я│п╬п╥п╢п╟п╫п╦п╣п╪ .deb"
+ 
+ msgid ""
+ "--newslack                     Use the new (8.1+) Slackware description "
+ "format"
+ msgstr ""
+-"--newslack                     Использовать новый (8.1+) формат описания Slackware "
+-"пакетов"
++"--newslack                     п≤я│п©п╬п╩я▄п╥п╬п╡п╟я┌я▄ п╫п╬п╡я▀п╧ (8.1+) я└п╬я─п╪п╟я┌ п╬п©п╦я│п╟п╫п╦я▐ Slackware "
++"п©п╟п╨п╣я┌п╬п╡"
+ 
+ msgid "                               (\"--newslack\" implies \"-S\")"
+-msgstr "                               (\"--newslack\" подразумевает \"-S\")"
++msgstr "                               (\"--newslack\" п©п╬п╢я─п╟п╥я┐п╪п╣п╡п╟п╣я┌ \"-S\")"
+ 
+ msgid "*Cleanup options*"
+-msgstr "*Опции очистки*"
++msgstr "*п·п©я├п╦п╦ п╬я┤п╦я│я┌п╨п╦*"
+ 
+ msgid "--deldoc=<yes|no>              Delete doc-pak upon termination"
+-msgstr "--deldoc=<yes|no>              Удалять doc-pak при завершении"
++msgstr "--deldoc=<yes|no>              пёп╢п╟п╩я▐я┌я▄ doc-pak п©я─п╦ п╥п╟п╡п╣я─я┬п╣п╫п╦п╦"
+ 
+ msgid "--deldesc=<yes|no>             Delete description-pak upon termination"
+-msgstr "--deldesc=<yes|no>             Удалять description-pak при завершении"
++msgstr "--deldesc=<yes|no>             пёп╢п╟п╩я▐я┌я▄ description-pak п©я─п╦ п╥п╟п╡п╣я─я┬п╣п╫п╦п╦"
+ 
+ msgid "--delspec=<yes|no>             Delete spec file upon termination"
+-msgstr "--delspec=<yes|no>             Удалять spec-файл при завершении"
++msgstr "--delspec=<yes|no>             пёп╢п╟п╩я▐я┌я▄ spec-я└п╟п╧п╩ п©я─п╦ п╥п╟п╡п╣я─я┬п╣п╫п╦п╦"
+ 
+ msgid "--bk                           Backup any overwritten files"
+-msgstr "--bk                           Делать резервную копию замененных файлов"
++msgstr "--bk                           п■п╣п╩п╟я┌я▄ я─п╣п╥п╣я─п╡п╫я┐я▌ п╨п╬п©п╦я▌ п╥п╟п╪п╣п╫п╣п╫п╫я▀я┘ я└п╟п╧п╩п╬п╡"
+ 
+ msgid "--backup=<yes|no>              Toggle backup"
+-msgstr "--backup=<yes|no>              Архивировать?"
++msgstr "--backup=<yes|no>              п░я─я┘п╦п╡п╦я─п╬п╡п╟я┌я▄?"
+ 
+ msgid "*About CheckInstall*"
+-msgstr "*О программе*"
++msgstr "*п· п©я─п╬пЁя─п╟п╪п╪п╣*"
+ 
+ msgid "--help, -h                     Show this message"
+-msgstr "--help, -h                     Показать это сообщение"
++msgstr "--help, -h                     п÷п╬п╨п╟п╥п╟я┌я▄ я█я┌п╬ я│п╬п╬п╠я┴п╣п╫п╦п╣"
+ 
+ msgid "--copyright                    Show Copyright information"
+-msgstr "--copyright                    Показать информацию об авторских правах"
++msgstr "--copyright                    п÷п╬п╨п╟п╥п╟я┌я▄ п╦п╫я└п╬я─п╪п╟я├п╦я▌ п╬п╠ п╟п╡я┌п╬я─я│п╨п╦я┘ п©я─п╟п╡п╟я┘"
+ 
+ msgid "--version                      Show version information"
+-msgstr "--version                      Показать информация о версии"
++msgstr "--version                      п÷п╬п╨п╟п╥п╟я┌я▄ п╦п╫я└п╬я─п╪п╟я├п╦я▐ п╬ п╡п╣я─я│п╦п╦"
+ 
+ msgid "Use --help or -h to get more information"
+-msgstr "Используйте --help или -h для получения полной информации"
++msgstr "п≤я│п©п╬п╩я▄п╥я┐п╧я┌п╣ --help п╦п╩п╦ -h п╢п╩я▐ п©п╬п╩я┐я┤п╣п╫п╦я▐ п©п╬п╩п╫п╬п╧ п╦п╫я└п╬я─п╪п╟я├п╦п╦"
+ 
+ msgid "is an invalid value for"
+-msgstr "это неверное значение для"
++msgstr "я█я┌п╬ п╫п╣п╡п╣я─п╫п╬п╣ п╥п╫п╟я┤п╣п╫п╦п╣ п╢п╩я▐"
+ 
+ msgid "Restoring overwritten files from backup..."
+-msgstr "Восстанавливаются замененные файлы из резервной копии..."
++msgstr "п▓п╬я│я│я┌п╟п╫п╟п╡п╩п╦п╡п╟я▌я┌я│я▐ п╥п╟п╪п╣п╫п╣п╫п╫я▀п╣ я└п╟п╧п╩я▀ п╦п╥ я─п╣п╥п╣я─п╡п╫п╬п╧ п╨п╬п©п╦п╦..."
+ 
+ msgid "*** SIGINT received ***"
+-msgstr "*** получен SIGINT ***"
++msgstr "*** п©п╬п╩я┐я┤п╣п╫ SIGINT ***"
+ 
+ msgid "Cleaning up..."
+-msgstr "Очищается..."
++msgstr "п·я┤п╦я┴п╟п╣я┌я│я▐..."
+ 
+ msgid "Bye."
+-msgstr "Удачи."
++msgstr "пёп╢п╟я┤п╦."
+ 
+ msgid "The checkinstallrc file was not found at:"
+-msgstr "Файл checkinstallrc не найден в:"
++msgstr "п╓п╟п╧п╩ checkinstallrc п╫п╣ п╫п╟п╧п╢п╣п╫ п╡:"
+ 
+ msgid "Assuming default values."
+-msgstr "Подразумеваются значения по умолчанию."
++msgstr "п÷п╬п╢я─п╟п╥я┐п╪п╣п╡п╟я▌я┌я│я▐ п╥п╫п╟я┤п╣п╫п╦я▐ п©п╬ я┐п╪п╬п╩я┤п╟п╫п╦я▌."
+ 
+ msgid "I can't find $INSTALLWATCH."
+-msgstr "Невозможно найти $INSTALLWATCH."
++msgstr "п²п╣п╡п╬п╥п╪п╬п╤п╫п╬ п╫п╟п╧я┌п╦ $INSTALLWATCH."
+ 
+ msgid "I can't continue. Either install installwatch or"
+-msgstr "Невозможно продолжить. Необходимо установить installwatch или"
++msgstr "п²п╣п╡п╬п╥п╪п╬п╤п╫п╬ п©я─п╬п╢п╬п╩п╤п╦я┌я▄. п²п╣п╬п╠я┘п╬п╢п╦п╪п╬ я┐я│я┌п╟п╫п╬п╡п╦я┌я▄ installwatch п╦п╩п╦"
+ 
+ msgid "modify the INSTALLWATCH variable in this script,"
+-msgstr "модифицировать переменную INSTALLWATCH в этом скрипте,"
++msgstr "п╪п╬п╢п╦я└п╦я├п╦я─п╬п╡п╟я┌я▄ п©п╣я─п╣п╪п╣п╫п╫я┐я▌ INSTALLWATCH п╡ я█я┌п╬п╪ я│п╨я─п╦п©я┌п╣,"
+ 
+ msgid "then run checkinstall again."
+-msgstr "потом запустить программу снова."
++msgstr "п©п╬я┌п╬п╪ п╥п╟п©я┐я│я┌п╦я┌я▄ п©я─п╬пЁя─п╟п╪п╪я┐ я│п╫п╬п╡п╟."
+ 
+ msgid "My temp dir exists already."
+-msgstr "Мой временный каталог уже существует."
++msgstr "п°п╬п╧ п╡я─п╣п╪п╣п╫п╫я▀п╧ п╨п╟я┌п╟п╩п╬пЁ я┐п╤п╣ я│я┐я┴п╣я│я┌п╡я┐п╣я┌."
+ 
+ msgid "This looks like a symlink attack!"
+-msgstr "Это похоже на атаку через символические ссылки!"
++msgstr "п╜я┌п╬ п©п╬я┘п╬п╤п╣ п╫п╟ п╟я┌п╟п╨я┐ я┤п╣я─п╣п╥ я│п╦п╪п╡п╬п╩п╦я┤п╣я│п╨п╦п╣ я│я│я▀п╩п╨п╦!"
+ 
+ msgid "*** Aborting"
+-msgstr "*** Прерывается"
++msgstr "*** п÷я─п╣я─я▀п╡п╟п╣я┌я│я▐"
+ 
+ msgid "is an unacceptable value for the temp dir. Please"
+-msgstr "это неприменимые значения для временного каталога. Пожалуйста"
++msgstr "я█я┌п╬ п╫п╣п©я─п╦п╪п╣п╫п╦п╪я▀п╣ п╥п╫п╟я┤п╣п╫п╦я▐ п╢п╩я▐ п╡я─п╣п╪п╣п╫п╫п╬пЁп╬ п╨п╟я┌п╟п╩п╬пЁп╟. п÷п╬п╤п╟п╩я┐п╧я│я┌п╟"
+ 
+ msgid "edit the variable definition for"
+-msgstr "отредактируйте значения переменных для"
++msgstr "п╬я┌я─п╣п╢п╟п╨я┌п╦я─я┐п╧я┌п╣ п╥п╫п╟я┤п╣п╫п╦я▐ п©п╣я─п╣п╪п╣п╫п╫я▀я┘ п╢п╩я▐"
+ 
+ msgid "and try again."
+-msgstr "и попробуйте снова."
++msgstr "п╦ п©п╬п©я─п╬п╠я┐п╧я┌п╣ я│п╫п╬п╡п╟."
+ 
+ msgid "**** Failed to create temp dir!"
+-msgstr "**** Ошибка создания временного каталога!"
++msgstr "**** п·я┬п╦п╠п╨п╟ я│п╬п╥п╢п╟п╫п╦я▐ п╡я─п╣п╪п╣п╫п╫п╬пЁп╬ п╨п╟я┌п╟п╩п╬пЁп╟!"
+ 
+ msgid "**** Do you have write permission for ${BASE_TMP_DIR}?"
+-msgstr "**** Вы имеете права для записи в ${BASE_TMP_DIR}?"
++msgstr "**** п▓я▀ п╦п╪п╣п╣я┌п╣ п©я─п╟п╡п╟ п╢п╩я▐ п╥п╟п©п╦я│п╦ п╡ ${BASE_TMP_DIR}?"
+ 
+ msgid "The package documentation directory ./doc-pak does not exist."
+-msgstr "Каталог с документацией к программе ./doc-pak не существует."
++msgstr "п п╟я┌п╟п╩п╬пЁ я│ п╢п╬п╨я┐п╪п╣п╫я┌п╟я├п╦п╣п╧ п╨ п©я─п╬пЁя─п╟п╪п╪п╣ ./doc-pak п╫п╣ я│я┐я┴п╣я│я┌п╡я┐п╣я┌."
+ 
+ msgid "Should I create a default set of package docs? "
+-msgstr "Создавать каталог с документацией по умолчанию? "
++msgstr "п║п╬п╥п╢п╟п╡п╟я┌я▄ п╨п╟я┌п╟п╩п╬пЁ я│ п╢п╬п╨я┐п╪п╣п╫я┌п╟я├п╦п╣п╧ п©п╬ я┐п╪п╬п╩я┤п╟п╫п╦я▌? "
+ 
+ msgid "Preparing package documentation..."
+-msgstr "Готовится документация к пакету..."
++msgstr "п⌠п╬я┌п╬п╡п╦я┌я│я▐ п╢п╬п╨я┐п╪п╣п╫я┌п╟я├п╦я▐ п╨ п©п╟п╨п╣я┌я┐..."
+ 
+ msgid "*** No known documentation files were found. The new package"
+-msgstr "*** Найдены неизвестные файлы документации. Новый пакет"
++msgstr "*** п²п╟п╧п╢п╣п╫я▀ п╫п╣п╦п╥п╡п╣я│я┌п╫я▀п╣ я└п╟п╧п╩я▀ п╢п╬п╨я┐п╪п╣п╫я┌п╟я├п╦п╦. п²п╬п╡я▀п╧ п©п╟п╨п╣я┌"
+ 
+ msgid "*** won't include a documentation directory."
+-msgstr "*** не будет включать каталог с документацией."
++msgstr "*** п╫п╣ п╠я┐п╢п╣я┌ п╡п╨п╩я▌я┤п╟я┌я▄ п╨п╟я┌п╟п╩п╬пЁ я│ п╢п╬п╨я┐п╪п╣п╫я┌п╟я├п╦п╣п╧."
+ 
+ msgid "Copying documentation directory..."
+-msgstr "Копируется каталог с документацией..."
++msgstr "п п╬п©п╦я─я┐п╣я┌я│я▐ п╨п╟я┌п╟п╩п╬пЁ я│ п╢п╬п╨я┐п╪п╣п╫я┌п╟я├п╦п╣п╧..."
+ 
+ msgid "Installing with"
+-msgstr "Устанавливается с"
++msgstr "пёя│я┌п╟п╫п╟п╡п╩п╦п╡п╟п╣я┌я│я▐ я│"
+ 
+ msgid ""
+ "========================= Installation results ==========================="
+ msgstr ""
+-"========================= Результаты установки ==========================="
++"========================= п═п╣п╥я┐п╩я▄я┌п╟я┌я▀ я┐я│я┌п╟п╫п╬п╡п╨п╦ ==========================="
+ 
+ msgid ""
+ "======================== Installation successful =========================="
+ msgstr ""
+-"======================== Установка успешно завершена ======================"
++"======================== пёя│я┌п╟п╫п╬п╡п╨п╟ я┐я│п©п╣я┬п╫п╬ п╥п╟п╡п╣я─я┬п╣п╫п╟ ======================"
+ 
+ msgid "****  Installation failed. Aborting package creation."
+-msgstr "****  Установка неудачна. Отменяется создание пакета."
++msgstr "****  пёя│я┌п╟п╫п╬п╡п╨п╟ п╫п╣я┐п╢п╟я┤п╫п╟. п·я┌п╪п╣п╫я▐п╣я┌я│я▐ я│п╬п╥п╢п╟п╫п╦п╣ п©п╟п╨п╣я┌п╟."
+ 
+ msgid "Do you want to view the installation log file? "
+-msgstr "Вы хотите просмотреть лог-файл установки программы? "
++msgstr "п▓я▀ я┘п╬я┌п╦я┌п╣ п©я─п╬я│п╪п╬я┌я─п╣я┌я▄ п╩п╬пЁ-я└п╟п╧п╩ я┐я│я┌п╟п╫п╬п╡п╨п╦ п©я─п╬пЁя─п╟п╪п╪я▀? "
+ 
+ msgid "Some of the files created by the installation are inside the build"
+-msgstr "Некоторые файлы были созданы вне директории сборки программы"
++msgstr "п²п╣п╨п╬я┌п╬я─я▀п╣ я└п╟п╧п╩я▀ п╠я▀п╩п╦ я│п╬п╥п╢п╟п╫я▀ п╡п╫п╣ п╢п╦я─п╣п╨я┌п╬я─п╦п╦ я│п╠п╬я─п╨п╦ п©я─п╬пЁя─п╟п╪п╪я▀"
+ 
+ msgid "directory: `pwd`"
+-msgstr "каталог: `pwd`"
++msgstr "п╨п╟я┌п╟п╩п╬пЁ: `pwd`"
+ 
+ msgid "You probably don't want them to be included in the package,"
+-msgstr "Возможно вы не захотите их включения в пакет,"
++msgstr "п▓п╬п╥п╪п╬п╤п╫п╬ п╡я▀ п╫п╣ п╥п╟я┘п╬я┌п╦я┌п╣ п╦я┘ п╡п╨п╩я▌я┤п╣п╫п╦я▐ п╡ п©п╟п╨п╣я┌,"
+ 
+ msgid "especially if they are inside your home directory."
+-msgstr "в случае если они вне вашего домашнего каталога."
++msgstr "п╡ я│п╩я┐я┤п╟п╣ п╣я│п╩п╦ п╬п╫п╦ п╡п╫п╣ п╡п╟я┬п╣пЁп╬ п╢п╬п╪п╟я┬п╫п╣пЁп╬ п╨п╟я┌п╟п╩п╬пЁп╟."
+ 
+ msgid "Do you want me to list them? "
+-msgstr "Вы хотите посмотреть их список? "
++msgstr "п▓я▀ я┘п╬я┌п╦я┌п╣ п©п╬я│п╪п╬я┌я─п╣я┌я▄ п╦я┘ я│п©п╦я│п╬п╨? "
+ 
+ msgid "Should I exclude them from the package? (Saying yes is a good idea) "
+-msgstr "Исключить их из пакета? (ответить ДА-хорошая идея) "
++msgstr "п≤я│п╨п╩я▌я┤п╦я┌я▄ п╦я┘ п╦п╥ п©п╟п╨п╣я┌п╟? (п╬я┌п╡п╣я┌п╦я┌я▄ п■п░-я┘п╬я─п╬я┬п╟я▐ п╦п╢п╣я▐) "
+ 
+ msgid "You requested to review the list of files that will be"
+-msgstr "Вы запросили список файлов, которые будут"
++msgstr "п▓я▀ п╥п╟п©я─п╬я│п╦п╩п╦ я│п©п╦я│п╬п╨ я└п╟п╧п╩п╬п╡, п╨п╬я┌п╬я─я▀п╣ п╠я┐п╢я┐я┌"
+ 
+ msgid "included in this package."
+-msgstr "включенны в пакет"
++msgstr "п╡п╨п╩я▌я┤п╣п╫п╫я▀ п╡ п©п╟п╨п╣я┌"
+ 
+ msgid "Now you'll have the chance to review and optionally modify it."
+-msgstr "Теперь у вас есть возможность просмотреть и при необходимости изменить их."
++msgstr "п╒п╣п©п╣я─я▄ я┐ п╡п╟я│ п╣я│я┌я▄ п╡п╬п╥п╪п╬п╤п╫п╬я│я┌я▄ п©я─п╬я│п╪п╬я┌я─п╣я┌я▄ п╦ п©я─п╦ п╫п╣п╬п╠я┘п╬п╢п╦п╪п╬я│я┌п╦ п╦п╥п╪п╣п╫п╦я┌я▄ п╦я┘."
+ 
+ msgid "Now you'll have the chance to review and optionally modify this file."
+-msgstr "Теперь у вас есть возможность просмотреть и при необходимости изменить этот файл."
++msgstr "п╒п╣п©п╣я─я▄ я┐ п╡п╟я│ п╣я│я┌я▄ п╡п╬п╥п╪п╬п╤п╫п╬я│я┌я▄ п©я─п╬я│п╪п╬я┌я─п╣я┌я▄ п╦ п©я─п╦ п╫п╣п╬п╠я┘п╬п╢п╦п╪п╬я│я┌п╦ п╦п╥п╪п╣п╫п╦я┌я▄ я█я┌п╬я┌ я└п╟п╧п╩."
+ 
+ msgid "Press ENTER to continue."
+-msgstr "Нажмите ВВОД для продолжения."
++msgstr "п²п╟п╤п╪п╦я┌п╣ п▓п▓п·п■ п╢п╩я▐ п©я─п╬п╢п╬п╩п╤п╣п╫п╦я▐."
+ 
+ msgid "Copying files to the temporary directory..."
+-msgstr "Файлы копируются во временный каталог..."
++msgstr "п╓п╟п╧п╩я▀ п╨п╬п©п╦я─я┐я▌я┌я│я▐ п╡п╬ п╡я─п╣п╪п╣п╫п╫я▀п╧ п╨п╟я┌п╟п╩п╬пЁ..."
+ 
+ msgid "Striping ELF binaries and libraries..."
+-msgstr "Удаляется отладочная информация их двоичных ELF-файлов и библиотек..."
++msgstr "пёп╢п╟п╩я▐п╣я┌я│я▐ п╬я┌п╩п╟п╢п╬я┤п╫п╟я▐ п╦п╫я└п╬я─п╪п╟я├п╦я▐ п╦я┘ п╢п╡п╬п╦я┤п╫я▀я┘ ELF-я└п╟п╧п╩п╬п╡ п╦ п╠п╦п╠п╩п╦п╬я┌п╣п╨..."
+ 
+ msgid "Striping ELF binaries..."
+-msgstr "Удаляется отладочная информация из двоичных ELF-файлов..."
++msgstr "пёп╢п╟п╩я▐п╣я┌я│я▐ п╬я┌п╩п╟п╢п╬я┤п╫п╟я▐ п╦п╫я└п╬я─п╪п╟я├п╦я▐ п╦п╥ п╢п╡п╬п╦я┤п╫я▀я┘ ELF-я└п╟п╧п╩п╬п╡..."
+ 
+ msgid "Compressing man pages..."
+-msgstr "Сжимаются страницы руководства..."
++msgstr "п║п╤п╦п╪п╟я▌я┌я│я▐ я│я┌я─п╟п╫п╦я├я▀ я─я┐п╨п╬п╡п╬п╢я│я┌п╡п╟..."
+ 
+ msgid "Building file list..."
+-msgstr "Построение списка файлов..."
++msgstr "п÷п╬я│я┌я─п╬п╣п╫п╦п╣ я│п©п╦я│п╨п╟ я└п╟п╧п╩п╬п╡..."
+ 
+ msgid "Please choose the packaging method you want to use."
+-msgstr "Пожалуйста выберите необходимый метод создания пакетов."
++msgstr "п÷п╬п╤п╟п╩я┐п╧я│я┌п╟ п╡я▀п╠п╣я─п╦я┌п╣ п╫п╣п╬п╠я┘п╬п╢п╦п╪я▀п╧ п╪п╣я┌п╬п╢ я│п╬п╥п╢п╟п╫п╦я▐ п©п╟п╨п╣я┌п╬п╡."
+ 
+ msgid "Slackware [S], RPM [R] or Debian [D]? "
+ msgstr ""
+ 
+ msgid "Please write a description for the package."
+-msgstr "Пожалуйста напишите описание пакета."
++msgstr "п÷п╬п╤п╟п╩я┐п╧я│я┌п╟ п╫п╟п©п╦я┬п╦я┌п╣ п╬п©п╦я│п╟п╫п╦п╣ п©п╟п╨п╣я┌п╟."
+ 
+ msgid " Remember that pkgtool shows"
+-msgstr " Помните что pkgtool показывает"
++msgstr " п÷п╬п╪п╫п╦я┌п╣ я┤я┌п╬ pkgtool п©п╬п╨п╟п╥я▀п╡п╟п╣я┌"
+ 
+ msgid "only the first one when listing packages so make that one descriptive."
+-msgstr "только первое описание в списке пакетов, поэтому напишите его только одно."
++msgstr "я┌п╬п╩я▄п╨п╬ п©п╣я─п╡п╬п╣ п╬п©п╦я│п╟п╫п╦п╣ п╡ я│п©п╦я│п╨п╣ п©п╟п╨п╣я┌п╬п╡, п©п╬я█я┌п╬п╪я┐ п╫п╟п©п╦я┬п╦я┌п╣ п╣пЁп╬ я┌п╬п╩я▄п╨п╬ п╬п╢п╫п╬."
+ 
+ msgid "End your description with an empty line or EOF."
+-msgstr "Закончите ваше описание пустой строкой или EOF."
++msgstr "п≈п╟п╨п╬п╫я┤п╦я┌п╣ п╡п╟я┬п╣ п╬п©п╦я│п╟п╫п╦п╣ п©я┐я│я┌п╬п╧ я│я┌я─п╬п╨п╬п╧ п╦п╩п╦ EOF."
+ 
+ msgid "Package created with checkinstall $CHECKINSTALL_VERSION"
+-msgstr "Пакет созданный с помощью checkinstall $CHECKINSTALL_VERSION"
++msgstr "п÷п╟п╨п╣я┌ я│п╬п╥п╢п╟п╫п╫я▀п╧ я│ п©п╬п╪п╬я┴я▄я▌ checkinstall $CHECKINSTALL_VERSION"
+ 
+ msgid "Warning: Your package description is bigger than 11 lines."
+-msgstr "Внимание: Ваше описание пакета более чем 11 строк."
++msgstr "п▓п╫п╦п╪п╟п╫п╦п╣: п▓п╟я┬п╣ п╬п©п╦я│п╟п╫п╦п╣ п©п╟п╨п╣я┌п╟ п╠п╬п╩п╣п╣ я┤п╣п╪ 11 я│я┌я─п╬п╨."
+ 
+ msgid "Warning: The Slackware 8.1+ pkgtools might not like it."
+-msgstr "Внимание: Программе pkgtools в Slackware 8.1+ это может не понравиться."
++msgstr "п▓п╫п╦п╪п╟п╫п╦п╣: п÷я─п╬пЁя─п╟п╪п╪п╣ pkgtools п╡ Slackware 8.1+ я█я┌п╬ п╪п╬п╤п╣я┌ п╫п╣ п©п╬п╫я─п╟п╡п╦я┌я▄я│я▐."
+ 
+ msgid "*** Warning: The package name"
+-msgstr "*** Внимание: Имя пакета"
++msgstr "*** п▓п╫п╦п╪п╟п╫п╦п╣: п≤п╪я▐ п©п╟п╨п╣я┌п╟"
+ 
+ msgid "contains upper case"
+-msgstr "содержит верхний регистр"
++msgstr "я│п╬п╢п╣я─п╤п╦я┌ п╡п╣я─я┘п╫п╦п╧ я─п╣пЁп╦я│я┌я─"
+ 
+ msgid "*** Warning: letters. dpkg might not like that so I changed"
+-msgstr "*** Внимание: символов. dpkg может не понять изменение"
++msgstr "*** п▓п╫п╦п╪п╟п╫п╦п╣: я│п╦п╪п╡п╬п╩п╬п╡. dpkg п╪п╬п╤п╣я┌ п╫п╣ п©п╬п╫я▐я┌я▄ п╦п╥п╪п╣п╫п╣п╫п╦п╣"
+ 
+ msgid "*** Warning: them to lower case."
+-msgstr "*** Внимание: потом в нижнем регистре."
++msgstr "*** п▓п╫п╦п╪п╟п╫п╦п╣: п©п╬я┌п╬п╪ п╡ п╫п╦п╤п╫п╣п╪ я─п╣пЁп╦я│я┌я─п╣."
+ 
+ msgid "*** Warning: The package version \"${VERSION}\" does not"
+-msgstr "*** Внимание: Версия пакета \"${VERSION}\" не"
++msgstr "*** п▓п╫п╦п╪п╟п╫п╦п╣: п▓п╣я─я│п╦я▐ п©п╟п╨п╣я┌п╟ \"${VERSION}\" п╫п╣"
+ 
+ msgid "*** Warning: contain any digits. dpkg might not like that."
+-msgstr "*** Внимание: содержит любых цифровых символов. dpkg может не понять что."
++msgstr "*** п▓п╫п╦п╪п╟п╫п╦п╣: я│п╬п╢п╣я─п╤п╦я┌ п╩я▌п╠я▀я┘ я├п╦я└я─п╬п╡я▀я┘ я│п╦п╪п╡п╬п╩п╬п╡. dpkg п╪п╬п╤п╣я┌ п╫п╣ п©п╬п╫я▐я┌я▄ я┤я┌п╬."
+ 
+ msgid "This package will be built according to these values: "
+-msgstr "Этот пакет был создан с использованием данных значений: "
++msgstr "п╜я┌п╬я┌ п©п╟п╨п╣я┌ п╠я▀п╩ я│п╬п╥п╢п╟п╫ я│ п╦я│п©п╬п╩я▄п╥п╬п╡п╟п╫п╦п╣п╪ п╢п╟п╫п╫я▀я┘ п╥п╫п╟я┤п╣п╫п╦п╧: "
+ 
+ msgid "0 -  Maintainer:"
+-msgstr "0 -  Создатель:"
++msgstr "0 -  п║п╬п╥п╢п╟я┌п╣п╩я▄:"
+ 
+ msgid "1 -  Summary:"
+-msgstr "1 -  Общее описание:"
++msgstr "1 -  п·п╠я┴п╣п╣ п╬п©п╦я│п╟п╫п╦п╣:"
+ 
+ msgid "2 -  Name:"
+-msgstr "2 -  Название:"
++msgstr "2 -  п²п╟п╥п╡п╟п╫п╦п╣:"
+ 
+ msgid "3 -  Version:"
+-msgstr "3 -  Версия:"
++msgstr "3 -  п▓п╣я─я│п╦я▐:"
+ 
+ msgid "5 -  License:"
+-msgstr "5 -  Лицензия:"
++msgstr "5 -  п⌡п╦я├п╣п╫п╥п╦я▐:"
+ 
+ msgid "6 -  Group:"
+-msgstr "6 -  Группа:"
++msgstr "6 -  п⌠я─я┐п©п©п╟:"
+ 
+ msgid "7 -  Architecture:"
+-msgstr "7 -  Архитектура:"
++msgstr "7 -  п░я─я┘п╦я┌п╣п╨я┌я┐я─п╟:"
+ 
+ msgid "8 -  Source location:"
+-msgstr "8 -  Расположение исходников:"
++msgstr "8 -  п═п╟я│п©п╬п╩п╬п╤п╣п╫п╦п╣ п╦я│я┘п╬п╢п╫п╦п╨п╬п╡:"
+ 
+ msgid "9 -  Alternate source location:"
+-msgstr "9 -  Альтернативное расположение исходников:"
++msgstr "9 -  п░п╩я▄я┌п╣я─п╫п╟я┌п╦п╡п╫п╬п╣ я─п╟я│п©п╬п╩п╬п╤п╣п╫п╦п╣ п╦я│я┘п╬п╢п╫п╦п╨п╬п╡:"
+ 
+ msgid "10 - Provides:"
+-msgstr "10 - Обеспечивает:"
++msgstr "10 - п·п╠п╣я│п©п╣я┤п╦п╡п╟п╣я┌:"
+ 
+ msgid "11 - Requires:"
+-msgstr "11 -  Требует наличия:"
++msgstr "11 -  п╒я─п╣п╠я┐п╣я┌ п╫п╟п╩п╦я┤п╦я▐:"
+ 
+ msgid "Enter a number to change any of them or press ENTER to continue: "
+-msgstr "Введите номер для изменения параметра или нажмите ВВОД для продолжения: "
++msgstr "п▓п╡п╣п╢п╦я┌п╣ п╫п╬п╪п╣я─ п╢п╩я▐ п╦п╥п╪п╣п╫п╣п╫п╦я▐ п©п╟я─п╟п╪п╣я┌я─п╟ п╦п╩п╦ п╫п╟п╤п╪п╦я┌п╣ п▓п▓п·п■ п╢п╩я▐ п©я─п╬п╢п╬п╩п╤п╣п╫п╦я▐: "
+ 
+ msgid "Enter new summary: "
+-msgstr "Введите новое общее описание: "
++msgstr "п▓п╡п╣п╢п╦я┌п╣ п╫п╬п╡п╬п╣ п╬п╠я┴п╣п╣ п╬п©п╦я│п╟п╫п╦п╣: "
+ 
+ msgid "Enter new name: "
+-msgstr "Введите новое имя: "
++msgstr "п▓п╡п╣п╢п╦я┌п╣ п╫п╬п╡п╬п╣ п╦п╪я▐: "
+ 
+ msgid "Enter new version: "
+-msgstr "Введите новую версию: "
++msgstr "п▓п╡п╣п╢п╦я┌п╣ п╫п╬п╡я┐я▌ п╡п╣я─я│п╦я▌: "
+ 
+ msgid "Enter new release number: "
+-msgstr "Введите новый номер релиза: "
++msgstr "п▓п╡п╣п╢п╦я┌п╣ п╫п╬п╡я▀п╧ п╫п╬п╪п╣я─ я─п╣п╩п╦п╥п╟: "
+ 
+ msgid "Enter the license type: "
+-msgstr "Введите тип лицензии: "
++msgstr "п▓п╡п╣п╢п╦я┌п╣ я┌п╦п© п╩п╦я├п╣п╫п╥п╦п╦: "
+ 
+ msgid "Enter the new software group: "
+-msgstr "Введите новую программную группу: "
++msgstr "п▓п╡п╣п╢п╦я┌п╣ п╫п╬п╡я┐я▌ п©я─п╬пЁя─п╟п╪п╪п╫я┐я▌ пЁя─я┐п©п©я┐: "
+ 
+ msgid "Enter the architecture type: "
+-msgstr "Введите тип архитектуры: "
++msgstr "п▓п╡п╣п╢п╦я┌п╣ я┌п╦п© п╟я─я┘п╦я┌п╣п╨я┌я┐я─я▀: "
+ 
+ msgid "Enter the source location: "
+-msgstr "Введите расположение исходников: "
++msgstr "п▓п╡п╣п╢п╦я┌п╣ я─п╟я│п©п╬п╩п╬п╤п╣п╫п╦п╣ п╦я│я┘п╬п╢п╫п╦п╨п╬п╡: "
+ 
+ msgid "Enter the alternate source location: "
+-msgstr "Введите альтернативное расположение исходников: "
++msgstr "п▓п╡п╣п╢п╦я┌п╣ п╟п╩я▄я┌п╣я─п╫п╟я┌п╦п╡п╫п╬п╣ я─п╟я│п©п╬п╩п╬п╤п╣п╫п╦п╣ п╦я│я┘п╬п╢п╫п╦п╨п╬п╡: "
+ 
+ msgid "Enter the maintaner's name and e-mail address: "
+-msgstr "Введите имя создателя пакета и адрес его почты"
++msgstr "п▓п╡п╣п╢п╦я┌п╣ п╦п╪я▐ я│п╬п╥п╢п╟я┌п╣п╩я▐ п©п╟п╨п╣я┌п╟ п╦ п╟п╢я─п╣я│ п╣пЁп╬ п©п╬я┤я┌я▀"
+ 
+ msgid "Enter the provided features: "
+-msgstr "Введите обеспечиваемые дополнения: "
++msgstr "п▓п╡п╣п╢п╦я┌п╣ п╬п╠п╣я│п©п╣я┤п╦п╡п╟п╣п╪я▀п╣ п╢п╬п©п╬п╩п╫п╣п╫п╦я▐: "
+ 
+ msgid "Enter the additional requirements: "
+-msgstr "Введите дополнительные требования: "
++msgstr "п▓п╡п╣п╢п╦я┌п╣ п╢п╬п©п╬п╩п╫п╦я┌п╣п╩я▄п╫я▀п╣ я┌я─п╣п╠п╬п╡п╟п╫п╦я▐: "
+ 
+ msgid "********************************************"
+ msgstr "********************************************"
+ 
+ msgid "**** Slackware package creation selected ***"
+-msgstr "**** Выбрано создание пакета Slackware ***"
++msgstr "**** п▓я▀п╠я─п╟п╫п╬ я│п╬п╥п╢п╟п╫п╦п╣ п©п╟п╨п╣я┌п╟ Slackware ***"
+ 
+ msgid "*** The \"installpkg\" program is not in your PATH!"
+-msgstr "*** Программа \"installpkg\" не найдена в путях PATH!"
++msgstr "*** п÷я─п╬пЁя─п╟п╪п╪п╟ \"installpkg\" п╫п╣ п╫п╟п╧п╢п╣п╫п╟ п╡ п©я┐я┌я▐я┘ PATH!"
+ 
+ msgid "*** Slackware package creation aborted"
+-msgstr "*** Создание пакета Slackware прервано"
++msgstr "*** п║п╬п╥п╢п╟п╫п╦п╣ п©п╟п╨п╣я┌п╟ Slackware п©я─п╣я─п╡п╟п╫п╬"
+ 
+ msgid "Preparing Slackware install directory..."
+-msgstr "Создается установочная директория Slackware..."
++msgstr "п║п╬п╥п╢п╟п╣я┌я│я▐ я┐я│я┌п╟п╫п╬п╡п╬я┤п╫п╟я▐ п╢п╦я─п╣п╨я┌п╬я─п╦я▐ Slackware..."
+ 
+ msgid "Writing package description..."
+-msgstr "Записывается описание пакета..."
++msgstr "п≈п╟п©п╦я│я▀п╡п╟п╣я┌я│я▐ п╬п©п╦я│п╟п╫п╦п╣ п©п╟п╨п╣я┌п╟..."
+ 
+ msgid "Writing Slackware install script..."
+-msgstr "Записывается установочный скрипт Slackware..."
++msgstr "п≈п╟п©п╦я│я▀п╡п╟п╣я┌я│я▐ я┐я│я┌п╟п╫п╬п╡п╬я┤п╫я▀п╧ я│п╨я─п╦п©я┌ Slackware..."
+ 
+ msgid "Appending your script to the main install script..."
+-msgstr "Ваш скрипт добавляется к основному сценарию установки пакета..."
++msgstr "п▓п╟я┬ я│п╨я─п╦п©я┌ п╢п╬п╠п╟п╡п╩я▐п╣я┌я│я▐ п╨ п╬я│п╫п╬п╡п╫п╬п╪я┐ я│я├п╣п╫п╟я─п╦я▌ я┐я│я┌п╟п╫п╬п╡п╨п╦ п©п╟п╨п╣я┌п╟..."
+ 
+ msgid "Creating package ${SLACK_PKG_BASENAME}..."
+-msgstr "Создается пакет ${SLACK_PKG_BASENAME}..."
++msgstr "п║п╬п╥п╢п╟п╣я┌я│я▐ п©п╟п╨п╣я┌ ${SLACK_PKG_BASENAME}..."
+ 
+ msgid "Installing package..."
+-msgstr "Устанавливается пакет..."
++msgstr "пёя│я┌п╟п╫п╟п╡п╩п╦п╡п╟п╣я┌я│я▐ п©п╟п╨п╣я┌..."
+ 
+ msgid "*** Failed to install the package"
+-msgstr "*** Ошибка установки пакета"
++msgstr "*** п·я┬п╦п╠п╨п╟ я┐я│я┌п╟п╫п╬п╡п╨п╦ п©п╟п╨п╣я┌п╟"
+ 
+ msgid "Do you want to see the log file? "
+-msgstr "Желаете просмотреть лог-файл? "
++msgstr "п√п╣п╩п╟п╣я┌п╣ п©я─п╬я│п╪п╬я┌я─п╣я┌я▄ п╩п╬пЁ-я└п╟п╧п╩? "
+ 
+ msgid "NOTE: The package will not be installed."
+-msgstr "ПРЕДУПРЕЖДЕНИЕ: Этот пакет не был установлен."
++msgstr "п÷п═п∙п■пёп÷п═п∙п√п■п∙п²п≤п∙: п╜я┌п╬я┌ п©п╟п╨п╣я┌ п╫п╣ п╠я▀п╩ я┐я│я┌п╟п╫п╬п╡п╩п╣п╫."
+ 
+ msgid "**************************************"
+ msgstr "**************************************"
+ 
+ msgid "**** RPM package creation selected ***"
+-msgstr "**** Выбрано создание пакета RPM **"
++msgstr "**** п▓я▀п╠я─п╟п╫п╬ я│п╬п╥п╢п╟п╫п╦п╣ п©п╟п╨п╣я┌п╟ RPM **"
+ 
+ msgid "*** The \"rpm\" program is not in your PATH!"
+-msgstr "*** Программа \"rpm\" не найдена в ваших путях PATH!"
++msgstr "*** п÷я─п╬пЁя─п╟п╪п╪п╟ \"rpm\" п╫п╣ п╫п╟п╧п╢п╣п╫п╟ п╡ п╡п╟я┬п╦я┘ п©я┐я┌я▐я┘ PATH!"
+ 
+ msgid "*** RPM package creation aborted"
+-msgstr "*** Создание RPM-пакета прервано"
++msgstr "*** п║п╬п╥п╢п╟п╫п╦п╣ RPM-п©п╟п╨п╣я┌п╟ п©я─п╣я─п╡п╟п╫п╬"
+ 
+ msgid "$RPMSOURCEDIR has no SOURCES directory. Please write the path to"
+-msgstr "$RPMSOURCEDIR не имеет каталога SOURCES. Пожалуйста напишите путь в"
++msgstr "$RPMSOURCEDIR п╫п╣ п╦п╪п╣п╣я┌ п╨п╟я┌п╟п╩п╬пЁп╟ SOURCES. п÷п╬п╤п╟п╩я┐п╧я│я┌п╟ п╫п╟п©п╦я┬п╦я┌п╣ п©я┐я┌я▄ п╡"
+ 
+ msgid "the RPM source directory tree: "
+-msgstr "дерево исходных текстов для RPM: "
++msgstr "п╢п╣я─п╣п╡п╬ п╦я│я┘п╬п╢п╫я▀я┘ я┌п╣п╨я│я┌п╬п╡ п╢п╩я▐ RPM: "
+ 
+ msgid "You requested to review the .spec file for this package."
+-msgstr "Вы запросили просмотр .spec-файла для данного пакета."
++msgstr "п▓я▀ п╥п╟п©я─п╬я│п╦п╩п╦ п©я─п╬я│п╪п╬я┌я─ .spec-я└п╟п╧п╩п╟ п╢п╩я▐ п╢п╟п╫п╫п╬пЁп╬ п©п╟п╨п╣я┌п╟."
+ 
+ msgid "Building RPM package..."
+-msgstr "Собирается RPM пакет..."
++msgstr "п║п╬п╠п╦я─п╟п╣я┌я│я▐ RPM п©п╟п╨п╣я┌..."
+ 
+ msgid "*** Failed to build the package"
+-msgstr "*** Ошибка сборки пакета"
++msgstr "*** п·я┬п╦п╠п╨п╟ я│п╠п╬я─п╨п╦ п©п╟п╨п╣я┌п╟"
+ 
+ msgid "Warning: the use of RPMFLAGS is deprecated."
+-msgstr "Внимание: использование RPMFLAGS подавляется."
++msgstr "п▓п╫п╦п╪п╟п╫п╦п╣: п╦я│п©п╬п╩я▄п╥п╬п╡п╟п╫п╦п╣ RPMFLAGS п©п╬п╢п╟п╡п╩я▐п╣я┌я│я▐."
+ 
+ msgid "Warning: You should now use RPM_FLAGS,"
+-msgstr "Внимание: Сейчас вы должны использовать RPM_FLAGS,"
++msgstr "п▓п╫п╦п╪п╟п╫п╦п╣: п║п╣п╧я┤п╟я│ п╡я▀ п╢п╬п╩п╤п╫я▀ п╦я│п©п╬п╩я▄п╥п╬п╡п╟я┌я▄ RPM_FLAGS,"
+ 
+ msgid "Warning: please update your checkinstallrc file."
+-msgstr "Внимание: пожалуйста обновите ваш файл checkinstallrc."
++msgstr "п▓п╫п╦п╪п╟п╫п╦п╣: п©п╬п╤п╟п╩я┐п╧я│я┌п╟ п╬п╠п╫п╬п╡п╦я┌п╣ п╡п╟я┬ я└п╟п╧п╩ checkinstallrc."
+ 
+ msgid "Installing RPM package..."
+-msgstr "Устанавливается RPM-пакет..."
++msgstr "пёя│я┌п╟п╫п╟п╡п╩п╦п╡п╟п╣я┌я│я▐ RPM-п©п╟п╨п╣я┌..."
+ 
+ msgid "NOTE: The package will not be installed"
+-msgstr "ЗАМЕТКА: Пакет не установлен"
++msgstr "п≈п░п°п∙п╒п п░: п÷п╟п╨п╣я┌ п╫п╣ я┐я│я┌п╟п╫п╬п╡п╩п╣п╫"
+ 
+ msgid "*****************************************"
+ msgstr "*****************************************"
+ 
+ msgid "**** Debian package creation selected ***"
+-msgstr "**** Выбрано создание пакета для Debian ***"
++msgstr "**** п▓я▀п╠я─п╟п╫п╬ я│п╬п╥п╢п╟п╫п╦п╣ п©п╟п╨п╣я┌п╟ п╢п╩я▐ Debian ***"
+ 
+ msgid "*** The \"dpkg\" program is not in your PATH!"
+-msgstr "*** Программа \"dpkg\" не найдена в ваших путях PATH!"
++msgstr "*** п÷я─п╬пЁя─п╟п╪п╪п╟ \"dpkg\" п╫п╣ п╫п╟п╧п╢п╣п╫п╟ п╡ п╡п╟я┬п╦я┘ п©я┐я┌я▐я┘ PATH!"
+ 
+ msgid "*** Debian package creation aborted"
+-msgstr "*** Создание Debian-пакета прервано"
++msgstr "*** п║п╬п╥п╢п╟п╫п╦п╣ Debian-п©п╟п╨п╣я┌п╟ п©я─п╣я─п╡п╟п╫п╬"
+ 
+ msgid "You requested to review the control file for this package."
+-msgstr "Вы запросили просмотр control-файла для данного пакета."
++msgstr "п▓я▀ п╥п╟п©я─п╬я│п╦п╩п╦ п©я─п╬я│п╪п╬я┌я─ control-я└п╟п╧п╩п╟ п╢п╩я▐ п╢п╟п╫п╫п╬пЁп╬ п©п╟п╨п╣я┌п╟."
+ 
+ msgid "Building Debian package..."
+-msgstr "Собирается Debian-пакет..."
++msgstr "п║п╬п╠п╦я─п╟п╣я┌я│я▐ Debian-п©п╟п╨п╣я┌..."
+ 
+ msgid "Installing Debian package..."
+-msgstr "Устанавливается Debian-пакет..."
++msgstr "пёя│я┌п╟п╫п╟п╡п╩п╦п╡п╟п╣я┌я│я▐ Debian-п©п╟п╨п╣я┌..."
+ 
+ msgid "*** No method was selected, I won't build any package."
+-msgstr "*** Методов не выбрано, невозможно создать любой пакет."
++msgstr "*** п°п╣я┌п╬п╢п╬п╡ п╫п╣ п╡я▀п╠я─п╟п╫п╬, п╫п╣п╡п╬п╥п╪п╬п╤п╫п╬ я│п╬п╥п╢п╟я┌я▄ п╩я▌п╠п╬п╧ п©п╟п╨п╣я┌."
+ 
+ msgid "*** The installation command \"$INSTALLCMD\""
+-msgstr "*** Установочная команда \"$INSTALLCMD\""
++msgstr "*** пёя│я┌п╟п╫п╬п╡п╬я┤п╫п╟я▐ п╨п╬п╪п╟п╫п╢п╟ \"$INSTALLCMD\""
+ 
+ msgid "*** has already been executed."
+-msgstr "*** уже была выполнена."
++msgstr "*** я┐п╤п╣ п╠я▀п╩п╟ п╡я▀п©п╬п╩п╫п╣п╫п╟."
+ 
+ msgid "The package storage directory"
+-msgstr "Каталог сохранения пакетов"
++msgstr "п п╟я┌п╟п╩п╬пЁ я│п╬я┘я─п╟п╫п╣п╫п╦я▐ п©п╟п╨п╣я┌п╬п╡"
+ 
+ msgid "doesn't exist. Do you want to create it?"
+-msgstr "не существует. Создать?"
++msgstr "п╫п╣ я│я┐я┴п╣я│я┌п╡я┐п╣я┌. п║п╬п╥п╢п╟я┌я▄?"
+ 
+ msgid "Creating package storage directory..."
+-msgstr "Создается каталог для хранения пакетов..."
++msgstr "п║п╬п╥п╢п╟п╣я┌я│я▐ п╨п╟я┌п╟п╩п╬пЁ п╢п╩я▐ я┘я─п╟п╫п╣п╫п╦я▐ п©п╟п╨п╣я┌п╬п╡..."
+ 
+ msgid "*** Unable to create $PAK_DIR"
+-msgstr "*** Невозможно создать $PAK_DIR"
++msgstr "*** п²п╣п╡п╬п╥п╪п╬п╤п╫п╬ я│п╬п╥п╢п╟я┌я▄ $PAK_DIR"
+ 
+ msgid "Transferring package to"
+-msgstr "Пакет перемещается в"
++msgstr "п÷п╟п╨п╣я┌ п©п╣я─п╣п╪п╣я┴п╟п╣я┌я│я▐ п╡"
+ 
+ msgid "There's no package storage directory, the package"
+-msgstr "Нет каталога хранения пакетов, пакет"
++msgstr "п²п╣я┌ п╨п╟я┌п╟п╩п╬пЁп╟ я┘я─п╟п╫п╣п╫п╦я▐ п©п╟п╨п╣я┌п╬п╡, п©п╟п╨п╣я┌"
+ 
+ msgid "will be stored at the default location."
+-msgstr "будет сохранен в каталоге по умолчанию."
++msgstr "п╠я┐п╢п╣я┌ я│п╬я┘я─п╟п╫п╣п╫ п╡ п╨п╟я┌п╟п╩п╬пЁп╣ п©п╬ я┐п╪п╬п╩я┤п╟п╫п╦я▌."
+ 
+ msgid "Erasing temporary files..."
+-msgstr "Удаляются временные файлы..."
++msgstr "пёп╢п╟п╩я▐я▌я┌я│я▐ п╡я─п╣п╪п╣п╫п╫я▀п╣ я└п╟п╧п╩я▀..."
+ 
+ msgid "Deleting doc-pak directory..."
+-msgstr "Удаляется каталог doc-pak..."
++msgstr "пёп╢п╟п╩я▐п╣я┌я│я▐ п╨п╟я┌п╟п╩п╬пЁ doc-pak..."
+ 
+ msgid "Writing backup package..."
+-msgstr "Записывается пакет с резервной копией..."
++msgstr "п≈п╟п©п╦я│я▀п╡п╟п╣я┌я│я▐ п©п╟п╨п╣я┌ я│ я─п╣п╥п╣я─п╡п╫п╬п╧ п╨п╬п©п╦п╣п╧..."
+ 
+ msgid "Deleting temp dir..."
+-msgstr "Удаляется временный каталог..."
++msgstr "пёп╢п╟п╩я▐п╣я┌я│я▐ п╡я─п╣п╪п╣п╫п╫я▀п╧ п╨п╟я┌п╟п╩п╬пЁ..."
+ 
+ msgid "Building debug information package..."
+-msgstr "Собирается пакет с отладочной информацией..."
++msgstr "п║п╬п╠п╦я─п╟п╣я┌я│я▐ п©п╟п╨п╣я┌ я│ п╬я┌п╩п╟п╢п╬я┤п╫п╬п╧ п╦п╫я└п╬я─п╪п╟я├п╦п╣п╧..."
+ 
+ msgid " Done. The new package has been installed and saved to"
+-msgstr " Далее. Новые пакеты были установлены и сохранены в"
++msgstr " п■п╟п╩п╣п╣. п²п╬п╡я▀п╣ п©п╟п╨п╣я┌я▀ п╠я▀п╩п╦ я┐я│я┌п╟п╫п╬п╡п╩п╣п╫я▀ п╦ я│п╬я┘я─п╟п╫п╣п╫я▀ п╡"
+ 
+ msgid " You can remove it from your system anytime using: "
+-msgstr " Вы можете удалить их из системы в любое время, используя: "
++msgstr " п▓я▀ п╪п╬п╤п╣я┌п╣ я┐п╢п╟п╩п╦я┌я▄ п╦я┘ п╦п╥ я│п╦я│я┌п╣п╪я▀ п╡ п╩я▌п╠п╬п╣ п╡я─п╣п╪я▐, п╦я│п©п╬п╩я▄п╥я┐я▐: "
+ 
+ msgid " Done. The new package has been saved to"
+-msgstr " Далее. Новые пакеты были сохранены в"
++msgstr " п■п╟п╩п╣п╣. п²п╬п╡я▀п╣ п©п╟п╨п╣я┌я▀ п╠я▀п╩п╦ я│п╬я┘я─п╟п╫п╣п╫я▀ п╡"
+ 
+ msgid " You can install it in your system anytime using: "
+-msgstr " Вы можете установить их в систему в любое время, используя: "
++msgstr " п▓я▀ п╪п╬п╤п╣я┌п╣ я┐я│я┌п╟п╫п╬п╡п╦я┌я▄ п╦я┘ п╡ я│п╦я│я┌п╣п╪я┐ п╡ п╩я▌п╠п╬п╣ п╡я─п╣п╪я▐, п╦я│п©п╬п╩я▄п╥я┐я▐: "
+Index: locale/checkinstall-zh_CN.po
+===================================================================
+--- locale/checkinstall-zh_CN.po.orig	2009-06-06 22:41:12.000000000 +0200
++++ locale/checkinstall-zh_CN.po	2009-12-07 17:01:52.274351778 +0100
+@@ -12,623 +12,623 @@ msgid ""
+ msgstr ""
+ "Project-Id-Version: 1.6.0beta2\n"
+ "POT-Creation-Date: 2003-3-19 00:58-0600\n"
+-"PO-Revision-Date:  2003-3-19 00:58-0600\n"
++"PO-Revision-Date:  2009-12-07 17:00:02+0100\n"
+ "Last-Translator: Hao Xin Kui <xinkuihao@yahoo.com>\n"
+ "Language-Team: ES <izto@asic-linux.com.mx>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=gb2312\n"
++"Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ 
+ msgid "           This software is released under the GNU GPL."
+-msgstr "╠╬хМ╪Чрт GNU GPL ╟Фх╗п╜рИ╟Д╡╪"
++msgstr "Ф°╛Х╫╞Д╩╤Д╩╔ GNU GPL Г┴┬Ф²┐Е█▐Х╝╝И╒│Е╦┐"
+ 
+ msgid "Usage: checkinstall [options] [command [command arguments]]"
+-msgstr "сц╥╗ё╨checkinstall [╡нйЩ] [цЭаН [цЭаН╣д╡нйЩ]]"
++msgstr "Г■╗ФЁ∙О╪ checkinstall [Е▐┌Ф∙╟] [Е▒╫Д╩╓ [Е▒╫Д╩╓Г └Е▐┌Ф∙╟]]"
+ 
+ msgid "Options:"
+-msgstr "╡нйЩё╨"
++msgstr "Е▐┌Ф∙╟О╪ "
+ 
+ msgid "*Package type selection*"
+-msgstr "*я║тЯ╢Р╟Э╦Яй╫*"
++msgstr "*И─┴Ф▀╘Ф┴⌠Е▄┘Ф═╪Е╪▐*"
+ 
+ msgid "-t,--type=<slackware|rpm|debian> Choose packaging system"
+-msgstr "-t,--type=<slackware|rpm|debian> я║тЯ╢Р╟Эо╣мЁ"
++msgstr "-t,--type=<slackware|rpm|debian> И─┴Ф▀╘Ф┴⌠Е▄┘ГЁ╩Г╩÷"
+ 
+ msgid "-S                               Build a Slackware package"
+-msgstr "-S                             ╢╢╫╗р╩╦Ж Slackware ╟Э"
++msgstr "-S                             Е┬⌡Е╩╨Д╦─Д╦╙ Slackware Е▄┘"
+ 
+ msgid "-R                               Build a RPM package"
+-msgstr "-R                             ╢╢╫╗р╩╦Ж RPM ╟Э"
++msgstr "-R                             Е┬⌡Е╩╨Д╦─Д╦╙ RPM Е▄┘"
+ 
+ msgid "-D                               Build a Debian package"
+-msgstr "-D                             ╢╢╫╗р╩╦Ж Debian ╟Э"
++msgstr "-D                             Е┬⌡Е╩╨Д╦─Д╦╙ Debian Е▄┘"
+ 
+ msgid "*Install options*"
+-msgstr "*╟╡в╟╡нйЩ*"
++msgstr "*Е╝┴Хё┘Е▐┌Ф∙╟*"
+ 
+ msgid "--install=<yes|no>             Toggle created package installation"
+-msgstr "--install=<yes|no>             гп╩╩╢╢╫╗╟Э╨Сйг╥Явт╤╞╟╡в╟"
++msgstr "--install=<yes|no>             Е┬┤Ф█╒Е┬⌡Е╩╨Е▄┘Е░▌Ф≤╞Е░╕Х┤╙Е┼╗Е╝┴Хё┘"
+ 
+ msgid "*Scripting options*"
+-msgstr "*╫е╠╬╡нйЩ*"
++msgstr "*Х└ Ф°╛Е▐┌Ф∙╟*"
+ 
+ msgid "-y, --default                  Accept default answers to all questions"
+-msgstr "-y, --default                  кЫспнйлБ╬Ы╫сйэх╠й║╢П╟╦"
++msgstr "-y, --default                  Ф┴─Ф°┴И≈╝И╒≤Е²┤Ф▌╔Е▐≈Г╪╨Г°│Г╜■Ф║┬"
+ 
+ msgid "--pkgname=<name>               Set name"
+-msgstr "--pkgname=<name>               иХжццШЁф"
++msgstr "--pkgname=<name>               Х╝╬Г╫╝Е░█Г╖╟"
+ 
+ msgid "--pkgversion=<version>         Set version"
+-msgstr "--pkgversion=<version>         иХжц╟Ф╠╬╨е"
++msgstr "--pkgversion=<version>         Х╝╬Г╫╝Г┴┬Ф°╛Е▐╥"
+ 
+ msgid "-A, --arch, --pkgarch=<arch>   Set architecture"
+-msgstr "-A, --arch, --pkgarch=<arch>   иХжцй╧сцф╫л╗"
++msgstr "-A, --arch, --pkgarch=<arch>   Х╝╬Г╫╝Д╫©Г■╗Е╧ЁЕ▐╟"
+ 
+ msgid "--pkgrelease=<release>         Set release"
+-msgstr "--pkgrelease=<release>         иХжц╥╒╡╪╨е"
++msgstr "--pkgrelease=<release>         Х╝╬Г╫╝Е▐▒Е╦┐Е▐╥"
+ 
+ msgid "--pkglicense=<license>         Set license"
+-msgstr "--pkglicense=<license>        иХжц╟Фх╗п╜рИ"
++msgstr "--pkglicense=<license>        Х╝╬Г╫╝Г┴┬Ф²┐Е█▐Х╝╝"
+ 
+ msgid "--pkggroup=<group>             Set software group"
+-msgstr "--pkggroup=<вИцШ>             иХжцхМ╪ЧвИ╠П"
++msgstr "--pkggroup=<Г╩└Е░█>             Х╝╬Г╫╝Х╫╞Д╩╤Г╩└Е┬╚"
+ 
+ msgid "--pkgsource=<source>           Set source location"
+-msgstr "--pkgsource=<source>          иХжцт╢бКн╩жц"
++msgstr "--pkgsource=<source>          Х╝╬Г╫╝Ф╨░Г═│Д╫█Г╫╝"
+ 
+ msgid "--pkgaltsource=<altsource>     Set alternate source location"
+-msgstr "--pkgaltsource=<altsource>    иХжцлФ╩╩т╢бКн╩жц"
++msgstr "--pkgaltsource=<altsource>    Х╝╬Г╫╝Ф⌡©Ф█╒Ф╨░Г═│Д╫█Г╫╝"
+ 
+ msgid "--pakdir=<directory>           The new package will be saved here"
+-msgstr "--pakdir=<д©б╪>               пб╟Э╫╚╠ё╢ФтзуБюО"
++msgstr "--pakdir=<Г⌡╝Е╫∙>               Ф√╟Е▄┘Е╟├Д©²Е╜≤Е°╗Х©≥И┤▄"
+ 
+ msgid "--maintainer=<email addr>      The package maintainer (.deb)"
+-msgstr "--maintainer=<email ╣ьж╥>     хМ╪Ч╟Э╣дн╛╩╓уъ (.deb)"
++msgstr "--maintainer=<email Е°╟Е²─>     Х╫╞Д╩╤Е▄┘Г └Г╩╢Ф┼╓Х─┘ (.deb)"
+ 
+ msgid "--provides=<list>              Features provided by this package (.rpm)"
+-msgstr "--provides=<list>             уБ╦Ж╟ЭлА╧╘╣дльпт (.rpm)"
++msgstr "--provides=<list>             Х©≥Д╦╙Е▄┘Ф▐░Д╬⌡Г └Г┴╧Ф─╖ (.rpm)"
+ 
+ msgid "--requires=<list>              Features required by this package (.rpm)"
+-msgstr "--requires=<list>             уБ╦Ж╟Эр╙гС╣дльпт (.rpm)"
++msgstr "--requires=<list>             Х©≥Д╦╙Е▄┘Х╕│Ф╠┌Г └Г┴╧Ф─╖ (.rpm)"
+ 
+ msgid "--rpmflags=<flags>             Pass this flags to the rpm installer"
+-msgstr "--rpmflags=<flags>            ╟я╡нйЩ flags ╢╚╣щ╦Ь rpm ╟╡в╟ЁлпР"
++msgstr "--rpmflags=<flags>            Ф┼┼Е▐┌Ф∙╟ flags Д╪═И─▓Г╩≥ rpm Е╝┴Хё┘Г╗▀Е╨▐"
+ 
+ msgid "--dpkgflags=<flags>            Pass this flags to the dpkg installer"
+-msgstr "--dpkgflags=<flags>           ╟я╡нйЩ flags ╢╚╣щ╦Ь dpkg ╟╡в╟ЁлпР"
++msgstr "--dpkgflags=<flags>           Ф┼┼Е▐┌Ф∙╟ flags Д╪═И─▓Г╩≥ dpkg Е╝┴Хё┘Г╗▀Е╨▐"
+ 
+ msgid "--spec=<path>                  .spec file location"
+-msgstr "--spec=<path>                 .spec нд╪Ч╣дн╩жц"
++msgstr "--spec=<path>                 .spec Ф√┤Д╩╤Г └Д╫█Г╫╝"
+ 
+ msgid "--nodoc                        Do not include documentation files"
+-msgstr "--nodoc                       ╡╩р╙╟Э╨╛нд╣╣нд╪Ч"
++msgstr "--nodoc                       Д╦█Х╕│Е▄┘Е░╚Ф√┤Ф║ёФ√┤Д╩╤"
+ 
+ msgid "*Info display options*"
+-msgstr "*пео╒отй╬╡нйЩ*"
++msgstr "*Д©║Ф│╞Ф≤╬Г╓╨Е▐┌Ф∙╟*"
+ 
+ msgid "-d<0|1|2>                      Set debug level"
+-msgstr "-d<0|1|2>                     иХжц╣Вйт╪╤╠П"
++msgstr "-d<0|1|2>                     Х╝╬Г╫╝Х╟┐Х╞∙Г╨╖Е┬╚"
+ 
+ msgid "-si                            Run an interactive install command"
+-msgstr "-si                           ткппр╩╦Ж╫╩╩╔╣д╟╡в╟цЭаН"
++msgstr "-si                           Х©░Х║▄Д╦─Д╦╙Д╨╓Д╨▓Г └Е╝┴Хё┘Е▒╫Д╩╓"
+ 
+ msgid "--showinstall=<yes|no>         Toggle interactive install command"
+-msgstr "--showinstall=<yes|no>        гп╩╩йг╥Я╫╩╩╔╟╡в╟"
++msgstr "--showinstall=<yes|no>        Е┬┤Ф█╒Ф≤╞Е░╕Д╨╓Д╨▓Е╝┴Хё┘"
+ 
+ msgid ""
+ "-ss                            Run an interactive Slackware installation "
+ "script"
+-msgstr "-ss                           ткпп╫╩╩╔╣д Slackware ╟╡в╟╫е╠╬"
++msgstr "-ss                           Х©░Х║▄Д╨╓Д╨▓Г └ Slackware Е╝┴Хё┘Х└ Ф°╛"
+ 
+ msgid ""
+ "--showslack=<yes|no>           Toggle interactive Slackware installation "
+ "script"
+-msgstr "--showslack=<yes|no>          гп╩╩йг╥Яй╧сц╫╩╩╔╣д Slackware ╟╡в╟╫е╠╬"
++msgstr "--showslack=<yes|no>          Е┬┤Ф█╒Ф≤╞Е░╕Д╫©Г■╗Д╨╓Д╨▓Г └ Slackware Е╝┴Хё┘Х└ Ф°╛"
+ 
+ msgid "*Package tuning options*"
+-msgstr "*╢Р╟Э╡нйЩ╣ВуШ*"
++msgstr "*Ф┴⌠Е▄┘Е▐┌Ф∙╟Х╟┐Ф∙╢*"
+ 
+ msgid ""
+ "--autodoinst=<yes|no>          Toggle the creation of a doinst.sh script"
+ msgstr ""
+-"--autodoinst=<yes|no>                гп╩╩йг╥Я╢╢╫╗ doinst.sh ╫е╠╬"
++"--autodoinst=<yes|no>                Е┬┤Ф█╒Ф≤╞Е░╕Е┬⌡Е╩╨ doinst.sh Х└ Ф°╛"
+ 
+ msgid ""
+ "--strip=<yes|no>               Strip any ELF binaries found inside the "
+ "package"
+-msgstr "--strip=<yes|no>              Strip ╟Эжп╣дкЫсп ELF ╤Ч╫Ьжфнд╪Ч"
++msgstr "--strip=<yes|no>              Strip Е▄┘Д╦╜Г └Ф┴─Ф°┴ ELF Д╨▄Х©⌡Е┬╤Ф√┤Д╩╤"
+ 
+ msgid ""
+ "--stripso=<yes|no>             Strip any ELF binary libraries (.so files)"
+-msgstr "--stripso=<yes|no>            Strip кЫсп ELF ╤Ч╫Ьжф©Бнд╪Ч (.so нд╪Ч)"
++msgstr "--stripso=<yes|no>            Strip Ф┴─Ф°┴ ELF Д╨▄Х©⌡Е┬╤Е╨⌠Ф√┤Д╩╤ (.so Ф√┤Д╩╤)"
+ 
+ msgid ""
+ "--gzman=<yes|no>               Compress any man pages found inside the "
+ "package"
+-msgstr "--gzman=<yes|no>              ╢Р╟Эй╠я╧кУкЫсп╣д man йж╡АрЁ"
++msgstr "--gzman=<yes|no>              Ф┴⌠Е▄┘Ф≈╤Е▌▀Г╪╘Ф┴─Ф°┴Г └ man Ф┴▀Е├▄И║╣"
+ 
+ msgid "--docdir=<path>                Where to put documentation files"
+-msgstr "--docdir=<path>               ╫╚нд╣╣нд╪Ч╥етзддюО"
++msgstr "--docdir=<path>               Е╟├Ф√┤Ф║ёФ√┤Д╩╤Ф■╬Е°╗Е⌠╙И┤▄"
+ 
+ msgid "--umask=<mask>                 Set the umask value"
+-msgstr "--umask=<mask>                иХжц umask ж╣"
++msgstr "--umask=<mask>                Х╝╬Г╫╝ umask Е─╪"
+ 
+ msgid ""
+ "--exclude=<file|dir[,...]>     Exclude these files/directories from the "
+ "package"
+-msgstr "--exclude=<file|dir[,...]>     ╟Эжп╡╩╪схКобапнд╪Ч/д©б╪"
++msgstr "--exclude=<file|dir[,...]>     Е▄┘Д╦╜Д╦█Е┼═Е┘╔Д╦▀Е┬≈Ф√┤Д╩╤/Г⌡╝Е╫∙"
+ 
+ msgid "--include=<listfile>           Force the inclusion in the package of the"
+-msgstr "--include=<listfile>           ╢Р╟Эй╠г©жф╟Э╨╛╨СцФ╣днд╪Ч"
++msgstr "--include=<listfile>           Ф┴⌠Е▄┘Ф≈╤Е╪╨Е┬╤Е▄┘Е░╚Е░▌И²╒Г └Ф√┤Д╩╤"
+ 
+ msgid "--inspect                      Inspect the package's file list"
+-msgstr "--inspect                      ╪Юйс╟Э╣днд╪Чап╠М"
++msgstr "--inspect                      Г⌡▒Х╖├Е▄┘Г └Ф√┤Д╩╤Е┬≈Х║╗"
+ 
+ msgid ""
+ "--review-spec                  Review the spec file before creating a .rpm"
+-msgstr "--review-spec                  тз╢╢╫╗ .rpm ╟Эг╟ох╪Л╡И spec нд╪Ч"
++msgstr "--review-spec                  Е°╗Е┬⌡Е╩╨ .rpm Е▄┘Е┴█Е┘┬Фё─Ф÷╔ spec Ф√┤Д╩╤"
+ 
+ msgid ""
+ "--review-control               Review the control file before creating a .deb"
+-msgstr "--review-control               тз╢╢╫╗ .deb ╟Эг╟ох╪Л╡И control нд╪Ч"
++msgstr "--review-control               Е°╗Е┬⌡Е╩╨ .deb Е▄┘Е┴█Е┘┬Фё─Ф÷╔ control Ф√┤Д╩╤"
+ 
+ 
+ msgid ""
+ "--newslack                     Use the new (8.1+) Slackware description "
+ "format"
+-msgstr "--newslack                     й╧сцпб╣д(8.1ртио)Slackware цХйЖ╦Яй╫"
++msgstr "--newslack                     Д╫©Г■╗Ф√╟Г └(8.1Д╩╔Д╦┼)Slackware Ф▐▐Х©╟Ф═╪Е╪▐"
+ 
+ msgid "                               (\"--newslack\" implies \"-S\")"
+-msgstr "                              (\"--newslack\" ╬мйг \"-S\")"
++msgstr "                              (\"--newslack\" Е╟╠Ф≤╞ \"-S\")"
+ 
+ msgid "*Cleanup options*"
+-msgstr "*гЕЁЩ╡нйЩ*"
++msgstr "*Ф╦┘И≥╓Е▐┌Ф∙╟*"
+ 
+ msgid "--deldoc=<yes|no>              Delete doc-pak upon termination"
+-msgstr "--deldoc=<yes|no>              жп╤ой╠и╬ЁЩ doc-pak "
++msgstr "--deldoc=<yes|no>              Д╦╜Ф√╜Ф≈╤Е┬═И≥╓ doc-pak "
+ 
+ msgid "--deldesc=<yes|no>             Delete description-pak upon termination"
+-msgstr "--deldesc=<yes|no>             жп╤ой╠и╬ЁЩ description-pak"
++msgstr "--deldesc=<yes|no>             Д╦╜Ф√╜Ф≈╤Е┬═И≥╓ description-pak"
+ 
+ msgid "--delspec=<yes|no>             Delete spec file upon termination"
+-msgstr "--delspec=<yes|no>             жп╤ой╠и╬ЁЩ spec нд╪Ч"
++msgstr "--delspec=<yes|no>             Д╦╜Ф√╜Ф≈╤Е┬═И≥╓ spec Ф√┤Д╩╤"
+ 
+ msgid "--bk                           Backup any overwritten files"
+-msgstr "--bk                           ╠╦╥щкЫсп╠╩╦╡╦г╣днд╪Ч"
++msgstr "--bk                           Е╓┤Д╩╫Ф┴─Ф°┴Х╒╚Х╕├Г⌡√Г └Ф√┤Д╩╤"
+ 
+ msgid "--backup=<yes|no>              Toggle backup"
+-msgstr "--backup=<yes|no>              гп╩╩йг╥Я╠╦╥щ"
++msgstr "--backup=<yes|no>              Е┬┤Ф█╒Ф≤╞Е░╕Е╓┤Д╩╫"
+ 
+ msgid "*About CheckInstall*"
+-msgstr "*╧ьсз CheckInstall*"
++msgstr "*Е┘ЁД╨▌ CheckInstall*"
+ 
+ msgid "--help, -h                     Show this message"
+-msgstr "--help, -h                     отй╬уБ╦ЖоШо╒"
++msgstr "--help, -h                     Ф≤╬Г╓╨Х©≥Д╦╙Ф╤┬Ф│╞"
+ 
+ msgid "--copyright                    Show Copyright information"
+-msgstr "--copyright                    отй╬╟Фх╗пео╒"
++msgstr "--copyright                    Ф≤╬Г╓╨Г┴┬Ф²┐Д©║Ф│╞"
+ 
+ msgid "--version                      Show version information"
+-msgstr "--version                      отй╬╟Ф╠╬пео╒"
++msgstr "--version                      Ф≤╬Г╓╨Г┴┬Ф°╛Д©║Ф│╞"
+ 
+ msgid "Use --help or -h to get more information"
+-msgstr "й╧сц --help ╩Р -h ю╢╣ц╣╫╦Э╤Юпео╒"
++msgstr "Д╫©Г■╗ --help Ф┬√ -h Ф²╔Е╬≈Е┬╟Ф⌡╢Е╓ Д©║Ф│╞"
+ 
+ msgid "is an invalid value for"
+-msgstr "йг╡╩уЩх╥╣дж╣ё╛╤тсз"
++msgstr "Ф≤╞Д╦█Ф╜ёГ║╝Г └Е─╪О╪▄Е╞╧Д╨▌"
+ 
+ msgid "Restoring overwritten files from backup..."
+-msgstr "╢с╠╦╥щжп╩ж╦╢╠╩╦╡╦г╣днд╪Ч║╜║╜"
++msgstr "Д╩▌Е╓┤Д╩╫Д╦╜Ф│╒Е╓█Х╒╚Х╕├Г⌡√Г └Ф√┤Д╩╤Б─╕Б─╕"
+ 
+ msgid "*** SIGINT received ***"
+-msgstr "*** йу╣╫ SIGINT пе╨е ***"
++msgstr "*** Ф■╤Е┬╟ SIGINT Д©║Е▐╥ ***"
+ 
+ msgid "Cleaning up..."
+-msgstr "гЕЁЩ║╜║╜"
++msgstr "Ф╦┘И≥╓Б─╕Б─╕"
+ 
+ msgid "Bye."
+-msgstr "ты╪Ш║ё"
++msgstr "Е├█Х╖│Ц─┌"
+ 
+ msgid "The checkinstallrc file was not found at:"
+-msgstr "тзобапн╩жцур╡╩╣╫ checkinstallrc нд╪Чё╨"
++msgstr "Е°╗Д╦▀Е┬≈Д╫█Г╫╝Ф┴╬Д╦█Е┬╟ checkinstallrc Ф√┤Д╩╤О╪ "
+ 
+ msgid "Assuming default values."
+-msgstr "╪ы╤╗йгх╠й║ж╣║ё"
++msgstr "Е│┤Е╝ Ф≤╞Г╪╨Г°│Е─╪Ц─┌"
+ 
+ msgid "I can't find $INSTALLWATCH."
+-msgstr "нрур╡╩╣╫ $INSTALLWATCH║ё"
++msgstr "Ф┬▒Ф┴╬Д╦█Е┬╟ $INSTALLWATCHЦ─┌"
+ 
+ msgid "I can't continue. Either install installwatch or"
+-msgstr "нр╡╩дэ╪лпЬак║ёдЦр╙ц╢в╟ио installwatchё╛р╙ц╢"
++msgstr "Ф┬▒Д╦█Х┐╫Г╩╖Г╩╜Д╨├Ц─┌Д╫═Х╕│Д╧┬Хё┘Д╦┼ installwatchО╪▄Х╕│Д╧┬"
+ 
+ msgid "modify the INSTALLWATCH variable in this script,"
+-msgstr "пч╦д╠╬╫е╠╬жп╣д INSTALLWATCH ╠Да©"
++msgstr "Д©╝Ф■╧Ф°╛Х└ Ф°╛Д╦╜Г └ INSTALLWATCH Е▐≤И┤▐"
+ 
+ msgid "then run checkinstall again."
+-msgstr "х╩╨Стыткпп checkinstall."
++msgstr "Г└╤Е░▌Е├█Х©░Х║▄ checkinstall."
+ 
+ msgid "My temp dir exists already."
+-msgstr "нр╣даый╠д©б╪ря╬╜╢Фтзак║ё"
++msgstr "Ф┬▒Г └Д╦╢Ф≈╤Г⌡╝Е╫∙Е╥╡Г╩▐Е╜≤Е°╗Д╨├Ц─┌"
+ 
+ msgid "This looks like a symlink attack!"
+-msgstr "©╢иох╔оЯйг╥Ш╨еа╢╫с╧╔╩Вё║"
++msgstr "Г°▀Д╦┼Е▌╩Е┐▐Ф≤╞Г╛╕Е▐╥И⌠╬Ф▌╔Ф■╩Е┤╩О╪│"
+ 
+ msgid "*** Aborting"
+-msgstr "*** мкЁЖ"
++msgstr "*** И──Е┤╨"
+ 
+ msgid "is an unacceptable value for the temp dir. Please"
+-msgstr "╤таый╠д©б╪ю╢к╣йгр╩╦Ж╡╩дэ╫сйэ╣дж╣║ёгК"
++msgstr "Е╞╧Д╦╢Ф≈╤Г⌡╝Е╫∙Ф²╔Х╞╢Ф≤╞Д╦─Д╦╙Д╦█Х┐╫Ф▌╔Е▐≈Г └Е─╪Ц─┌Х╞╥"
+ 
+ msgid "edit the variable definition for"
+-msgstr "╠ЮрК╠Да©╤╗рЕё╛н╙"
++msgstr "Г╪√Х╞▒Е▐≤И┤▐Е╝ Д╧┴О╪▄Д╦╨"
+ 
+ msgid "and try again."
+-msgstr "х╩╨Стыйтр╩╢н║ё"
++msgstr "Г└╤Е░▌Е├█Х╞∙Д╦─Ф╛║Ц─┌"
+ 
+ msgid "**** Failed to create temp dir!"
+-msgstr "**** ╢╢╫╗аый╠д©б╪й╖╟эё║"
++msgstr "**** Е┬⌡Е╩╨Д╦╢Ф≈╤Г⌡╝Е╫∙Е╓╠Х╢╔О╪│"
+ 
+ msgid "**** Do you have write permission for ${BASE_TMP_DIR}?"
+-msgstr "**** дЦ╤т ${BASE_TMP_DIR} спп╢х╗очбПё©"
++msgstr "**** Д╫═Е╞╧ ${BASE_TMP_DIR} Ф°┴Е├≥Ф²┐И≥░Е░≈О╪÷"
+ 
+ msgid "The package documentation directory ./doc-pak does not exist."
+-msgstr "хМ╪Ч╟Э╣днд╣╣д©б╪ ./doc-pak ╡╩╢Фтз║ё"
++msgstr "Х╫╞Д╩╤Е▄┘Г └Ф√┤Ф║ёГ⌡╝Е╫∙ ./doc-pak Д╦█Е╜≤Е°╗Ц─┌"
+ 
+ msgid "Should I create a default set of package docs? "
+-msgstr "нрйг╡╩йгс╕╦ц╢╢╫╗р╩лвх╠й║╣дхМ╪Ч╟Энд╣╣ё© "
++msgstr "Ф┬▒Ф≤╞Д╦█Ф≤╞Е╨■Х╞╔Е┬⌡Е╩╨Д╦─Е╔≈Г╪╨Г°│Г └Х╫╞Д╩╤Е▄┘Ф√┤Ф║ёО╪÷ "
+ 
+ msgid "Preparing package documentation..."
+-msgstr "в╪╠╦хМ╪Ч╟Э╣днд╣╣║╜║╜"
++msgstr "Е┤├Е╓┤Х╫╞Д╩╤Е▄┘Г └Ф√┤Ф║ёБ─╕Б─╕"
+ 
+ msgid "*** No known documentation files were found. The new package"
+-msgstr "*** ц╩сп╥╒ожряж╙╣днд╣╣║ёуБ╦Жпб╟Э"
++msgstr "*** Ф╡║Ф°┴Е▐▒Г▌╟Е╥╡Г÷╔Г └Ф√┤Ф║ёЦ─┌Х©≥Д╦╙Ф√╟Е▄┘"
+ 
+ msgid "*** won't include a documentation directory."
+-msgstr "*** ╫╚ц╩спнд╣╣д©б╪"
++msgstr "*** Е╟├Ф╡║Ф°┴Ф√┤Ф║ёГ⌡╝Е╫∙"
+ 
+ msgid "Copying documentation directory..."
+-msgstr "©╫╠╢нд╣╣д©б╪║╜║╜"
++msgstr "Ф▀╥Х╢²Ф√┤Ф║ёГ⌡╝Е╫∙Б─╕Б─╕"
+ 
+ msgid "Installing with"
+-msgstr "╟╡в╟цЭаН"
++msgstr "Е╝┴Хё┘Е▒╫Д╩╓"
+ 
+ msgid ""
+ "========================= Installation results ==========================="
+-msgstr "=============================== ╟╡в╟╫А╧Ш ================================="
++msgstr "=============================== Е╝┴Хё┘Г╩⌠Ф·° ================================="
+ 
+ msgid ""
+ "======================== Installation successful =========================="
+-msgstr "=============================== ╟╡в╟Ёи╧╕ ================================="
++msgstr "=============================== Е╝┴Хё┘Ф┬░Е┼÷ ================================="
+ 
+ msgid "****  Installation failed. Aborting package creation."
+-msgstr "**** ╟╡в╟й╖╟э║ёмкЁЖ╢Р╟Э╧ЩЁл║ё"
++msgstr "**** Е╝┴Хё┘Е╓╠Х╢╔Ц─┌И──Е┤╨Ф┴⌠Е▄┘Х©┤Г╗▀Ц─┌"
+ 
+ msgid "Do you want to view the installation log file? "
+-msgstr "дЦпХ╡╩пХр╙©╢р╩об╟╡в╟╣дхуж╬нд╪Чё©"
++msgstr "Д╫═И°─Д╦█И°─Х╕│Г°▀Д╦─Д╦▀Е╝┴Хё┘Г └Ф≈╔Е©≈Ф√┤Д╩╤О╪÷"
+ 
+ msgid "Some of the files created by the installation are inside the build"
+-msgstr "╟╡в╟жп╢╢╫╗╣др╩п╘нд╪Чожтз╥етз╠ЮрК"
++msgstr "Е╝┴Хё┘Д╦╜Е┬⌡Е╩╨Г └Д╦─Д╨⌡Ф√┤Д╩╤Г▌╟Е°╗Ф■╬Е°╗Г╪√Х╞▒"
+ 
+ msgid "directory: `pwd`"
+-msgstr "д©б╪ё╨`pwd`"
++msgstr "Г⌡╝Е╫∙О╪ `pwd`"
+ 
+ msgid "You probably don't want them to be included in the package,"
+-msgstr "дЦ©идэ╡╩оКкЭцгр╡╟Э╨╛╣╫вН╨С╢РЁи╣д╟Эжпё╛"
++msgstr "Д╫═Е▐╞Х┐╫Д╦█Ф┐ЁЕ╝┐Д╩╛Д╧÷Е▄┘Е░╚Е┬╟Ф°─Е░▌Ф┴⌠Ф┬░Г └Е▄┘Д╦╜О╪▄"
+ 
+ msgid "especially if they are inside your home directory."
+-msgstr "схфДйгхГ╧ШкЭцгтздЦ╣д╪рд©б╪юО║ё"
++msgstr "Е╟╓Е┘╤Ф≤╞Е╕┌Ф·°Е╝┐Д╩╛Е°╗Д╫═Г └Е╝╤Г⌡╝Е╫∙И┤▄Ц─┌"
+ 
+ msgid "Do you want me to list them? "
+-msgstr "дЦоКнр╟якЭцгапЁЖю╢ц╢ё©"
++msgstr "Д╫═Ф┐ЁФ┬▒Ф┼┼Е╝┐Д╩╛Е┬≈Е┤╨Ф²╔Д╧┬О╪÷"
+ 
+ msgid "Should I exclude them from the package? (Saying yes is a good idea) "
+-msgstr "нрс╕╦ц╟якЭцгееЁЩтз╟ЭмБц╢ё©(╩ь╢П yes ╠х╫о╨ц)"
++msgstr "Ф┬▒Е╨■Х╞╔Ф┼┼Е╝┐Д╩╛Ф▌▓И≥╓Е°╗Е▄┘Е╓√Д╧┬О╪÷(Е⌡·Г╜■ yes Ф╞■Х╬┐Е╔╫)"
+ 
+ msgid "You requested to review the list of files that will be"
+-msgstr "дЦр╙гС©╢р╩обнд╪Чап╠Мё╛кЭцг╫╚╠╩"
++msgstr "Д╫═Х╕│Ф╠┌Г°▀Д╦─Д╦▀Ф√┤Д╩╤Е┬≈Х║╗О╪▄Е╝┐Д╩╛Е╟├Х╒╚"
+ 
+ msgid "included in this package."
+-msgstr "╟Э╨╛тз╟ЭюО║ё"
++msgstr "Е▄┘Е░╚Е°╗Е▄┘И┤▄Ц─┌"
+ 
+ msgid "Now you'll have the chance to review and optionally modify it."
+-msgstr "ожтздЦсп╩З╩А╪Л╡Ир╩обё╛╡╒©иртпч╦дкЭ║ё"
++msgstr "Г▌╟Е°╗Д╫═Ф°┴Ф°╨Д╪ Фё─Ф÷╔Д╦─Д╦▀О╪▄Е╧╤Е▐╞Д╩╔Д©╝Ф■╧Е╝┐Ц─┌"
+ 
+ msgid "Now you'll have the chance to review and optionally modify this file."
+-msgstr "ожтздЦсп╩З╩А╪Л╡Ир╩обуБ╦Жнд╪Чё╛╡╒©иртпч╦дкЭ║ё"
++msgstr "Г▌╟Е°╗Д╫═Ф°┴Ф°╨Д╪ Фё─Ф÷╔Д╦─Д╦▀Х©≥Д╦╙Ф√┤Д╩╤О╪▄Е╧╤Е▐╞Д╩╔Д©╝Ф■╧Е╝┐Ц─┌"
+ 
+ msgid "Press ENTER to continue."
+-msgstr "╟╢╩ьЁ╣╪Э╪лпЬ║ё"
++msgstr "Ф▄┴Е⌡·Х╫╕И■╝Г╩╖Г╩╜Ц─┌"
+ 
+ msgid "Copying files to the temporary directory..."
+-msgstr "╟янд╪Ч©╫╠╢╣╫аый╠д©б╪║╜║╜"
++msgstr "Ф┼┼Ф√┤Д╩╤Ф▀╥Х╢²Е┬╟Д╦╢Ф≈╤Г⌡╝Е╫∙Б─╕Б─╕"
+ 
+ msgid "Striping ELF binaries and libraries..."
+-msgstr "Striping ELF ╤Ч╫Ьжфнд╪Ч╨м©Бнд╪Ч║╜║╜"
++msgstr "Striping ELF Д╨▄Х©⌡Е┬╤Ф√┤Д╩╤Е▓▄Е╨⌠Ф√┤Д╩╤Б─╕Б─╕"
+ 
+ msgid "Striping ELF binaries..."
+-msgstr "Striping ELF ╤Ч╫Ьжфнд╪Ч║╜║╜"
++msgstr "Striping ELF Д╨▄Х©⌡Е┬╤Ф√┤Д╩╤Б─╕Б─╕"
+ 
+ msgid "Compressing man pages..."
+-msgstr "я╧кУ man йж╡АрЁ║╜║╜"
++msgstr "Е▌▀Г╪╘ man Ф┴▀Е├▄И║╣Б─╕Б─╕"
+ 
+ msgid "Building file list..."
+-msgstr "╢╢╫╗нд╪Чап╠М║╜║╜"
++msgstr "Е┬⌡Е╩╨Ф√┤Д╩╤Е┬≈Х║╗Б─╕Б─╕"
+ 
+ msgid "Please choose the packaging method you want to use."
+-msgstr "гКя║тЯдЦоКй╧сц╣д╢Р╟Э╥╫й╫║ё"
++msgstr "Х╞╥И─┴Ф▀╘Д╫═Ф┐ЁД╫©Г■╗Г └Ф┴⌠Е▄┘Ф√╧Е╪▐Ц─┌"
+ 
+ msgid "Slackware [S], RPM [R] or Debian [D]? "
+-msgstr "Slackware [S], RPM [R] ╩╧йг Debian [D]?"
++msgstr "Slackware [S], RPM [R] Х©≤Ф≤╞ Debian [D]?"
+ 
+ msgid "Please write a description for the package."
+-msgstr "гКн╙уБ╦ЖхМ╪Ч╟Эп╢р╩╦ЖцХйЖ║ё"
++msgstr "Х╞╥Д╦╨Х©≥Д╦╙Х╫╞Д╩╤Е▄┘Е├≥Д╦─Д╦╙Ф▐▐Х©╟Ц─┌"
+ 
+ msgid " Remember that pkgtool shows"
+-msgstr "р╙╪гв║ё╛pkgtool ж╩отй╬"
++msgstr "Х╕│Х╝╟Д╫▐О╪▄pkgtool Е▐╙Ф≤╬Г╓╨"
+ 
+ msgid "only the first one when listing packages so make that one descriptive."
+-msgstr "г╟цФ╣др╩╦Жё╛тзотй╬хМ╪Ч╟Эап╠Мй╠ё╛кЫртсц╦Э╬ълЕ╣дцХйЖю╢╠Мй╬кЭ║ё"
++msgstr "Е┴█И²╒Г └Д╦─Д╦╙О╪▄Е°╗Ф≤╬Г╓╨Х╫╞Д╩╤Е▄┘Е┬≈Х║╗Ф≈╤О╪▄Ф┴─Д╩╔Г■╗Ф⌡╢Е┘╥Д╫⌠Г └Ф▐▐Х©╟Ф²╔Х║╗Г╓╨Е╝┐Ц─┌"
+ 
+ msgid "End your description with an empty line or EOF."
+-msgstr "сцр╩╦Ж©упп╩Р EOF ю╢╫АйЬдЦ╣дцХйЖ║ё"
++msgstr "Г■╗Д╦─Д╦╙Г╘╨Х║▄Ф┬√ EOF Ф²╔Г╩⌠Ф²÷Д╫═Г └Ф▐▐Х©╟Ц─┌"
+ 
+ msgid "Package created with checkinstall $CHECKINSTALL_VERSION"
+-msgstr "хМ╪Ч╟Эйгсц checkinstall $CHECKINSTALL_VERSION ю╢╢╢╫╗╣д"
++msgstr "Х╫╞Д╩╤Е▄┘Ф≤╞Г■╗ checkinstall $CHECKINSTALL_VERSION Ф²╔Е┬⌡Е╩╨Г └"
+ 
+ msgid "Warning: Your package description is bigger than 11 lines."
+-msgstr "╬╞╦Фё╨дЦ╣дхМ╪Ч╟ЭцХйЖ╠х11пп╤Ю║ё"
++msgstr "Х╜╕Е▒┼О╪ Д╫═Г └Х╫╞Д╩╤Е▄┘Ф▐▐Х©╟Ф╞■11Х║▄Е╓ Ц─┌"
+ 
+ msgid "Warning: The Slackware 8.1+ pkgtools might not like it."
+-msgstr "╬╞╦Фё╨Slackware 8.1 ртио╣д pkgtools ©идэ╡╩тйпМуБяЫ║ё"
++msgstr "Х╜╕Е▒┼О╪ Slackware 8.1 Д╩╔Д╦┼Г └ pkgtools Е▐╞Х┐╫Д╦█Е┘│Х╝╦Х©≥Ф═╥Ц─┌"
+ 
+ msgid "*** Warning: The package name"
+-msgstr "*** ╬╞╦Фё╨хМ╪Ч╟ЭцШЁф"
++msgstr "*** Х╜╕Е▒┼О╪ Х╫╞Д╩╤Е▄┘Е░█Г╖╟"
+ 
+ msgid "contains upper case"
+-msgstr "╟Э╨╛ак╢Сп╢"
++msgstr "Е▄┘Е░╚Д╨├Е╓╖Е├≥"
+ 
+ msgid "*** Warning: letters. dpkg might not like that so I changed"
+-msgstr "*** ╬╞╦Фё╨вжд╦║ёdpkg ©идэ╡╩тйпМуБяЫё╛кЫртнр╟якЭцг"
++msgstr "*** Х╜╕Е▒┼О╪ Е╜≈Ф╞█Ц─┌dpkg Е▐╞Х┐╫Д╦█Е┘│Х╝╦Х©≥Ф═╥О╪▄Ф┴─Д╩╔Ф┬▒Ф┼┼Е╝┐Д╩╛"
+ 
+ msgid "*** Warning: them to lower case."
+-msgstr "*** ╬╞╦Фё╨╦дЁип║п╢вжд╦║ё"
++msgstr "*** Х╜╕Е▒┼О╪ Ф■╧Ф┬░Е╟▐Е├≥Е╜≈Ф╞█Ц─┌"
+ 
+ msgid "*** Warning: The package version \"${VERSION}\" does not"
+-msgstr "*** ╬╞╦Фё╨хМ╪Ч╟Э╟Ф╠╬ \"${VERSION}\" ╡╩╟Э╨╛"
++msgstr "*** Х╜╕Е▒┼О╪ Х╫╞Д╩╤Е▄┘Г┴┬Ф°╛ \"${VERSION}\" Д╦█Е▄┘Е░╚"
+ 
+ msgid "*** Warning: contain any digits. dpkg might not like that."
+-msgstr "*** ╬╞╦Фё╨хн╨нйЩвж║ёdpkg ©идэ╡╩тйпМуБяЫ║ё"
++msgstr "*** Х╜╕Е▒┼О╪ Д╩╩Д╫∙Ф∙╟Е╜≈Ц─┌dpkg Е▐╞Х┐╫Д╦█Е┘│Х╝╦Х©≥Ф═╥Ц─┌"
+ 
+ msgid "This package will be built according to these values: "
+-msgstr "хМ╪Ч╟Э╫╚сцобцФ╣дж╣ю╢╢╢╫╗ё╨"
++msgstr "Х╫╞Д╩╤Е▄┘Е╟├Г■╗Д╦▀И²╒Г └Е─╪Ф²╔Е┬⌡Е╩╨О╪ "
+ 
+ msgid "0 -  Maintainer:"
+-msgstr "0 - н╛╩╓уъё╨"
++msgstr "0 - Г╩╢Ф┼╓Х─┘О╪ "
+ 
+ msgid "1 -  Summary:"
+-msgstr "1 - ╪Р╫Иё╨"
++msgstr "1 - Г╝─Д╩▀О╪ "
+ 
+ msgid "2 -  Name:"
+-msgstr "2 - цШЁфё╨"
++msgstr "2 - Е░█Г╖╟О╪ "
+ 
+ msgid "3 -  Version:"
+-msgstr "3 - ╟Ф╠╬╨её╨"
++msgstr "3 - Г┴┬Ф°╛Е▐╥О╪ "
+ 
+ msgid "5 -  License:"
+-msgstr "5 - ╟Фх╗п╜рИё╨"
++msgstr "5 - Г┴┬Ф²┐Е█▐Х╝╝О╪ "
+ 
+ msgid "6 -  Group:"
+-msgstr "6 - ©╙╥╒вИё╨"
++msgstr "6 - Е╪─Е▐▒Г╩└О╪ "
+ 
+ msgid "7 -  Architecture:"
+-msgstr "7 - й╧сцф╫л╗ё╨"
++msgstr "7 - Д╫©Г■╗Е╧ЁЕ▐╟О╪ "
+ 
+ msgid "8 -  Source location:"
+-msgstr "8 - т╢бКн╩жцё╨"
++msgstr "8 - Ф╨░Г═│Д╫█Г╫╝О╪ "
+ 
+ msgid "9 -  Alternate source location:"
+-msgstr "9 - ╠╦сцт╢бКн╩жцё╨"
++msgstr "9 - Е╓┤Г■╗Ф╨░Г═│Д╫█Г╫╝О╪ "
+ 
+ msgid "10 - Provides:"
+-msgstr "10 - лА╧╘ё╨"
++msgstr "10 - Ф▐░Д╬⌡О╪ "
+ 
+ msgid "11 - Requires:"
+-msgstr "11 - рюю╣ё╨"
++msgstr "11 - Д╬²Х╣√О╪ "
+ 
+ msgid "Enter a number to change any of them or press ENTER to continue: "
+-msgstr "йДхКр╩╦ЖйЩвжю╢╦д╠ДкЭцгё╛╩Р╟╢╩ьЁ╣╪Э╪лпЬё╨"
++msgstr "Х╬⌠Е┘╔Д╦─Д╦╙Ф∙╟Е╜≈Ф²╔Ф■╧Е▐≤Е╝┐Д╩╛О╪▄Ф┬√Ф▄┴Е⌡·Х╫╕И■╝Г╩╖Г╩╜О╪ "
+ 
+ msgid "Enter new summary: "
+-msgstr "йДхКпб╣д╪Р╫Иё╨"
++msgstr "Х╬⌠Е┘╔Ф√╟Г └Г╝─Д╩▀О╪ "
+ 
+ msgid "Enter new name: "
+-msgstr "йДхКпб╣дцШЁфё╨"
++msgstr "Х╬⌠Е┘╔Ф√╟Г └Е░█Г╖╟О╪ "
+ 
+ msgid "Enter new version: "
+-msgstr "йДхКпб╣д╟Ф╠╬╨е"
++msgstr "Х╬⌠Е┘╔Ф√╟Г └Г┴┬Ф°╛Е▐╥"
+ 
+ msgid "Enter new release number: "
+-msgstr "йДхКпб╣д╥╒╡╪╨её╨"
++msgstr "Х╬⌠Е┘╔Ф√╟Г └Е▐▒Е╦┐Е▐╥О╪ "
+ 
+ msgid "Enter the license type: "
+-msgstr "йДхК╟Фх╗п╜рИё╨"
++msgstr "Х╬⌠Е┘╔Г┴┬Ф²┐Е█▐Х╝╝О╪ "
+ 
+ msgid "Enter the new software group: "
+-msgstr "йДхКпб╣д©╙╥╒вИё╨"
++msgstr "Х╬⌠Е┘╔Ф√╟Г └Е╪─Е▐▒Г╩└О╪ "
+ 
+ msgid "Enter the architecture type: "
+-msgstr "йДхКй╧сцф╫л╗ё╨"
++msgstr "Х╬⌠Е┘╔Д╫©Г■╗Е╧ЁЕ▐╟О╪ "
+ 
+ msgid "Enter the source location: "
+-msgstr "йДхКт╢бКн╩жцё╨"
++msgstr "Х╬⌠Е┘╔Ф╨░Г═│Д╫█Г╫╝О╪ "
+ 
+ msgid "Enter the alternate source location: "
+-msgstr "йДхК╠╦сцт╢бКн╩жцё╨"
++msgstr "Х╬⌠Е┘╔Е╓┤Г■╗Ф╨░Г═│Д╫█Г╫╝О╪ "
+ 
+ msgid "Enter the maintaner's name and e-mail address: "
+-msgstr "йДхКн╛╩╓уъ╣дцШвж╨м e-mail ╣ьж╥ё╨"
++msgstr "Х╬⌠Е┘╔Г╩╢Ф┼╓Х─┘Г └Е░█Е╜≈Е▓▄ e-mail Е°╟Е²─О╪ "
+ 
+ msgid "Enter the provided features: "
+-msgstr "йДхКлА╧╘╣дльптё╨"
++msgstr "Х╬⌠Е┘╔Ф▐░Д╬⌡Г └Г┴╧Ф─╖О╪ "
+ 
+ msgid "Enter the additional requirements: "
+-msgstr "йДхК╤НмБ╣дпХгСё╨"
++msgstr "Х╬⌠Е┘╔И╒²Е╓√Г └И°─Ф╠┌О╪ "
+ 
+ msgid "********************************************"
+ msgstr "********************************************"
+ 
+ msgid "**** Slackware package creation selected ***"
+-msgstr "**** я║тЯак╢╢╫╗ Slackware ╟Э ***"
++msgstr "**** И─┴Ф▀╘Д╨├Е┬⌡Е╩╨ Slackware Е▄┘ ***"
+ 
+ msgid "*** The \"installpkg\" program is not in your PATH!"
+-msgstr "*** The \"installpkg\" ЁлпР╡╩тздЦ╣д PATH ╩╥╬Ё╠Да©жпё║"
++msgstr "*** The \"installpkg\" Г╗▀Е╨▐Д╦█Е°╗Д╫═Г └ PATH Г▌╞Е╒┐Е▐≤И┤▐Д╦╜О╪│"
+ 
+ msgid "*** Slackware package creation aborted"
+-msgstr "*** Slackware ╟Э╢╢╫╗╧ЩЁлрБмБжпж╧"
++msgstr "*** Slackware Е▄┘Е┬⌡Е╩╨Х©┤Г╗▀Ф└▐Е╓√Д╦╜Ф╜╒"
+ 
+ msgid "Preparing Slackware install directory..."
+-msgstr "в╪╠╦ Slackware ╟╡в╟д©б╪║╜║╜"
++msgstr "Е┤├Е╓┤ Slackware Е╝┴Хё┘Г⌡╝Е╫∙Б─╕Б─╕"
+ 
+ msgid "Writing package description..."
+-msgstr "п╢хМ╪Ч╟ЭцХйЖ║╜║╜"
++msgstr "Е├≥Х╫╞Д╩╤Е▄┘Ф▐▐Х©╟Б─╕Б─╕"
+ 
+ msgid "Writing Slackware install script..."
+-msgstr "п╢ Slackware ╟╡в╟╫е╠╬║╜║╜"
++msgstr "Е├≥ Slackware Е╝┴Хё┘Х└ Ф°╛Б─╕Б─╕"
+ 
+ msgid "Appending your script to the main install script..."
+-msgstr "╫╚дЦ╣д╫е╠╬╦╫╪с╣╫жВ╟╡в╟╫е╠╬╨С║╜║╜"
++msgstr "Е╟├Д╫═Г └Х└ Ф°╛И≥└Е┼═Е┬╟Д╦╩Е╝┴Хё┘Х└ Ф°╛Е░▌Б─╕Б─╕"
+ 
+ msgid "Creating package ${SLACK_PKG_BASENAME}..."
+-msgstr "╢╢╫╗ ${SLACK_PKG_BASENAME} ╟Э║╜║╜"
++msgstr "Е┬⌡Е╩╨ ${SLACK_PKG_BASENAME} Е▄┘Б─╕Б─╕"
+ 
+ msgid "Installing package..."
+-msgstr "╟╡в╟хМ╪Ч╟Э║╜║╜"
++msgstr "Е╝┴Хё┘Х╫╞Д╩╤Е▄┘Б─╕Б─╕"
+ 
+ msgid "*** Failed to install the package"
+-msgstr "*** ╟╡в╟хМ╪Ч╟Эй╖╟э"
++msgstr "*** Е╝┴Хё┘Х╫╞Д╩╤Е▄┘Е╓╠Х╢╔"
+ 
+ msgid "Do you want to see the log file? "
+-msgstr "дЦоК©╢хуж╬нд╪Чц╢ё©"
++msgstr "Д╫═Ф┐ЁГ°▀Ф≈╔Е©≈Ф√┤Д╩╤Д╧┬О╪÷"
+ 
+ msgid "NOTE: The package will not be installed."
+-msgstr "в╒рБё╨уБ╦Ж╟Э╫╚╡╩╠╩╟╡в╟║ё"
++msgstr "ФЁ╗Ф└▐О╪ Х©≥Д╦╙Е▄┘Е╟├Д╦█Х╒╚Е╝┴Хё┘Ц─┌"
+ 
+ msgid "**************************************"
+ msgstr "**************************************"
+ 
+ msgid "**** RPM package creation selected ***"
+-msgstr "*** я║тЯак╢╢╫╗ RPM ╟Э ***"
++msgstr "*** И─┴Ф▀╘Д╨├Е┬⌡Е╩╨ RPM Е▄┘ ***"
+ 
+ msgid "*** The \"rpm\" program is not in your PATH!"
+-msgstr "*** \"rpm\" ЁлпР╡╩тздЦ╣д PATH ╩╥╬Ё╠Да©жпё║"
++msgstr "*** \"rpm\" Г╗▀Е╨▐Д╦█Е°╗Д╫═Г └ PATH Г▌╞Е╒┐Е▐≤И┤▐Д╦╜О╪│"
+ 
+ msgid "*** RPM package creation aborted"
+-msgstr "*** RPM ╟Э╢╢╫╗╧ЩЁлрБмБжпж╧"
++msgstr "*** RPM Е▄┘Е┬⌡Е╩╨Х©┤Г╗▀Ф└▐Е╓√Д╦╜Ф╜╒"
+ 
+ msgid "$RPMSOURCEDIR has no SOURCES directory. Please write the path to"
+-msgstr "$RPMSOURCEDIR ц╩сп SOURCES д©б╪║ёгКп╢ЁЖ"
++msgstr "$RPMSOURCEDIR Ф╡║Ф°┴ SOURCES Г⌡╝Е╫∙Ц─┌Х╞╥Е├≥Е┤╨"
+ 
+ msgid "the RPM source directory tree: "
+-msgstr "RPM source д©б╪╣дб╥╬╤ё╨"
++msgstr "RPM source Г⌡╝Е╫∙Г └Х╥╞Е╬└О╪ "
+ 
+ msgid "You requested to review the .spec file for this package."
+-msgstr "дЦр╙гС╪Л╡ИуБ╦Ж╟Э╣д .spec нд╪Ч"
++msgstr "Д╫═Х╕│Ф╠┌Фё─Ф÷╔Х©≥Д╦╙Е▄┘Г └ .spec Ф√┤Д╩╤"
+ 
+ msgid "Building RPM package..."
+-msgstr "╢╢╫╗ RPM ╟Э║╜║╜"
++msgstr "Е┬⌡Е╩╨ RPM Е▄┘Б─╕Б─╕"
+ 
+ msgid "*** Failed to build the package"
+-msgstr "*** ╢╢╫╗╟Эй╖╟э"
++msgstr "*** Е┬⌡Е╩╨Е▄┘Е╓╠Х╢╔"
+ 
+ msgid "Warning: the use of RPMFLAGS is deprecated."
+-msgstr "╬╞╦Фё╨╡╩мф╪Жй╧сц RPMFLAGS."
++msgstr "Х╜╕Е▒┼О╪ Д╦█Ф▌╗Х█░Д╫©Г■╗ RPMFLAGS."
+ 
+ msgid "Warning: You should now use RPM_FLAGS,"
+-msgstr "╬╞╦Фё╨дЦожтзс╕╦цй╧сцRPM_FLAGSё╛"
++msgstr "Х╜╕Е▒┼О╪ Д╫═Г▌╟Е°╗Е╨■Х╞╔Д╫©Г■╗RPM_FLAGSО╪▄"
+ 
+ msgid "Warning: please update your checkinstallrc file."
+-msgstr "╬╞╦Фё╨гК╦Эпб╣ддЦ checkinstallrc нд╪Ч║ё"
++msgstr "Х╜╕Е▒┼О╪ Х╞╥Ф⌡╢Ф√╟Г └Д╫═ checkinstallrc Ф√┤Д╩╤Ц─┌"
+ 
+ msgid "Installing RPM package..."
+-msgstr "╟╡в╟ RPM ╟Э║╜║╜"
++msgstr "Е╝┴Хё┘ RPM Е▄┘Б─╕Б─╕"
+ 
+ msgid "NOTE: The package will not be installed"
+-msgstr "в╒рБё╨уБ╦Ж╟Э╫╚╡╩╠╩╟╡в╟"
++msgstr "ФЁ╗Ф└▐О╪ Х©≥Д╦╙Е▄┘Е╟├Д╦█Х╒╚Е╝┴Хё┘"
+ 
+ msgid "*****************************************"
+ msgstr "*****************************************"
+ 
+ msgid "**** Debian package creation selected ***"
+-msgstr "**** я║тЯак╢╢╫╗ Debian ╟Э ***"
++msgstr "**** И─┴Ф▀╘Д╨├Е┬⌡Е╩╨ Debian Е▄┘ ***"
+ 
+ msgid "*** The \"dpkg\" program is not in your PATH!"
+-msgstr "*** \"dpkg\" ЁлпР╡╩тздЦ╣д PATH ╩╥╬Ё╠Да©жпё║"
++msgstr "*** \"dpkg\" Г╗▀Е╨▐Д╦█Е°╗Д╫═Г └ PATH Г▌╞Е╒┐Е▐≤И┤▐Д╦╜О╪│"
+ 
+ msgid "*** Debian package creation aborted"
+-msgstr "*** Debian ╟Э╢╢╫╗╧ЩЁлрБмБжпж╧"
++msgstr "*** Debian Е▄┘Е┬⌡Е╩╨Х©┤Г╗▀Ф└▐Е╓√Д╦╜Ф╜╒"
+ 
+ msgid "You requested to review the control file for this package."
+-msgstr "дЦр╙гС╪Л╡ИуБ╦Ж╟Э╣д control нд╪Ч║ё"
++msgstr "Д╫═Х╕│Ф╠┌Фё─Ф÷╔Х©≥Д╦╙Е▄┘Г └ control Ф√┤Д╩╤Ц─┌"
+ 
+ msgid "Building Debian package..."
+-msgstr "╢╢╫╗ Debian ╟Э║╜║╜"
++msgstr "Е┬⌡Е╩╨ Debian Е▄┘Б─╕Б─╕"
+ 
+ msgid "Installing Debian package..."
+-msgstr "╟╡в╟ Debian ╟Э║╜║╜"
++msgstr "Е╝┴Хё┘ Debian Е▄┘Б─╕Б─╕"
+ 
+ msgid "*** No method was selected, I won't build any package."
+-msgstr "*** дЦй╡ц╢╥╫╥╗р╡ц╩я║ё╛нр╫╚╡╩╢╢╫╗хн╨н╟Э║ё"
++msgstr "*** Д╫═Д╩─Д╧┬Ф√╧ФЁ∙Д╧÷Ф╡║И─┴О╪▄Ф┬▒Е╟├Д╦█Е┬⌡Е╩╨Д╩╩Д╫∙Е▄┘Ц─┌"
+ 
+ msgid "*** The installation command \"$INSTALLCMD\""
+-msgstr "*** ╟╡в╟цЭаН \"$INSTALLCMD\""
++msgstr "*** Е╝┴Хё┘Е▒╫Д╩╓ \"$INSTALLCMD\""
+ 
+ msgid "*** has already been executed."
+-msgstr "*** ря╬╜ж╢ппак║ё"
++msgstr "*** Е╥╡Г╩▐Ф┴╖Х║▄Д╨├Ц─┌"
+ 
+ msgid "The package storage directory"
+-msgstr "хМ╪Ч╟Э╢Ф╥ед©б╪"
++msgstr "Х╫╞Д╩╤Е▄┘Е╜≤Ф■╬Г⌡╝Е╫∙"
+ 
+ msgid "doesn't exist. Do you want to create it?"
+-msgstr "╡╩╢Фтз║ёдЦоК╢╢╫╗кЭц╢ё©"
++msgstr "Д╦█Е╜≤Е°╗Ц─┌Д╫═Ф┐ЁЕ┬⌡Е╩╨Е╝┐Д╧┬О╪÷"
+ 
+ msgid "Creating package storage directory..."
+-msgstr "╢╢╫╗хМ╪Ч╟Э╢Ф╥ед©б╪║╜║╜"
++msgstr "Е┬⌡Е╩╨Х╫╞Д╩╤Е▄┘Е╜≤Ф■╬Г⌡╝Е╫∙Б─╕Б─╕"
+ 
+ msgid "*** Unable to create $PAK_DIR"
+-msgstr "*** ╡╩дэ╢╢╫╗ $PAK_DIR"
++msgstr "*** Д╦█Х┐╫Е┬⌡Е╩╨ $PAK_DIR"
+ 
+ msgid "Transferring package to"
+-msgstr "╟я╟Эв╙рф╣╫"
++msgstr "Ф┼┼Е▄┘Х╫╛Г╖╩Е┬╟"
+ 
+ msgid "There's no package storage directory, the package"
+-msgstr "ц╩сп╟Э╢Ф╥ед©б╪ё╛уБ╦Ж╟Э"
++msgstr "Ф╡║Ф°┴Е▄┘Е╜≤Ф■╬Г⌡╝Е╫∙О╪▄Х©≥Д╦╙Е▄┘"
+ 
+ msgid "will be stored at the default location."
+-msgstr "╫╚╠╩╢Ф╥етзх╠й║╣дн╩жц║ё"
++msgstr "Е╟├Х╒╚Е╜≤Ф■╬Е°╗Г╪╨Г°│Г └Д╫█Г╫╝Ц─┌"
+ 
+ msgid "Erasing temporary files..."
+-msgstr "и╬ЁЩаый╠нд╪Ч║╜║╜"
++msgstr "Е┬═И≥╓Д╦╢Ф≈╤Ф√┤Д╩╤Б─╕Б─╕"
+ 
+ msgid "Deleting doc-pak directory..."
+-msgstr "и╬ЁЩ doc-pak д©б╪║╜║╜"
++msgstr "Е┬═И≥╓ doc-pak Г⌡╝Е╫∙Б─╕Б─╕"
+ 
+ msgid "Writing backup package..."
+-msgstr "иЗЁи╠╦╥щ╟Э║╜║╜"
++msgstr "Г■÷Ф┬░Е╓┤Д╩╫Е▄┘Б─╕Б─╕"
+ 
+ msgid "Deleting temp dir..."
+-msgstr "и╬ЁЩаый╠д©б╪║╜║╜"
++msgstr "Е┬═И≥╓Д╦╢Ф≈╤Г⌡╝Е╫∙Б─╕Б─╕"
+ 
+ msgid "Building debug information package..."
+-msgstr "╢╢╫╗╟Э╣д╣Вйтпео╒║╜║╜"
++msgstr "Е┬⌡Е╩╨Е▄┘Г └Х╟┐Х╞∙Д©║Ф│╞Б─╕Б─╕"
+ 
+ msgid " Done. The new package has been installed and saved to"
+-msgstr "╫АйЬ║ёпб╟Эря╬╜╟╡в╟акё╛╡╒╢Ф╥етз"
++msgstr "Г╩⌠Ф²÷Ц─┌Ф√╟Е▄┘Е╥╡Г╩▐Е╝┴Хё┘Д╨├О╪▄Е╧╤Е╜≤Ф■╬Е°╗"
+ 
+ msgid " You can remove it from your system anytime using: "
+-msgstr "дЦй╡ц╢й╠╨Р╤╪дэсцобапцЭаН╟якЭ╢со╣мЁюОи╬ЁЩё╨"
++msgstr "Д╫═Д╩─Д╧┬Ф≈╤Е─≥И┐╫Х┐╫Г■╗Д╦▀Е┬≈Е▒╫Д╩╓Ф┼┼Е╝┐Д╩▌ГЁ╩Г╩÷И┤▄Е┬═И≥╓О╪ "
+ 
+ msgid " Done. The new package has been saved to"
+-msgstr "╫АйЬ║ёпб╟Э╢Ф╥етз"
++msgstr "Г╩⌠Ф²÷Ц─┌Ф√╟Е▄┘Е╜≤Ф■╬Е°╗"
+ 
+ msgid " You can install it in your system anytime using: "
+-msgstr "дЦй╡ц╢й╠╨Р╤╪дэсцобапцЭаН╟╡в╟кЭё╨"
++msgstr "Д╫═Д╩─Д╧┬Ф≈╤Е─≥И┐╫Х┐╫Г■╗Д╦▀Е┬≈Е▒╫Д╩╓Е╝┴Хё┘Е╝┐О╪ "

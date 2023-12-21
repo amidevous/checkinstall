@@ -1,0 +1,86 @@
+Index: Makefile
+===================================================================
+--- Makefile.orig
++++ Makefile
+@@ -4,8 +4,8 @@
+ DESTDIR=
+ PREFIX=/usr/local
+ BINDIR=$(PREFIX)/sbin
+-LCDIR=$(PREFIX)/lib/checkinstall/locale
+-CONFDIR=$(PREFIX)/lib/checkinstall
++LCDIR=$(PREFIX)/share/locale
++CONFDIR=/etc
+ 
+ all:
+ 	for file in locale/checkinstall-*.po ; do \
+@@ -22,7 +22,7 @@ all:
+ 	done	
+ 	$(MAKE) -C installwatch
+ 	
+-install: all
++install: all checkinstall checkinstallrc-dist
+ 	export
+ 	$(MAKE) -C installwatch install
+ 	
+@@ -54,9 +54,16 @@ install: all
+ 		echo ======================================================== ;\
+ 		echo; \
+ 	fi
+-	
++
++checkinstall: checkinstall.in
++	sed -e 's%@TEXTDOMAINDIR@%$(LCDIR)%g' -e 's%@CONFDIR@%$(CONFDIR)%g' $< > $@
++
++checkinstallrc-dist: checkinstallrc-dist.in
++	sed -e 's%@PREFIX@%$(PREFIX)%g' $< >$@
++
+ clean:
+ 	for file in locale/checkinstall-*.mo ; do \
+ 		rm -f $${file} ; \
+ 	done
++	rm -f checkinstall checkinstallrc-dist
+ 	$(MAKE) -C installwatch clean
+Index: NLS_SUPPORT
+===================================================================
+--- NLS_SUPPORT.orig
++++ NLS_SUPPORT
+@@ -39,11 +39,11 @@ checkinstall-es.po
+ 3) Now create the locale directory for your language. Remember to use the same
+    ISO codes you use in your LC_ALL environment variable:
+ 
+-mkdir -p /usr/local/lib/checkinstall/locale/es_MX/LC_MESSAGES
++mkdir -p /usr/share/locale/es_MX/LC_MESSAGES
+ 
+ 4) Next, you should generate the .mo binary message file. Run msgfmt:
+ 
+-msgfmt -o /usr/local/lib/checkinstall/locale/es_MX/LC_MESSAGES/checkinstall.mo \
++msgfmt -o /usr/share/locale/es_MX/LC_MESSAGES/checkinstall.mo \
+      checkinstall-es.po
+ 
+ (The above goes all in one line)
+Index: README
+===================================================================
+--- README.orig
++++ README
+@@ -343,7 +343,7 @@ CHANGE in CheckInstall 1.4.0:
+ 
+  The variable declaration section in the checkinstall script has been removed,
+  you should now edit the checkinstallrc file, normally installed under 
+- /usr/local/lib/checkinstall.
++ /etc.
+ 
+ 
+  In the checkinstallrc file you will find some variables wich modify
+Index: RELNOTES
+===================================================================
+--- RELNOTES.orig
++++ RELNOTES
+@@ -275,7 +275,7 @@ linked binaries and .deb packaging forma
+ 
+ * The variable definition section inside the checkinstall script is gone.
+   Now you should edit the checkinstallrc file, normally installed under
+-  /usr/local/lib/checkinstall
++  /etc
+ 
+ * Added an option ("--exclude") to tell checkinstall wich directories to ignore
+   while searchig for modified files.

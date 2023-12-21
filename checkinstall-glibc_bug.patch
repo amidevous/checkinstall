@@ -1,0 +1,100 @@
+Index: installwatch/installwatch.c
+===================================================================
+--- installwatch/installwatch.c.orig	2009-12-07 14:53:21.000000000 +0100
++++ installwatch/installwatch.c	2009-12-07 14:56:43.830174950 +0100
+@@ -2526,12 +2526,12 @@ int fchown(int fd, uid_t owner, gid_t gr
+ 	return result;
+ }
+ 
++#if !defined(__s390_glibc_bug_) && !defined(__powerpc_glibc_bug_) 
+ FILE *fopen(const char *pathname, const char *mode) {
+ 	FILE *result;
+ 	instw_t instw;
+ 	int status=0;
+ 
+-	REFCOUNT;
+ 
+ 	if (!libc_handle)
+ 		initialize();
+@@ -2555,6 +2555,7 @@ FILE *fopen(const char *pathname, const
+ #endif
+ 
+ 	if(mode[0]=='w'||mode[0]=='a'||mode[1]=='+') {
++		REFCOUNT;
+ 		backup(instw.truepath);
+ 		instw_apply(&instw);
+ 		logg("%" PRIdPTR "\tfopen\t%s\t#%s\n",(intptr_t)result,
+@@ -2579,6 +2580,7 @@ FILE *fopen(const char *pathname, const
+ 
+ 	return result;
+ }
++#endif
+ 
+ int ftruncate(int fd, TRUNCATE_T length) {
+ 	int result;
+@@ -3552,13 +3554,12 @@ int ftruncate64(int fd, __off64_t length
+ 	return result;
+ }
+ 
++#if !defined(__s390_glibc_bug_) && !defined(__powerpc_glibc_bug_) 
+ FILE *fopen64(const char *pathname, const char *mode) {
+ 	FILE *result;
+ 	instw_t instw;
+ 	int status;
+ 
+-	REFCOUNT;
+-
+ 	if (!libc_handle)
+ 		initialize();
+ 
+@@ -3581,6 +3582,7 @@ FILE *fopen64(const char *pathname, cons
+ #endif
+ 
+ 	if(mode[0]=='w'||mode[0]=='a'||mode[1]=='+') {
++		REFCOUNT;
+ 		backup(instw.truepath);
+ 		instw_apply(&instw);
+ 	}
+@@ -3603,6 +3605,7 @@ FILE *fopen64(const char *pathname, cons
+ 
+ 	return result;
+ }
++#endif
+ 
+ int open64(const char *pathname, int flags, ...) {
+ /* Eventually, there is a third parameter: it's mode_t mode */
+Index: installwatch/test-installwatch.c
+===================================================================
+--- installwatch/test-installwatch.c.orig	2009-12-07 14:53:21.000000000 +0100
++++ installwatch/test-installwatch.c	2009-12-07 14:56:43.830174950 +0100
+@@ -17,6 +17,8 @@
+  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  */
+ 
++#define _LARGEFILE64_SOURCE
++
+ #include <fcntl.h>
+ #include <stdio.h>
+ #include <sys/types.h>
+@@ -287,7 +289,7 @@ int main(int argc, char **argv) {
+ 	puts("Testing installwatch " VERSION);
+ 	puts("Using " TESTFILE " and " TESTFILE2 " as a test files\n");
+ 	passed = failed = 0;
+-	do_test("chmod", test_chmod, 4);
++	do_test("chmod", test_chmod, 3);
+ 	do_test("chown", test_chown, 3);
+ 	do_test("chroot", test_chroot, 1);
+ 	do_test("creat", test_creat, 2);
+@@ -296,10 +298,12 @@ int main(int argc, char **argv) {
+ #endif
+ 	do_test("fchmod", test_fchmod, 3);
+ 	do_test("fchown", test_fchown, 3);
++#if !defined(__s390_glibc_bug_) && !defined(__powerpc_glibc_bug_)
+ 	do_test("fopen",test_fopen,2);
+ #if(GLIBC_MINOR >= 1)
+ 	do_test("fopen64",test_fopen64,2);
+ #endif	
++#endif	
+ 	do_test("ftruncate", test_ftruncate, 3);
+ #if(GLIBC_MINOR >= 1)
+ 	do_test("ftruncate64", test_ftruncate64, 3);

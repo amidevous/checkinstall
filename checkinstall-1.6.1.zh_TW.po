@@ -1,0 +1,610 @@
+# Traditional Chinese Messages for checkinstall.
+# Copyright (C) 2002 Felipe Eduardo Sanchez Diaz Duran.
+# This file is distributed under the same license as the digikam package.
+# Hao Xin Kui <xinkuihao@yahoo.com>, 2002.
+# Wei-Lun Chao <chaoweilun@gmail.com>, 2008.
+#
+msgid ""
+msgstr "Project-Id-Version: checkinstall 1.6.1\n"
+"POT-Creation-Date: 2003-3-19 00:58-0600\n"
+"PO-Revision-Date: 2008-1-3 11:51+0800\n"
+"Last-Translator: Wei-Lun Chao <chaoweilun@gmail.com>\n"
+"Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "           This software is released under the GNU GPL."
+msgstr "                   本軟體以 GNU GPL 使用授權釋出"
+
+msgid "Usage: checkinstall [options] [command [command arguments]]"
+msgstr "用法：checkinstall [選項] [命令 [命令引數]]"
+
+msgid "Options:"
+msgstr "選項："
+
+msgid "*Package type selection*"
+msgstr "*選擇打包格式*"
+
+msgid "-t,--type=<slackware|rpm|debian> Choose packaging system"
+msgstr "-t,--type=<slackware|rpm|debian> 選擇打包系統"
+
+msgid "-S                               Build a Slackware package"
+msgstr "-S                               建立一個 Slackware 套件"
+
+msgid "-R                               Build a RPM package"
+msgstr "-R                               建立一個 RPM 套件"
+
+msgid "-D                               Build a Debian package"
+msgstr "-D                               建立一個 Debian 套件"
+
+msgid "*Install options*"
+msgstr "*安裝選項*"
+
+msgid "--install=<yes|no>             Toggle created package installation"
+msgstr "--install=<yes|no>             切換建立套件後是否自動安裝"
+
+msgid "*Scripting options*"
+msgstr "*命令稿選項*"
+
+msgid "-y, --default                  Accept default answers to all questions"
+msgstr "-y，--default                  所有問題均接受預設答案"
+
+msgid "--pkgname=<name>               Set name"
+msgstr "--pkgname=<name>               設定名稱"
+
+msgid "--pkgversion=<version>         Set version"
+msgstr "--pkgversion=<version>         設定版本編號"
+
+msgid "-A, --arch, --pkgarch=<arch>   Set architecture"
+msgstr "-A，--arch，--pkgarch=<arch>   設定系統架構"
+
+msgid "--pkgrelease=<release>         Set release"
+msgstr "--pkgrelease=<release>         設定釋出編號"
+
+msgid "--pkglicense=<license>         Set license"
+msgstr "--pkglicense=<license>         設定使用授權"
+
+msgid "--pkggroup=<group>             Set software group"
+msgstr "--pkggroup=<group>             設定軟體群組"
+
+msgid "--pkgsource=<source>           Set source location"
+msgstr "--pkgsource=<source>           設定原始碼位置"
+
+msgid "--pkgaltsource=<altsource>     Set alternate source location"
+msgstr "--pkgaltsource=<altsource>     設定替代原始碼位置"
+
+msgid "--pakdir=<directory>           The new package will be saved here"
+msgstr "--pakdir=<directory>           新套件將儲存在這裏"
+
+msgid "--maintainer=<email addr>      The package maintainer (.deb)"
+msgstr "--maintainer=<email addr>      套件的維護者 (.deb)"
+
+msgid "--provides=<list>              Features provided by this package (.rpm)"
+msgstr "--provides=<list>              這個套件提供的功能 (.rpm)"
+
+msgid "--requires=<list>              Features required by this package (.rpm)"
+msgstr "--requires=<list>             這個套件要求的功能 (.rpm)"
+
+msgid "--rpmflags=<flags>             Pass this flags to the rpm installer"
+msgstr "--rpmflags=<flags>             把選項旗標傳遞給 rpm 安裝程式"
+
+msgid "--dpkgflags=<flags>            Pass this flags to the dpkg installer"
+msgstr "--dpkgflags=<flags>            把選項旗標傳遞給 dpkg 安裝程式"
+
+msgid "--spec=<path>                  .spec file location"
+msgstr "--spec=<path>                  .spec 檔案的位置"
+
+msgid "--nodoc                        Do not include documentation files"
+msgstr "--nodoc                        不要包含文件檔案"
+
+msgid "*Info display options*"
+msgstr "*資訊顯示選項*"
+
+msgid "-d<0|1|2>                      Set debug level"
+msgstr "-d<0|1|2>                      設定除錯層級"
+
+msgid "-si                            Run an interactive install command"
+msgstr "-si                            執行一個互動式安裝命令"
+
+msgid "--showinstall=<yes|no>         Toggle interactive install command"
+msgstr "--showinstall=<yes|no>         切換是否互動式安裝"
+
+msgid "-ss                            Run an interactive Slackware installation script"
+msgstr "-ss                            執行互動式 Slackware 安裝命令稿"
+
+msgid "--showslack=<yes|no>           Toggle interactive Slackware installation script"
+msgstr "--showslack=<yes|no>           切換是否使用互動式 Slackware 安裝命令稿"
+
+msgid "*Package tuning options*"
+msgstr "*打包調整選項*"
+
+msgid "--autodoinst=<yes|no>          Toggle the creation of a doinst.sh script"
+msgstr "--autodoinst=<yes|no>          切換是否建立 doinst.sh 命令稿"
+
+msgid "--strip=<yes|no>               Strip any ELF binaries found inside the package"
+msgstr "--strip=<yes|no>               捨棄套件中所有 ELF 二進位檔案內的符號"
+
+msgid "--stripso=<yes|no>             Strip any ELF binary libraries (.so files)"
+msgstr "--stripso=<yes|no>             捨棄所有 ELF 二進位函式庫檔案內的符號 (.so 檔案)"
+
+msgid "--gzman=<yes|no>               Compress any man pages found inside the package"
+msgstr "--gzman=<yes|no>               打包時壓縮所有的 man 手冊頁"
+
+msgid "--docdir=<path>                Where to put documentation files"
+msgstr "--docdir=<path>                將文件檔案放在哪裏"
+
+msgid "--umask=<mask>                 Set the umask value"
+msgstr "--umask=<mask>                 設定 umask 值"
+
+msgid "--exclude=<file|dir[,...]>     Exclude these files/directories from the package"
+msgstr "--exclude=<file|dir[,...]>     套件中不加入下列檔案/目錄"
+
+msgid "--include=<listfile>           Force the inclusion in the package of the"
+msgstr "--include=<listfile>           打包時強制包含後面的檔案"
+
+msgid "--inspect                      Inspect the package's file list"
+msgstr "--inspect                      監視套件的檔案清單"
+
+msgid "--review-spec                  Review the spec file before creating a .rpm"
+msgstr "--review-spec                  在建立 .rpm 套件前先檢查 spec 檔案"
+
+msgid "--review-control               Review the control file before creating a .deb"
+msgstr "--review-control               在建立 .deb 套件前先檢查 control 檔案"
+
+msgid "--newslack                     Use the new (8.1+) Slackware description format"
+msgstr "--newslack                     使用新的(8.1以上)Slackware 描述格式"
+
+msgid "                               (\"--newslack\" implies \"-S\")"
+msgstr "                              (\"--newslack\" 就是 \"-S\")"
+
+msgid "*Cleanup options*"
+msgstr "*清除選項*"
+
+msgid "--deldoc=<yes|no>              Delete doc-pak upon termination"
+msgstr "--deldoc=<yes|no>              中斷時刪除 doc-pak "
+
+msgid "--deldesc=<yes|no>             Delete description-pak upon termination"
+msgstr "--deldesc=<yes|no>             中斷時刪除 description-pak"
+
+msgid "--delspec=<yes|no>             Delete spec file upon termination"
+msgstr "--delspec=<yes|no>             中斷時刪除 spec 檔案"
+
+msgid "--bk                           Backup any overwritten files"
+msgstr "--bk                           替代所有被覆寫的檔案"
+
+msgid "--backup=<yes|no>              Toggle backup"
+msgstr "--backup=<yes|no>              切換是否替代"
+
+msgid "*About CheckInstall*"
+msgstr "*關於 CheckInstall*"
+
+msgid "--help, -h                     Show this message"
+msgstr "--help, -h                     顯示這個訊息"
+
+msgid "--copyright                    Show Copyright information"
+msgstr "--copyright                    顯示版權資訊"
+
+msgid "--version                      Show version information"
+msgstr "--version                      顯示版本資訊"
+
+msgid "Use --help or -h to get more information"
+msgstr "使用 --help 或 -h 來得到更多資訊"
+
+msgid "is an invalid value for"
+msgstr "是不正確的值，對於"
+
+msgid "Restoring overwritten files from backup..."
+msgstr "從替代中恢復被覆寫的檔案…"
+
+msgid "*** SIGINT received ***"
+msgstr "*** 收到 SIGINT 信號 ***"
+
+msgid "Cleaning up..."
+msgstr "清除…"
+
+msgid "Bye."
+msgstr "再見。"
+
+msgid "The checkinstallrc file was not found at:"
+msgstr "在下列位置找不到 checkinstallrc 檔案："
+
+msgid "Assuming default values."
+msgstr "假定是預設值。"
+
+msgid "I can't find $INSTALLWATCH."
+msgstr "我找不到 $INSTALLWATCH。"
+
+msgid "I can't continue. Either install installwatch or"
+msgstr "我不能繼續了。您要麼裝上 installwatch，要麼"
+
+msgid "modify the INSTALLWATCH variable in this script,"
+msgstr "修改本命令稿中的 INSTALLWATCH 變數"
+
+msgid "then run checkinstall again."
+msgstr "然後再執行 checkinstall。"
+
+msgid "My temp dir exists already."
+msgstr "我的臨時目錄已經存在了。"
+
+msgid "This looks like a symlink attack!"
+msgstr "看上去像是符號連結攻擊！"
+
+msgid "*** Aborting"
+msgstr "*** 離開"
+
+msgid "is an unacceptable value for the temp dir. Please"
+msgstr "對臨時目錄來說是一個不能接受的值。請"
+
+msgid "edit the variable definition for"
+msgstr "編輯以下變數定義"
+
+msgid "and try again."
+msgstr "然後重試一次。"
+
+msgid "**** Failed to create temp dir!"
+msgstr "**** 建立臨時目錄失敗！"
+
+msgid "**** Do you have write permission for ${BASE_TMP_DIR}?"
+msgstr "**** 您對 ${BASE_TMP_DIR} 有寫入權限嗎？"
+
+msgid "The package documentation directory ./doc-pak does not exist."
+msgstr "套件的文件目錄 ./doc-pak 不存在。"
+
+msgid "Should I create a default set of package docs? "
+msgstr "我是不是應該建立一套預設的套件文件？ "
+
+msgid "Preparing package documentation..."
+msgstr "準備套件的文件…"
+
+msgid "*** No known documentation files were found. The new package"
+msgstr "*** 沒有發現已知的文件。這個新套件"
+
+msgid "*** won't include a documentation directory."
+msgstr "*** 將沒有文件目錄"
+
+msgid "Copying documentation directory..."
+msgstr "複製文件目錄…"
+
+msgid "Installing with"
+msgstr "安裝命令"
+
+msgid "========================= Installation results ==========================="
+msgstr "=============================== 安裝結果 ================================="
+
+msgid "======================== Installation successful =========================="
+msgstr "=============================== 安裝成功 ================================="
+
+msgid "****  Installation failed. Aborting package creation."
+msgstr "**** 安裝失敗。離開打包程序。"
+
+msgid "Do you want to view the installation log file? "
+msgstr "您需不需要看一下安裝的日誌檔案？"
+
+msgid "Some of the files created by the installation are inside the build"
+msgstr "安裝中建立的一些檔案現在放在編譯"
+
+msgid "directory: `pwd`"
+msgstr "目錄：`pwd`"
+
+msgid "You probably don't want them to be included in the package,"
+msgstr "您可能不想要它們也包含到最後完成的套件中，"
+
+msgid "especially if they are inside your home directory."
+msgstr "尤其是如果它們在您的家目錄裏。"
+
+msgid "Do you want me to list them? "
+msgstr "您想要我把它們列出來嗎？"
+
+msgid "Should I exclude them from the package? (Saying yes is a good idea) "
+msgstr "我應該把它們排除在套件外嗎？(回答 yes 比較好)"
+
+msgid "You requested to review the list of files that will be"
+msgstr "您要求看一下檔案清單，它們將被"
+
+msgid "included in this package."
+msgstr "包含在套件裏。"
+
+msgid "Now you'll have the chance to review and optionally modify it."
+msgstr "現在您有機會檢查一下，並可以修改它。"
+
+msgid "Now you'll have the chance to review and optionally modify this file."
+msgstr "現在您有機會檢查一下這個檔案，並可以修改它。"
+
+msgid "Press ENTER to continue."
+msgstr "按輸入鍵繼續。"
+
+msgid "Copying files to the temporary directory..."
+msgstr "把檔案複製到臨時目錄…"
+
+msgid "Striping ELF binaries and libraries..."
+msgstr "捨棄 ELF 二進位檔案和函式庫檔案內的符號…"
+
+msgid "Striping ELF binaries..."
+msgstr "捨棄 ELF 二進位檔案內的符號…"
+
+msgid "Compressing man pages..."
+msgstr "壓縮 man 手冊頁…"
+
+msgid "Building file list..."
+msgstr "建立檔案清單…"
+
+msgid "Please choose the packaging method you want to use."
+msgstr "請選擇您想使用的打包方式。"
+
+msgid "Slackware [S], RPM [R] or Debian [D]? "
+msgstr "Slackware [S]、RPM [R] 還是 Debian [D]?"
+
+msgid "Please write a description for the package."
+msgstr "請為這個套件寫一個描述。"
+
+msgid " Remember that pkgtool shows"
+msgstr "要記住，pkgtool 只顯示"
+
+msgid "only the first one when listing packages so make that one descriptive."
+msgstr "前面的一個，在顯示套件清單時，所以用更具體的描述來表示它。"
+
+msgid "End your description with an empty line or EOF."
+msgstr "用一個空列或 EOF 來結束您的描述。"
+
+msgid "Package created with checkinstall $CHECKINSTALL_VERSION"
+msgstr "套件是用 checkinstall $CHECKINSTALL_VERSION 來建立的"
+
+msgid "Warning: Your package description is bigger than 11 lines."
+msgstr "警告：您的套件描述多於 11 列。"
+
+msgid "Warning: The Slackware 8.1+ pkgtools might not like it."
+msgstr "警告：Slackware 8.1 以上的 pkgtools 可能不允許這樣。"
+
+msgid "*** Warning: The package name"
+msgstr "*** 警告：套件名稱"
+
+msgid "contains upper case"
+msgstr "包含了大寫"
+
+msgid "*** Warning: letters. dpkg might not like that so I changed"
+msgstr "*** 警告：字母。dpkg 可能不允許這樣，所以我把它們"
+
+msgid "*** Warning: them to lower case."
+msgstr "*** 警告：改成小寫字母。"
+
+msgid "*** Warning: The package version \"${VERSION}\" does not"
+msgstr "*** 警告：套件版本 \"${VERSION}\" 不包含"
+
+msgid "*** Warning: contain any digits. dpkg might not like that."
+msgstr "*** 警告：任何數字。dpkg 可能不允許這樣。"
+
+msgid "This package will be built according to these values: "
+msgstr "套件將用下面的值來建立："
+
+msgid "0 -  Maintainer:"
+msgstr "0 - 維護者："
+
+msgid "1 -  Summary:"
+msgstr "1 - 簡介："
+
+msgid "2 -  Name:"
+msgstr "2 - 名稱："
+
+msgid "3 -  Version:"
+msgstr "3 - 版本編號："
+
+msgid "5 -  License:"
+msgstr "5 - 使用授權："
+
+msgid "6 -  Group:"
+msgstr "6 - 群組："
+
+msgid "7 -  Architecture:"
+msgstr "7 - 系統架構："
+
+msgid "8 -  Source location:"
+msgstr "8 - 原始碼位置："
+
+msgid "9 -  Alternate source location:"
+msgstr "9 - 替代原始碼位置："
+
+msgid "10 - Provides:"
+msgstr "10 - 提供："
+
+msgid "11 - Requires:"
+msgstr "11 - 依存："
+
+msgid "Enter a number to change any of them or press ENTER to continue: "
+msgstr "輸入一個數字來變更它們，或按輸入鍵繼續："
+
+msgid "Enter new summary: "
+msgstr "輸入新的簡介："
+
+msgid "Enter new name: "
+msgstr "輸入新的名稱："
+
+msgid "Enter new version: "
+msgstr "輸入新的版本編號"
+
+msgid "Enter new release number: "
+msgstr "輸入新的釋出編號："
+
+msgid "Enter the license type: "
+msgstr "輸入使用授權："
+
+msgid "Enter the new software group: "
+msgstr "輸入新的群組："
+
+msgid "Enter the architecture type: "
+msgstr "輸入系統架構："
+
+msgid "Enter the source location: "
+msgstr "輸入原始碼位置："
+
+msgid "Enter the alternate source location: "
+msgstr "輸入替代原始碼位置："
+
+msgid "Enter the maintaner's name and e-mail address: "
+msgstr "輸入維護者的名稱和 e-mail 位址："
+
+msgid "Enter the provided features: "
+msgstr "輸入提供的功能："
+
+msgid "Enter the additional requirements: "
+msgstr "輸入額外的需求："
+
+msgid "********************************************"
+msgstr "********************************************"
+
+msgid "**** Slackware package creation selected ***"
+msgstr "**** 選擇了建立 Slackware 套件 ***"
+
+msgid "*** The \"installpkg\" program is not in your PATH!"
+msgstr "*** The \"installpkg\" 程式不在您的 PATH 環境變數中！"
+
+msgid "*** Slackware package creation aborted"
+msgstr "*** Slackware 套件建立程序意外中止"
+
+msgid "Preparing Slackware install directory..."
+msgstr "準備 Slackware 安裝目錄…"
+
+msgid "Writing package description..."
+msgstr "寫套件描述…"
+
+msgid "Writing Slackware install script..."
+msgstr "寫 Slackware 安裝命令稿…"
+
+msgid "Appending your script to the main install script..."
+msgstr "將您的命令稿附加到主安裝命令稿後…"
+
+msgid "Creating package ${SLACK_PKG_BASENAME}..."
+msgstr "建立 ${SLACK_PKG_BASENAME} 套件…"
+
+msgid "Installing package..."
+msgstr "安裝套件…"
+
+msgid "*** Failed to install the package"
+msgstr "*** 安裝套件失敗"
+
+msgid "Do you want to see the log file? "
+msgstr "您想看日誌檔案嗎？"
+
+msgid "NOTE: The package will not be installed."
+msgstr "注意：這個套件將不被安裝。"
+
+msgid "**************************************"
+msgstr "**************************************"
+
+msgid "**** RPM package creation selected ***"
+msgstr "*** 選擇了建立 RPM 套件 ***"
+
+msgid "*** The \"rpm\" program is not in your PATH!"
+msgstr "*** \"rpm\" 程式不在您的 PATH 環境變數中！"
+
+msgid "*** RPM package creation aborted"
+msgstr "*** RPM 套件建立程序意外中止"
+
+msgid "$RPMSOURCEDIR has no SOURCES directory. Please write the path to"
+msgstr "$RPMSOURCEDIR 沒有 SOURCES 目錄。請寫出"
+
+msgid "the RPM source directory tree: "
+msgstr "RPM 原始碼目錄的路徑："
+
+msgid "You requested to review the .spec file for this package."
+msgstr "您要求檢查這個套件的 .spec 檔案"
+
+msgid "Building RPM package..."
+msgstr "建立 RPM 套件…"
+
+msgid "*** Failed to build the package"
+msgstr "*** 建立套件失敗"
+
+msgid "Warning: the use of RPMFLAGS is deprecated."
+msgstr "警告：不推薦使用 RPMFLAGS。"
+
+msgid "Warning: You should now use RPM_FLAGS,"
+msgstr "警告：您現在應該使用 RPM_FLAGS，"
+
+msgid "Warning: please update your checkinstallrc file."
+msgstr "警告：請更新的您 checkinstallrc 檔案。"
+
+msgid "Installing RPM package..."
+msgstr "安裝 RPM 套件…"
+
+msgid "NOTE: The package will not be installed"
+msgstr "注意：這個套件將不被安裝"
+
+msgid "*****************************************"
+msgstr "*****************************************"
+
+msgid "**** Debian package creation selected ***"
+msgstr "**** 選擇了建立 Debian 套件 ***"
+
+msgid "*** The \"dpkg\" program is not in your PATH!"
+msgstr "*** \"dpkg\" 程式不在您的 PATH 環境變數中！"
+
+msgid "*** Debian package creation aborted"
+msgstr "*** Debian 套件建立程序意外中止"
+
+msgid "You requested to review the control file for this package."
+msgstr "您要求檢查這個套件的 control 檔案。"
+
+msgid "Building Debian package..."
+msgstr "建立 Debian 套件…"
+
+msgid "Installing Debian package..."
+msgstr "安裝 Debian 套件…"
+
+msgid "*** No method was selected, I won't build any package."
+msgstr "*** 您什麼方法也沒選，我將不建立任何套件。"
+
+msgid "*** The installation command \"$INSTALLCMD\""
+msgstr "*** 安裝命令 \"$INSTALLCMD\""
+
+msgid "*** has already been executed."
+msgstr "*** 已經執行了。"
+
+msgid "The package storage directory"
+msgstr "套件存放目錄"
+
+msgid "doesn't exist. Do you want to create it?"
+msgstr "不存在。您想建立它嗎？"
+
+msgid "Creating package storage directory..."
+msgstr "建立套件存放目錄…"
+
+msgid "*** Unable to create $PAK_DIR"
+msgstr "*** 不能建立 $PAK_DIR"
+
+msgid "Transferring package to"
+msgstr "把套件轉移到"
+
+msgid "There's no package storage directory, the package"
+msgstr "沒有套件存放目錄，這個套件"
+
+msgid "will be stored at the default location."
+msgstr "將被存放在預設的位置。"
+
+msgid "Erasing temporary files..."
+msgstr "刪除暫時檔案…"
+
+msgid "Deleting doc-pak directory..."
+msgstr "刪除 doc-pak 目錄…"
+
+msgid "Writing backup package..."
+msgstr "產生替代套件…"
+
+msgid "Deleting temp dir..."
+msgstr "刪除臨時目錄…"
+
+msgid "Building debug information package..."
+msgstr "建立套件的除錯資訊…"
+
+msgid " Done. The new package has been installed and saved to"
+msgstr "結束。新套件已經安裝了，並存放在"
+
+msgid " You can remove it from your system anytime using: "
+msgstr "您什麼時候都能用下列命令把它從系統裏刪除："
+
+msgid " Done. The new package has been saved to"
+msgstr "結束。新套件存放在"
+
+msgid " You can install it in your system anytime using: "
+msgstr "您什麼時候都能用下列命令安裝它："
