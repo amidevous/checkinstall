@@ -1,0 +1,50 @@
+From: =?utf-8?q?Lukas_M=C3=A4rdian?= <slyon@ubuntu.com>
+Date: Thu, 14 Oct 2021 15:26:10 +0200
+Subject: Define _STAT_VER & _MKNOD_VER locally (dropped in glibc 2.33)
+
+In glibc 2.33, they've removed the _STAT_VER and _MKNOD_VER definitions
+from public headers. They have no plans to add these back so checkinstall
+needs to attempt its own definitions. There is some protection as if they
+were wrong and there was a mismatch, we'd get an error at runtime.
+
+Removed in upstream glibc:
+https://sourceware.org/git/?p=glibc.git;a=commitdiff;h=8ed005daf0ab03e142500324a34087ce179ae78e
+
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+---
+ installwatch/installwatch.c | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+diff --git a/installwatch/installwatch.c b/installwatch/installwatch.c
+index b145e03..a55335e 100644
+--- a/installwatch/installwatch.c
++++ b/installwatch/installwatch.c
+@@ -158,6 +158,27 @@ static int (*true_unlinkat)(int, const char *, int);
+ 	#define inline
+ #endif	
+ 
++#ifndef _STAT_VER
++ #if defined (__aarch64__)
++  #define _STAT_VER 0
++ #elif defined (__s390x__)
++  # define _STAT_VER 1
++ #elif defined (__x86_64__)
++  #define _STAT_VER 1
++ #else
++  #define _STAT_VER 3
++ #endif
++#endif
++#ifndef _MKNOD_VER
++ #if defined (__aarch64__)
++  #define _MKNOD_VER 0
++ #elif defined (__x86_64__)
++  #define _MKNOD_VER 0
++ #else
++  #define _MKNOD_VER 1
++ #endif
++#endif
++
+ static inline int true_stat(const char *pathname,struct stat *info) {
+ 	return true_xstat(_STAT_VER,pathname,info);
+ }
