@@ -10,9 +10,9 @@ into account.
  checkinstall |    3 ++-
  1 files changed, 2 insertions(+), 1 deletions(-)
 
---- a/checkinstall.in
-+++ b/checkinstall.in
-@@ -177,7 +177,7 @@
+--- a/checkinstall
++++ b/checkinstall
+@@ -176,7 +176,7 @@
     echog "--stripso=<yes|no>             Strip any ELF binary libraries (.so files)" 
     echog "--addso=<yes|no>               Search for any shared libs and add"
     echog "                               them to /etc/ld.so.conf"
@@ -21,7 +21,7 @@ into account.
     echog "                               the owner/group for all dirs to root.root"
     echog "--gzman=<yes|no>               Compress any man pages found inside the package"
     echog "--docdir=<path>                Where to put documentation files"
-@@ -1842,6 +1842,7 @@
+@@ -1793,6 +1793,7 @@
  	if [ $RESET_UIDS -gt 0 ]; then
  	   find "$BUILD_DIR" -exec chown root.root {} \;
  	   find "$BUILD_DIR" -type d -exec chmod 755 {} \;
