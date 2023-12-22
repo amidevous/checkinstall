@@ -4,7 +4,7 @@ rm -rf $HOME/checkinstall-1.6.2 $HOME/checkinstall-1.6.2.tar.gz $HOME/checkinsta
 rm -rf $HOME/checkinstall-makefile_cleanup.patch $HOME/checkinstall-no_fortify_source.patch $HOME/checkinstall-translations.patch
 rm -rf $HOME/checkinstall-install_paths.patch $HOME/checkinstall-scandir.patch $HOME/installwatch-glibc_minor.patch
 rm -rf $HOME/checkinstall-ldflags.diff $HOME/checkinstall-ver.patch
-wget https://asic-linux.com.mx/~izto/checkinstall/files/source/checkinstall-1.6.2.tar.gz -O $HOME/checkinstall-1.6.2.tar.gz
+wget https://github.com/amidevous/checkinstall/releases/download/0.0.1/checkinstall-1.6.2.tar.gz -O $HOME/checkinstall-1.6.2.tar.gz
 tar -xvf $HOME/checkinstall-1.6.2.tar.gz
 wget https://github.com/amidevous/checkinstall/raw/master/checkinstall-glibc_bug.patch -O $HOME/checkinstall-glibc_bug.patch
 wget https://github.com/amidevous/checkinstall/raw/master/checkinstall-destdir.patch -O $HOME/checkinstall-destdir.patch
