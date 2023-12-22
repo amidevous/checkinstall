@@ -3,20 +3,20 @@ Date: Thu, 15 Apr 2010 14:47:45 -0400
 Subject: [PATCH] Load checkinstallrc from /etc
 
 ---
- checkinstall |    2 +-
- 1 files changed, 1 insertions(+), 1 deletions(-)
+ checkinstall | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/checkinstall b/checkinstall
-index d2ba87e..aeae91e 100755
+index 41a7978..d2ba87e 100644
 --- a/checkinstall
 +++ b/checkinstall
-@@ -492,7 +492,7 @@ function copy_dir_hierarchy {
- ckversion
- echo
+@@ -65,7 +65,7 @@ INSTALLDIR=`followlinks "$0"`
+ INSTALLDIR=`dirname "$INSTALLDIR"`/..
  
--CHECKINSTALLRC=${CHECKINSTALLRC:-${INSTALLDIR}/lib/checkinstall/checkinstallrc}
-+CHECKINSTALLRC=${CHECKINSTALLRC:-/etc/checkinstallrc}
- if ! [ -f $CHECKINSTALLRC ]; then
-    echog "The checkinstallrc file was not found at:\n$CHECKINSTALLRC"
-    echo
--- 
+ # gettext variables
+-export TEXTDOMAINDIR="$INSTALLDIR"/lib/checkinstall/locale
++export TEXTDOMAINDIR=/usr/share/locale
+ export TEXTDOMAIN=checkinstall
+ 
+ # .spec file path
+--
