@@ -6,7 +6,7 @@ Subject: [PATCH] Load checkinstallrc from /etc
  checkinstall |    2 +-
  1 files changed, 1 insertions(+), 1 deletions(-)
 
-diff --git a/checkinstall.in b/checkinstall.in
+diff --git a/checkinstall b/checkinstall
 index d2ba87e..aeae91e 100755
 --- a/checkinstall
 +++ b/checkinstall
