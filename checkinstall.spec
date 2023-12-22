@@ -7,7 +7,7 @@ Release:        1
 License:        GPLv2+
 Group:          Development/Tools
 URL:            https://asic-linux.com.mx/~izto/checkinstall/
-Source:         https://asic-linux.com.mx/~izto/checkinstall/files/source/checkinstall-1.6.2.tar.gz
+Source:         https://github.com/amidevous/checkinstall/releases/download/0.0.1/checkinstall-1.6.2.tar.gz
 Source1:        https://github.com/amidevous/checkinstall/raw/master/checkinstall.in
 Source2:        https://github.com/amidevous/checkinstall/raw/master/checkinstallrc-dist.in
 Source3:        https://github.com/amidevous/checkinstall/raw/master/checkinstall-1.6.1.zh_TW.po
